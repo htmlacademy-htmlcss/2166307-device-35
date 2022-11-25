@@ -1,12 +1,105 @@
 <!DOCTYPE html>
 <html lang="ru">
+
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Девайс</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
   </head>
-  <body>
 
-    <p>Репозиторий создан для обучения на профессиональном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">HTML и CSS. Профессиональная вёрстка сайтов</a>».</p>
+  <body>
+ <!--================================== H E A D E R ================================================================================== -->
+    <header>
+
+      <div class="navigation-container">
+      <nav class="navigation">
+
+        <div class="line1">
+          <a class="logo-link" href="index.html">
+            <img class="device-logo" src="images/device-logo.svg" width="145" height="36"
+              alt="Логотип интернет магазина Девайс.">
+          </a>
+        </div>
+
+        <div class="line2">
+          <form class="site-search-form" action="https://echo.htmlacademy.ru/" method="post">
+            <label class="visually-hidden" for="search-target">Поиск по сайту.</label>
+            <input class="search-line" placeholder="Поиск по сайту" type="text" name="search-request"
+              id="search-target">
+            <button class="search-button" type="submit">
+              Найти
+            </button>
+          </form>
+
+          <ul class="navigation-list">
+            <li class="navigation-items">
+              <a class="navigation-link navigation-link-current" href="index.html">Поиск по сайту</a>
+            </li>
+            <li class="navigation-items">
+              <a class="navigation-link" href="#">Войти -Выйти</a>
+            </li>
+            <li class="navigation-items">
+              <a class="navigation-link" href="catalog.html">Сравнить - Корзина</a>
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="line3">
+          <ul class="navigation-user">
+
+            <li class="navigation-items">
+              <a class="navigation-link" href="#">
+                <span>Каталог товаров</span>
+              </a>
+
+            </li>
+
+            <li class="navigation-items">
+              <a class="navigation-link" href="#">
+                <span>Доставка</span>
+              </a>
+
+            </li>
+            <li class="navigation-items">
+              <a class="navigation-link heart" href="#">
+                <span>Гарантия</span>
+              </a>
+
+            </li>
+            <li class="navigation-items">
+              <a class="navigation-link wish button-brown" href="#">Контакты</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      </div>
+    </header>
+ <!-- ==================================== M A I N ==================================================================================  -->
+    <main class="main-page">
+      Это мейн
+    </main>
+<!-- ===========↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓=============== F O O T E R =========================↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓========================= -->
+    <footer>
+      Это футер
+    </footer>
+<!-- =========== ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ =============== F O O T E R ======================== ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ====================== -->
 
   </body>
+<!---↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓-------------------  МОДАЛЬНОЕ   ОКНО  -------------------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ --------------------------->
+  <div class="modal-container" id="delivery-dialog">
+
+    <div class="modal">
+
+      <div>Доставка под заказ - Close Button</div>
+      <div>Имя - Эмейл</div>
+      <div>Что везти - Количество</div>
+      <div>Submit Button</div>
+
+
+    </div>
+
+  </div>
+
 </html>
