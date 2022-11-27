@@ -2,7 +2,7 @@
   font-family: "Rubik";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/rubik/rubik-400.woff2") format("woff2");
+  src: url("fonts/rubik/rubik-400.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -10,7 +10,7 @@
   font-family: "Rubik";
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/rubik/rubik-700.woff2") format("woff2");
+  src: url("fonts/rubik/rubik-700.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -18,7 +18,7 @@
   font-family: "Raleway";
   font-style: normal;
   font-weight: 800;
-  src: url("../fonts/raleway/raleway-800.woff2") format("woff2");
+  src: url("fonts/raleway/raleway-800.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -31,15 +31,13 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
   min-height: 100%;
   font-family: "Rubik", sans-serif, Arial;
   font-size: 18px;
   line-height: 30px;
   background-color: #ffffff;
   color: #000000;
-  width: 1200px;
 }
 
 img {
@@ -66,16 +64,20 @@ img {
   left: 0;
 }
 
+/*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ----БЛОК НАВИГАЦИИ -----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -----*/
+
 .navigation-container {
   display: flex;
   width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #FFE17F;
   margin-top: 40px;
 }
 
 .navigation {
   display: grid;
-  grid-auto-rows: auto auto auto;
+  grid-template-rows: auto auto auto;
   width: 1040px;
   gap: 30px;
   margin-left: auto;
@@ -116,19 +118,22 @@ img {
 }
 
 .search-button {
-  width: 160px;
+  display: flex;
+  align-items: center;
+  height: 40px;
   line-height: 20px;
   font-size: 16px;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
   border: 2px solid #000000;
+  border-left: 0;
   background-color: transparent;
-  padding: 0 56px;
+  padding: 10px 56px;
   box-sizing: border-box;
 }
 
 .user-actions-container {
-  /* flex контейнер для ИмяЮзера/Вход - Выйти - Сравнить - Корзина  */
+  /* flex контейнер для  |- ИмяЮзера/Вход -|- Выйти -|- Сравнить -|- Корзина -|  */
   display: flex;
   justify-content: space-between;
   background-color: darkorchid;
@@ -178,17 +183,17 @@ img {
   /* grid track number 3 */
   display: flex;
   justify-content: space-between;
-  background-color: rgb(189, 97, 97);
   font-family: "Raleway", sans-serif;
   font-size: 18px;
-  line-height: 21.13px;
+  font-weight: 800;
+  line-height: 21px;
+  letter-spacing: 0.2em;
 }
 
 .catalog-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background-color: rgb(161, 161, 219);
 }
 
 .navigation-list {
@@ -198,7 +203,6 @@ img {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background-color: red;
   flex-wrap: wrap;
 }
 
@@ -224,6 +228,149 @@ img {
 }
 
 
+/*-↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-------------------БЛОК НАВИГАЦИИ ---------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑--------*/
+
+
+
+.main-page {
+  /*режем весь main на 6 рядов  */
+  display: grid;
+  grid-template-rows: auto auto auto auto auto auto;
+  width: 100%;
+  gap: 70px;
+}
+
+
+
+
+/*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ------------ HERO БЛОК -----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ----------*/
+.line1-hero {
+  display: flex;
+  width: 100%;
+  background-color: aquamarine;
+}
+
+
+/*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ----------- HERO БЛОК ----------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
+
+
+/*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ----------- DIRECTIONS -----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ----------*/
+.line2-directions-list {
+  display: grid;
+  grid-template-columns: 160px 160px 160px 160px 160px 160px;
+  grid-template-rows: 160px auto;
+  grid-auto-flow: column dense;
+  gap: 32px 40px;
+  width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(129, 148, 201);
+  list-style-type: none;
+  padding: 0;
+}
+
+.directions-item {
+  background-color: #FFE17F;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.directions-item:nth-child(odd) {
+  background-color: #db9090;
+}
+
+/*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ----------- DIRECTIONS ----------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
+
+
+/*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ------------ SERVICES -----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ------------*/
+.line3-services {
+  display: flex;
+  width: 100%;
+  background-color: rgb(243, 156, 156);
+}
+
+
+/*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ------------ SERVICES ----------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
+
+
+/*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -------- CUSTOM DELIVERY --------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -----------*/
+.line4-custom-delivery {
+  display: grid;
+  grid-template-columns: 125px auto 125px;
+  grid-template-rows: auto;
+  gap: 125px;
+  width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(129, 148, 201);
+}
+
+.class1 {
+  display: flex;
+  flex-direction: column;
+
+  background-image: url("../images/delivery-icon.svg");
+  background-size: 47px 31px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #FFE17F;
+}
+
+.class2 {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 21px;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000000;
+  background-color: #F0F0F0;
+}
+
+.class3 {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../images/info-icon.svg");
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #F0F0F0;
+}
+
+
+/*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -------- CUSTOM DELIVERY ---------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
+
+
+/*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -------- ABOUT and CONTACTS -------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -----------*/
+.line5-about-contacts {
+  display: flex;
+  width: 100%;
+  background-color: rgb(201, 177, 228);
+}
+
+
+/*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -------- ABOUT and CONTACTS------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
+
+/*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -------- SUBSCRIPTION -----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -----------*/
+.line6-subscription {
+  display: flex;
+  background-color: #F0F0F0;
+}
+
+
+/*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -------- SUBSCRIPTION----------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
+
+
+
+
+
+/*-----↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓-------------------------  МОДАЛЬНОЕ  ОКНО  ----------------------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ --------------*/
 
 
 .modal {
