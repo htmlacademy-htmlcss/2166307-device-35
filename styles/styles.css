@@ -254,7 +254,7 @@ img {
 /*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ----------- HERO БЛОК ----------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
 
 
-/*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ----------- DIRECTIONS -----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ----------*/
+/*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -------- PRODUCT DIRECTIONS -----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ----------*/
 .line2-directions-list {
   display: grid;
   grid-template-columns: 160px 160px 160px 160px 160px 160px;
@@ -269,18 +269,32 @@ img {
   padding: 0;
 }
 
-.directions-item {
+.directions-item:nth-child(odd) {
+  justify-content: center;
+  align-items: center;
   background-color: #FFE17F;
+}
+
+.directions-item:nth-child(3) {
+  align-items: flex-end;
+}
+
+.directions-item {
+  display: flex;
   list-style-type: none;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
   padding: 0;
   margin: 0;
+  background-color: #FFFFFF;
+  flex-wrap: wrap;
 }
 
-.directions-item:nth-child(odd) {
-  background-color: #db9090;
-}
 
-/*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ----------- DIRECTIONS ----------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
+/*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ --------- PRODUCT DIRECTIONS --------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
 
 
 /*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ------------ SERVICES -----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ------------*/
@@ -304,12 +318,12 @@ img {
   margin-left: auto;
   margin-right: auto;
   background-color: rgb(129, 148, 201);
+  line-height: 10px;
 }
 
 .class1 {
   display: flex;
   flex-direction: column;
-
   background-image: url("../images/delivery-icon.svg");
   background-size: 47px 31px;
   background-repeat: no-repeat;
@@ -322,10 +336,11 @@ img {
   flex-direction: column;
   align-self: center;
   text-align: center;
+  padding: 38.26px 0;
   font-family: "Raleway", sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 800;
-  line-height: 21px;
+  line-height: 23.48px;
   letter-spacing: 0.2em;
   text-decoration: none;
   text-transform: uppercase;
@@ -368,17 +383,65 @@ img {
 
 
 
+/*-----↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓-------------------  F O O T E R   ------------------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓---------------------------*/
+
+.footer-container {
+  display: flex;
+  width: 100%;
+  background-color: #444444;
+  padding-top: 62px;
+  padding-bottom: 61px;
+}
+
+.footer {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  width: 1160px;
+  gap: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(129, 148, 201);
+}
+
+
+/*-----↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑------------------------- F O O T E R ------------------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑------------------------*/
+
+
 
 
 /*-----↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓-------------------------  МОДАЛЬНОЕ  ОКНО  ----------------------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ --------------*/
 
 
-.modal {
+.modal-delivery {
   display: grid;
   grid-template-rows: auto auto auto auto;
   width: 760px;
   gap: 42px;
+  padding: 72px 80px;
   margin-left: auto;
   margin-right: auto;
   background-color: aqua;
  }
+
+ .modal-line1 {
+  /* modal track number 1 */
+  background-color: rgb(138, 219, 181);
+}
+
+.modal-line2 {
+  /* modal track number 2 */
+  display: flex;
+  background-color: gray;
+}
+
+.modal-line3 {
+  /* modal track number 3 */
+  display: flex;
+  background-color: rgb(180, 160, 182);
+}
+
+.modal-line4-button {
+  /* modal track number 3 */
+  display: flex;
+  background-color: rgb(180, 160, 182);
+}
