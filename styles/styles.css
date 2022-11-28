@@ -2,7 +2,7 @@
   font-family: "Rubik";
   font-style: normal;
   font-weight: 400;
-  src: url("fonts/rubik/rubik-400.woff2") format("woff2");
+  src: url("../fonts/rubik/rubik-400.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -10,7 +10,7 @@
   font-family: "Rubik";
   font-style: normal;
   font-weight: 700;
-  src: url("fonts/rubik/rubik-700.woff2") format("woff2");
+  src: url("../fonts/rubik/rubik-700.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -18,7 +18,7 @@
   font-family: "Raleway";
   font-style: normal;
   font-weight: 800;
-  src: url("fonts/raleway/raleway-800.woff2") format("woff2");
+  src: url("../fonts/raleway/raleway-800.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -33,7 +33,7 @@ body {
   flex-direction: column;
   width: 100%;
   min-height: 100%;
-  font-family: "Rubik", sans-serif, Arial;
+  font-family: "Rubik", sans-serif;
   font-size: 18px;
   line-height: 30px;
   background-color: #ffffff;
@@ -244,12 +244,86 @@ img {
 
 
 /*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ------------ HERO БЛОК -----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ----------*/
-.line1-hero {
+
+
+.top-products-list {
   display: flex;
-  width: 100%;
-  background-color: aquamarine;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
 }
 
+.top-products-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-block-bracelet {
+  display: grid;
+  grid-template-columns: 560px 560px;
+  width: 1160px;
+  height: 554px;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+
+  background: linear-gradient(to top, #FFFFFF 71.804511%, #FFE17F 28.195488%);
+}
+
+.hero-block-monopod {
+  display: grid;
+  grid-template-columns: 560px 560px;
+  width: 1160px;
+  height: 554px;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+
+  background: linear-gradient(to top, #FFFFFF 71.804511%, #FFE17F 28.195488%);
+}
+
+.hero-block-copter {
+  display: grid;
+  grid-template-columns: 560px 560px;
+  width: 1160px;
+  height: 554px;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+
+  background: linear-gradient(to top, #FFFFFF 71.804511%, #FFE17F 28.195488%);
+
+}
+
+.hero-number {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: 700;
+  font-size: 180px;
+  line-height: 135px;
+  color: #FFFFFF;
+  padding-right: 49px;
+  margin-top: 29px;
+}
+
+.hero-number {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: 700;
+  font-size: 180px;
+  line-height: 135px;
+  color: #FFFFFF;
+  padding-right: 49px;
+  margin-top: 29px;
+  flex-wrap: wrap;
+}
 
 /*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ----------- HERO БЛОК ----------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
 
@@ -264,7 +338,6 @@ img {
   width: 1160px;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgb(129, 148, 201);
   list-style-type: none;
   padding: 0;
 }
@@ -300,8 +373,9 @@ img {
 /*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ------------ SERVICES -----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ------------*/
 .line3-services {
   display: flex;
+  height: 391px;
   width: 100%;
-  background-color: rgb(243, 156, 156);
+  background: linear-gradient(to top, #929292 71.804511%, #FFE17F 28.195488%);
 }
 
 
