@@ -391,8 +391,7 @@ img {
   width: 1160px;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgb(129, 148, 201);
-  line-height: 10px;
+  background-color: #F0F0F0;
 }
 
 .class1 {
@@ -438,9 +437,21 @@ img {
 
 /*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -------- ABOUT and CONTACTS -------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -----------*/
 .line5-about-contacts {
-  display: flex;
-  width: 100%;
+  display: grid;
+  grid-template-columns: 520px 532px;
+  grid-template-rows: 7px auto;
+  gap: 47px 108px;
+  width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: rgb(201, 177, 228);
+}
+
+.line-black {
+  display: block;
+  background-color: #000000;
+  width: 84px;
+  height: 7px;
 }
 
 
