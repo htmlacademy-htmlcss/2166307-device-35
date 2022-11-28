@@ -191,9 +191,43 @@ img {
 }
 
 .catalog-container {
+
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  max-width: 236px;
+  background-color: aquamarine;
+  flex-wrap: wrap;
+}
+
+.catalog-link {
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.catalog-link::before {
+  content: '';
+  position: absolute;
+  left: 243px;
+  top: -14.85px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-image: url("../images/circle-plus-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+
+.catalog-link:hover::before {
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-image: url("../images/circle-minus-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .navigation-list {
@@ -259,34 +293,6 @@ img {
   flex-direction: column;
 }
 
-.hero-block-bracelet {
-  display: grid;
-  grid-template-columns: 560px 560px;
-  width: 1160px;
-  height: 554px;
-  gap: 40px;
-  margin: 0;
-  padding: 0;
-  margin-left: auto;
-  margin-right: auto;
-
-  background: linear-gradient(to top, #FFFFFF 71.804511%, #FFE17F 28.195488%);
-}
-
-.hero-block-monopod {
-  display: grid;
-  grid-template-columns: 560px 560px;
-  width: 1160px;
-  height: 554px;
-  gap: 40px;
-  margin: 0;
-  padding: 0;
-  margin-left: auto;
-  margin-right: auto;
-
-  background: linear-gradient(to top, #FFFFFF 71.804511%, #FFE17F 28.195488%);
-}
-
 .hero-block-copter {
   display: grid;
   grid-template-columns: 560px 560px;
@@ -297,10 +303,36 @@ img {
   padding: 0;
   margin-left: auto;
   margin-right: auto;
-
   background: linear-gradient(to top, #FFFFFF 71.804511%, #FFE17F 28.195488%);
-
 }
+
+.hero-block-bracelet {
+  display: none;
+  grid-template-columns: 560px 560px;
+  width: 1160px;
+  height: 554px;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(to top, #FFFFFF 71.804511%, #FFE17F 28.195488%);
+}
+
+.hero-block-monopod {
+  display: none;
+  grid-template-columns: 560px 560px;
+  width: 1160px;
+  height: 554px;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(to top, #FFFFFF 71.804511%, #FFE17F 28.195488%);
+}
+
+
 
 .hero-number {
   display: flex;
