@@ -24,7 +24,7 @@
 
 
 html {
-  height:100%;
+  height: 100%;
 }
 
 body {
@@ -38,6 +38,7 @@ body {
   line-height: 30px;
   background-color: #ffffff;
   color: #000000;
+
 }
 
 img {
@@ -87,11 +88,11 @@ img {
 
 .logo-line {
   /* grid track number 1 */
-  line-height: 10px;
+  display: flex;
 }
 
 .user-line {
-   /* grid track number 2 */
+  /* grid track number 2 */
   display: flex;
   background-color: rgb(218, 131, 184);
 }
@@ -191,7 +192,7 @@ img {
 }
 
 .catalog-container {
-
+  position: relative;
   display: flex;
   flex-direction: column;
   max-width: 236px;
@@ -200,7 +201,7 @@ img {
 }
 
 .catalog-link {
-  position: relative;
+
   text-decoration: none;
   text-transform: uppercase;
   color: #000000;
@@ -280,70 +281,49 @@ img {
 /*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ------------ HERO БЛОК -----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ----------*/
 
 
-.top-products-list {
+.slider-container {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-
-.top-products-item {
-  display: flex;
-  flex-direction: column;
-}
-
-.hero-block-copter {
-  display: grid;
-  grid-template-columns: 560px 560px;
+  min-height: 560px;
   width: 1160px;
-  height: 554px;
-  gap: 40px;
   margin: 0;
   padding: 0;
   margin-left: auto;
   margin-right: auto;
-  background: linear-gradient(to top, #FFFFFF 71.804511%, #FFE17F 28.195488%);
+  background: linear-gradient(to top, transparent 71.804511%, #FFE17F 28.195488%);
 }
 
-.hero-block-bracelet {
+.slider-content {
   display: none;
   grid-template-columns: 560px 560px;
   width: 1160px;
-  height: 554px;
   gap: 40px;
-  margin: 0;
-  padding: 0;
+  line-height: 10px;
   margin-left: auto;
   margin-right: auto;
-  background: linear-gradient(to top, #FFFFFF 71.804511%, #FFE17F 28.195488%);
+  animation: fadeInFromNone 0.6s ease-in-out;
+  /*контент слайда плавно "проявляется" за 0.6 сек.*/
 }
 
-.hero-block-monopod {
-  display: none;
-  grid-template-columns: 560px 560px;
-  width: 1160px;
-  height: 554px;
-  gap: 40px;
-  margin: 0;
-  padding: 0;
-  margin-left: auto;
-  margin-right: auto;
-  background: linear-gradient(to top, #FFFFFF 71.804511%, #FFE17F 28.195488%);
+@keyframes fadeInFromNone {
+
+  /* анимация плавного появления слайда через  transition не работает =( , поэтому используем здесь технику @keyframes */
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: grid;
+    opacity: 0;
+  }
+
+  100% {
+    display: grid;
+    opacity: 1;
+  }
 }
 
-
-
-.hero-number {
-  display: flex;
-  justify-content: flex-end;
-  font-weight: 700;
-  font-size: 180px;
-  line-height: 135px;
-  color: #FFFFFF;
-  padding-right: 49px;
-  margin-top: 29px;
-}
 
 .hero-number {
   display: flex;
@@ -357,7 +337,214 @@ img {
   flex-wrap: wrap;
 }
 
+.hero-title {
+  display: flex;
+  margin: 0;
+  margin-top: -40px;
+  margin-bottom: 29px;
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 50px;
+  flex-wrap: wrap;
+}
+
+.hero-details {
+  display: grid;
+  width: 560px;
+  grid-template-rows: auto auto auto;
+  justify-items: start;
+  align-items: center;
+  gap: 50px;
+}
+
+.hero-description {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: #444444;
+}
+
+.details-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 220px;
+  min-height: 40px;
+  border: 2px solid #FFFFFF;
+  background: linear-gradient(to bottom, #FFFFFF 40%, #FFE17F 40%, #FFE17F 60%, #FFFFFF 60%);
+  padding: 0 37px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000000;
+  outline: none;
+  flex-wrap: wrap;
+}
+
+.details-btn:hover {
+  background: #FFE17F;
+}
+
+.details-btn:active {
+  background: #FFCC33;
+}
+
+.details-btn:focus-visible {
+  border: 2px solid #AF4FFF;
+  background: linear-gradient(to bottom, #FFFFFF 40%, #FFE17F 40%, #FFE17F 60%, #FFFFFF 60%);
+}
+
+.details-btn:disabled {
+  opacity: 0.3;
+}
+
+.hero-parameters-01 {
+  display: grid;
+  grid-template-columns: 141px 147px;
+  grid-template-rows: auto auto;
+  width: 305px;
+  gap: 12px 20px;
+}
+
+.hero-parameters-02 {
+  display: grid;
+  grid-template-columns: 155px;
+  grid-template-rows: auto auto;
+  width: 155px;
+  gap: 12px;
+}
+
+.hero-parameters-03 {
+  display: grid;
+  grid-template-columns: 99px 79px 128px;
+  grid-template-rows: auto auto;
+  width: 386px;
+  gap: 12px 40px;
+}
+
+.value {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 30px;
+}
+
+.parameter {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.slider-check + .slider-label {
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.slider-check {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  opacity: 0;
+}
+
+.slider-check.first,
+.slider-label.first {
+  top: 548px;
+  left: 542px;
+}
+
+.slider-check.second,
+.slider-label.second {
+  top: 548px;
+  left: 574px;
+}
+
+.slider-check.third,
+.slider-label.third {
+  top: 548px;
+  left: 606px;
+}
+
+.slider-check:checked + .slider-label {
+  background: #000000;
+}
+
+.slider-check:hover + .slider-label {
+  opacity: 0.6;
+}
+
+.slider-check:active + .slider-label {
+  opacity: 0.3;
+}
+
+.slider-check:checked + .slider-label + .slider-content {
+  display: grid;
+}
+
+.slider-btn {
+  position: absolute;
+  display: flex;
+  height: 66px;
+  width: 24px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: transparent;
+  background-size: 20px 60px;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.left {
+  top: 209px;
+  left: 28px;
+  background-image: url("../images/left-btn.svg");
+}
+
+.right {
+  top: 209px;
+  left: 538px;
+  background-image: url("../images/right-btn.svg");
+}
+
+.slider-btn:hover {
+  opacity: 0.6;
+}
+
+.slider-btn:active {
+  opacity: 0.3;
+}
+
+.slider-btn:focus-visible {
+  border: 2px solid #AF4FFF;
+}
+
+.slider-btn:disabled {
+  opacity: 0.1;
+}
+
 /*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ----------- HERO БЛОК ----------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
+
 
 
 /*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -------- PRODUCT DIRECTIONS -----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ----------*/
@@ -402,16 +589,20 @@ img {
 /*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ --------- PRODUCT DIRECTIONS --------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
 
 
+
 /*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ------------ SERVICES -----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ------------*/
-.line3-services {
+.services-container {
   display: flex;
-  height: 391px;
+  min-height: 391px;
   width: 100%;
   background: linear-gradient(to top, #929292 71.804511%, #FFE17F 28.195488%);
 }
 
 
+
+
 /*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ------------ SERVICES ----------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
+
 
 
 /*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -------- CUSTOM DELIVERY --------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -----------*/
@@ -467,6 +658,7 @@ img {
 /*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -------- CUSTOM DELIVERY ---------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
 
 
+
 /*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -------- ABOUT and CONTACTS -------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -----------*/
 .line5-about-contacts {
   display: grid;
@@ -488,6 +680,8 @@ img {
 
 
 /*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -------- ABOUT and CONTACTS------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
+
+
 
 /*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -------- SUBSCRIPTION -----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -----------*/
 .line6-subscription {
@@ -525,7 +719,6 @@ img {
 
 
 
-
 /*-----↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓-------------------------  МОДАЛЬНОЕ  ОКНО  ----------------------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ --------------*/
 
 
@@ -538,9 +731,9 @@ img {
   margin-left: auto;
   margin-right: auto;
   background-color: aqua;
- }
+}
 
- .modal-line1 {
+.modal-line1 {
   /* modal track number 1 */
   background-color: rgb(138, 219, 181);
 }

@@ -102,65 +102,110 @@
 
       <!-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ------------ HERO БЛОК -----------------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ---------->
       <section>
+
         <h2 class="visually-hidden"> Топовые продукты.</h2>
 
-        <ul class="top-products-list">
-          <li class="top-producst-item">
-            <h3 class="visually-hidden"> Квадрокоптер, оснащённый мощным с лазером.</h3>
-            <div class="hero-block-copter">
-
-              <div class="hero-image">
-                <img class="device-logo" src="images/hero-quadrocopter.svg" width="560" height="554"
-                  alt="Квадрокоптер с лазером - пархает как бабочка, жалит как пчела!">
-              </div>
-
-              <div class="hero2">
-                <span class="hero-number">01</span>
-                <title class="hero-title"></title>
-                <p class="hero-details"></p>
-              </div>
-
+        <div class="slider-container">
+          <h3 class="visually-hidden"> Квадрокоптер, оснащённый мощным с лазером.</h3>
+          <input class="slider-check first" type="radio" name="slider-check" value="01" id="top-quadrocopter" checked>
+          <label class="slider-label first" for="top-quadrocopter"><span
+              class="visually-hidden">Квадрокоптер.</span></label>
+          <!------------- ↓ ↓ СЛАЙД 01 ↓ ↓----------->
+          <div class="slider-content">
+            <div class="hero-image">
+              <img class="device-logo" src="images/hero-quadrocopter.png" width="560" height="560"
+                alt="Квадрокоптер с лазером - пархает как бабочка, жалит как пчела!">
             </div>
-          </li>
 
-          <li class="top-producst-item">
-            <h3 class="visually-hidden"> Топовый Монопод. Делай сефи как Бен Стиллер!</h3>
-            <div class="hero-block-monopod">
+            <div class="hero-info">
+              <span class="hero-number">01</span>
+              <h4 class="hero-title">Порхает как бабочка, жалит как пчела!</h4>
 
-              <div class="hero-image">
-                <img class="device-logo" src="images/hero-monopod.svg" width="560" height="554"
-                  alt="Восьми метровая палка для селфи!">
-              </div>
-              <div class="hero2">
-
-                <span class="hero-number">02</span>
-                <title class="hero-title"></title>
-                <p class="hero-details"></p>
-
+              <div class="hero-details">
+                <div class="hero-description">Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером,
+                  замаскированным под стандартную камеру.</div>
+                <a href="#" class="details-btn">Подробнее</a>
+                <div class="hero-parameters-01">
+                  <div class="value">800 м</div>
+                  <div class="value">50 м</div>
+                  <div class="parameter">Дальность полета</div>
+                  <div class="parameter">Радиус поражения</div>
+                </div>
               </div>
             </div>
-          </li>
+          </div>
+          <!------------ ↑ ↑ СЛАЙД 01  ↑ ↑----------->
 
-          <li class="top-producst-item">
-            <h3 class="visually-hidden"> Фитнес-браслет для правильного похудения.</h3>
-            <div class="hero-block-bracelet">
 
-              <div class="hero-image">
-                <img class="device-logo" src="images/hero-bracelet.svg" width="560" height="554"
-                  alt="Топовый фитнес-браслет для похудения.">
-              </div>
+          <h3 class="visually-hidden"> Фитнес-браслет для правильного похудения.</h3>
+          <input class="slider-check second" type="radio" name="slider-check" value="02" id="top-bracelet">
+          <label class="slider-label second" for="top-bracelet"> <span
+              class="visually-hidden">Фитнес-браслет.</span></label>
 
-              <div class="hero2">
-                <span class="hero-number">03</span>
-                <title class="hero-title"></title>
-                <p class="hero-details"></p>
-              </div>
-
+          <!------------- ↓ ↓ СЛАЙД 02 ↓ ↓----------->
+          <div class="slider-content">
+            <div class="hero-image">
+              <img class="device-logo" src="images/hero-bracelet.png" width="560" height="560"
+                alt="Топовый фитнес-браслет для похудения.">
             </div>
-          </li>
+
+            <div class="hero-info">
+              <span class="hero-number">02</span>
+              <h4 class="hero-title">Худеем <br> правильно!</h4>
+
+              <div class="hero-details">
+                <div class="hero-description">
+                  Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.
+                </div>
+                <a href="#" class="details-btn">Подробнее</a>
+                <div class="hero-parameters-02">
+                  <div class="value">48 часов</div>
+                  <div class="parameter">Без подзарядки</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!----------- ↑ ↑ СЛАЙД 02 ↑ ↑------------->
 
 
-        </ul>
+          <h3 class="visually-hidden"> Топовый Монопод.</h3>
+          <input class="slider-check third" type="radio" name="slider-check" value="03" id="top-monopod">
+          <label class="slider-label third" for="top-monopod"><span class="visually-hidden">Монопод.</span></label>
+
+          <!---------- ↓ ↓ СЛАЙД 03 ↓ ↓-------------->
+          <div class="slider-content">
+            <div class="hero-image">
+              <img class="device-logo" src="images/hero-monopod.png" width="560" height="560"
+                alt="Восьми метровая палка для селфи!">
+            </div>
+
+            <div class="hero-info">
+              <span class="hero-number">03</span>
+              <h4 class="hero-title">Делай селфи,<br> как Бен Стиллер!</h4>
+
+              <div class="hero-details">
+                <div class="hero-description">Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь,
+                  Карл!) метров длиной и весом всего 5 кг.
+                </div>
+                <a href="#" class="details-btn">Подробнее</a>
+
+                <div class="hero-parameters-03">
+                  <div class="value">8,5 м</div>
+                  <div class="value">5 кг</div>
+                  <div class="value">Карбон</div>
+                  <div class="parameter">Длина палки</div>
+                  <div class="parameter">Вес палки</div>
+                  <div class="parameter">Материал</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--------- ↑ ↑ СЛАЙД 03 ↑ ↑--------------->
+
+          <button class="slider-btn left"></button>
+          <button class="slider-btn right"></button>
+        </div>
+
       </section>
 
       <!--------- -↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ----------- HERO БЛОК -----------------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑----------->
@@ -199,11 +244,24 @@
 
 
       <!-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ------------ SERVICES ---------------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -------------->
-      <section class="line3-services">
+      <section>
         <h2 class="visually-hidden">
           Дополнительные сервисы.
         </h2>
-        3
+        <div class="services-container">
+
+          <div class="services-content">
+            <div class="services-menu">
+
+              <div class="service1"></div>
+              <div class="service2"></div>
+              <div class="service3"></div>
+
+            </div>
+            <div class="services-description"></div>
+          </div>
+
+        </div>
       </section>
       <!-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ------------ SERVICES ----------------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ------------->
 
@@ -233,22 +291,24 @@
         <div class="line-black"></div>
 
         <div class="about">
-        <h3 class="about-contacts-title">О нас</h3>
-        <p class="who-we-are">Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.</p>
-        <p class="what-we-can">Мы можем доставить ваш товар в самые отдалённые уголки России транспортными компаниями: </p>
-        <ol class="transport-list">
-          <li class="transport-item">Меловые линии</li>
-          <li class="transport-item">СДИК</li>
-          <li class="transport-item">ТоксБерри</li>
-        </ol>
+          <h3 class="about-contacts-title">О нас</h3>
+          <p class="who-we-are">Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.</p>
+          <p class="what-we-can">Мы можем доставить ваш товар в самые отдалённые уголки России транспортными компаниями:
+          </p>
+          <ol class="transport-list">
+            <li class="transport-item">Меловые линии</li>
+            <li class="transport-item">СДИК</li>
+            <li class="transport-item">ТоксБерри</li>
+          </ol>
         </div>
 
         <div class="contacts">
           <h3 class="about-contacts-title">Контакты</h3>
-          <p class="your-visit">Вы можете забрать товар сами, заехав в наш офис. Заодно сможете проверить работоспособность покупки. </p>
+          <p class="your-visit">Вы можете забрать товар сами, заехав в наш офис. Заодно сможете проверить
+            работоспособность покупки. </p>
           <h4 class="address">Интернет-магазин «Девайс» </h4>
           <p class="full-address">Санкт-Петербург, набережная реки Карповки, 5, литера П. </p>
-         <a clas="contact-phone">+7 (812) 812-12-12</a>
+          <a class="contact-phone">+7 (812) 812-12-12</a>
 
 
         </div>
@@ -309,6 +369,9 @@
       </form>
 
     </div>
+
+    <!--Script SLIDE MASTER-->
+    <script src="slide-master.js"></script>
 
   </body>
 
