@@ -595,11 +595,108 @@ img {
   display: flex;
   min-height: 391px;
   width: 100%;
-  background: linear-gradient(to top, #929292 71.804511%, #FFE17F 28.195488%);
+  background: linear-gradient(to top, #F0F0F0 73.91304348%, #FFFFFF 26.08695652%);
 }
 
+.services {
+  display: grid;
+  width: 1160px;
+  grid-template-columns: 280px 880px;
+  grid-template-rows: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.services-content {
+  display: flex;
+  flex-direction: column;
+  width: 880px;
+}
 
+.services-menu {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  align-items: center;
+  gap: 35px;
+  width: 280px;
+  padding-top: 64px;
+  padding-bottom: 65px;
+  margin-bottom: 72px;
+}
+
+.service-name {
+  display: flex;
+  align-items: center;
+  min-width: 160px;
+  min-height: 40px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background-color: rgb(132, 177, 132);
+  flex-wrap: wrap;
+}
+
+.service-content-delivery {
+  display: grid;
+  grid-template-columns: 452px 136px;
+  grid-template-rows: auto;
+  align-items: center;
+  gap: 110px;
+  width: 694px;
+  border-left: 7px solid #000000;
+  padding: 72.5px 63px 72.5px 116px;
+  margin-bottom: 72px;
+}
+
+.service-content-warranty {
+  display: none;
+  grid-template-columns: 452px 171px;
+  grid-template-rows: auto;
+  align-items: center;
+  gap: 83px;
+  width: 880px;
+  border-left: 7px solid #000000;
+  padding: 62px 63px 28px 116px;
+  margin-bottom: 72px;
+}
+
+.service-content-credit {
+  display: none;
+  grid-template-columns: 452px 156px;
+  grid-template-rows: auto;
+  align-items: center;
+  gap: 83px;
+  width: 880px;
+  border-left: 7px solid #000000;
+  padding: 65.5px 28px 65.5px 116px;
+  margin-bottom: 72px;
+}
+
+.service-title {
+  display: flex;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 50px;
+  margin: 0;
+  margin-bottom: 34px;
+  flex-wrap: wrap;
+}
+
+.service-description {
+  display: flex;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  margin: 0;
+  flex-wrap: wrap;
+}
 
 /*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ------------ SERVICES ----------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
 
