@@ -292,7 +292,7 @@
             </div>
           </div>
         </div>
-        </div>
+
       </section>
       <!-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ------------ SERVICES ----------------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ------------->
 
@@ -303,11 +303,11 @@
         <h2 class="visually-hidden">
           Доставка редких товаров под заказ.
         </h2>
-        <div class="line4-custom-delivery">
-          <div class="class1"></div>
-          <div class="class2">Доставим редкий товар под заказ</div>
-          <div class="class3"></div>
-        </div>
+        <a class="class2" href="#delivery-dialog">
+
+          Доставим редкий товар под заказ
+
+        </a>
       </section>
 
       <!-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -------- CUSTOM DELIVERY -------------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑----------->
@@ -349,11 +349,34 @@
       <!-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -------- ABOUT and CONTACTS -----------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ---------->
 
       <!-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ---------- SUBSCRIPTION --------------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ----------->
-      <section class="line6-subscription">
+      <section>
         <h2 class="visually-hidden">
           Подписка на рассылку.
         </h2>
-        6
+
+        <div class="subscription-container">
+
+          <div class="sub-line1">
+            <p class="sub-action">Подпишитесь на рассылку</p>
+            <p class="sub-benefit">Еженедельный дайджест с обзорами новинок,<br>
+              длительными тест-драйвами, распаковками, а также акции, спецпредложения и вот это вот всё.</p>
+          </div>
+
+          <div class="sub-line2">
+            <form class="subscription-form" action="https://echo.htmlacademy.ru/" method="post">
+              <label class="visually-hidden" for="subscription-email">Адрес электронной почты для рассылки.</label>
+              <input class="field-line" placeholder="Ваш e-mail" type="email" name="subscription-email"
+                id="subscription-email" required>
+              <button class="subscription-button" type="submit">
+                Подписаться
+              </button>
+            </form>
+
+            <p class="sub-free">Это бесплатно</p>
+
+          </div>
+
+        </div>
       </section>
 
     </main>
@@ -385,20 +408,25 @@
 
     <div class="modal-container" id="delivery-dialog">
 
-      <a class="modal-container-close" href="#close"></a>
+      <a class="modal-container-overlay" href="#close"></a>
 
-      <form class="modal-delivery" action="https://echo.htmlacademy.ru/" method="post">
+      <div class="modal">
 
-        <div class="modal-line1">Доставка под заказ - Close Button</div>
-        <div class="modal-line2">Имя - Эмейл</div>
-        <div class="modal-line3">Что везти - Количество</div>
-        <div class="modal-line4-button">
-          <button class="modal-send-button" type="submit">Отправить</button>
-        </div>
+        <section class="modal-content">
+
+          <form class="modal-delivery" action="https://echo.htmlacademy.ru/" method="post">
+
+            <div class="modal-line1">Доставка под заказ - Close Button</div>
+            <div class="modal-line2">Имя - Эмейл</div>
+            <div class="modal-line3">Что везти - Количество</div>
+            <div class="modal-line4-button">
+              <button class="modal-send-button" type="submit">Отправить</button>
+            </div>
 
 
-      </form>
-
+          </form>
+        </section>
+      </div>
     </div>
 
     <!--Script SLIDE MASTER-->

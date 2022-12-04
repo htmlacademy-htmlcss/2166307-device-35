@@ -714,16 +714,34 @@ img {
   background-color: #F0F0F0;
 }
 
-.class1 {
+.class2 {
   display: flex;
   flex-direction: column;
-  background-image: url("../images/delivery-icon.svg");
+  justify-content: center;
+  align-items: center;
+  width: 1160px;
+  margin-right: auto;
+  margin-left: auto;
+  /*background-image: url("../images/delivery-icon.svg");
   background-size: 47px 31px;
   background-repeat: no-repeat;
-  background-position: center center;
-  background-color: #FFE17F;
+  background-position: left center;*/
+
+  background-image: linear-gradient(90deg, #FFE17F 10.775862%, #F0F0F0 10.775862%, #F0F0F0 89.224138%);
+
+
+
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 23.48px;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000000;
 }
 
+/*
 .class2 {
   display: flex;
   flex-direction: column;
@@ -751,7 +769,7 @@ img {
   background-color: #F0F0F0;
 }
 
-
+*/
 /*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -------- CUSTOM DELIVERY ---------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
 
 
@@ -781,10 +799,115 @@ img {
 
 
 /*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -------- SUBSCRIPTION -----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -----------*/
-.line6-subscription {
+.subscription-container {
   display: flex;
+  flex-direction: column;
+  width: 100%;
   background-color: #F0F0F0;
 }
+.sub-line1,
+.sub-line2 {
+  display: flex;
+  width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sub-line1 {
+  padding-top: 64px;
+  margin-bottom: 144px;
+}
+.sub-line2 {
+  margin-bottom: 56px;
+}
+
+.sub-action,
+.sub-benefit,
+.sub-free {
+  margin: 0;
+}
+
+.sub-action {
+  display: flex;
+  flex-direction: column;
+  width: 368px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 50px;
+  margin-right: 232px;
+}
+
+.sub-benefit,
+.sub-free {
+  font-family: 'Rubik';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: #444444;
+}
+
+.sub-benefit {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.sub-free {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+
+.subscription-form {
+  display: flex;
+  margin: 0;
+  margin-right: 220px;
+}
+
+.subscription-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 252px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 57px;
+  text-align: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0 35px;
+  border: 3px solid #C4C4C4;
+  cursor: pointer;
+  flex-wrap: wrap;
+}
+
+.field-line {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 57px;
+  width: 541px;
+  border: 0;
+  border-bottom: 3px solid #C4C4C4;;
+  padding: 0;
+  margin: 0;
+  background-color: #F0F0F0;
+  color: #444444;
+}
+
+.field-line[placeholder] {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  padding-left: 17px;
+  color: rgba(68, 68, 68, 1);
+}
+
 
 
 /*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -------- SUBSCRIPTION----------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
@@ -819,15 +942,61 @@ img {
 /*-----↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓-------------------------  МОДАЛЬНОЕ  ОКНО  ----------------------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ --------------*/
 
 
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 30;
+}
+
+.modal-container:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-container-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(242, 242, 242, 0.8);
+
+}
+
+.modal {
+  position: relative;
+  margin: 612px auto;
+  width: 920px;
+
+  background: #FFFFFF;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  z-index: 8;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+
 .modal-delivery {
   display: grid;
   grid-template-rows: auto auto auto auto;
-  width: 760px;
+  width: 920px;
   gap: 42px;
-  padding: 72px 80px;
   margin-left: auto;
   margin-right: auto;
-  background-color: aqua;
+  background-color: transparent;
 }
 
 .modal-line1 {
