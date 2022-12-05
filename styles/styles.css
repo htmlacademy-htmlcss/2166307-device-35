@@ -1051,6 +1051,7 @@ img {
   gap: 119px;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 61px;
 }
 
 .footer-line1 {
@@ -1058,7 +1059,9 @@ img {
   position: relative;
   display: flex;
   flex-direction: column;
+  min-height: 150px;
   padding-top: 62px;
+  margin-bottom: 16px;
   background-color: #444444;
 }
 
@@ -1068,7 +1071,7 @@ img {
   display: block;
   width: 80px;
   height: 7px;
-  top: 237px;
+  bottom: 0;
   background-color: #FFC700;
 }
 
@@ -1102,6 +1105,7 @@ img {
   line-height: 20px;
   color: #FFFFFF;
   margin: 0;
+  margin-bottom: 35px;
   flex-wrap: wrap;
 }
 
@@ -1147,7 +1151,6 @@ img {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  margin-bottom: 61px;
 }
 
 .social-link {
@@ -1227,7 +1230,7 @@ img {
   width: 115px;
   color: #FFC700;
   margin-left: auto;
-  margin-bottom: 65px;
+  margin-bottom: 4px;
   text-decoration: none;
   outline: none;
   box-sizing: border-box;
