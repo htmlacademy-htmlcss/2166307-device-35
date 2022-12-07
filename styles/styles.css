@@ -596,22 +596,30 @@ img {
   min-height: 391px;
   width: 100%;
   background: linear-gradient(to top, #F0F0F0 73.91304348%, #FFFFFF 26.08695652%);
+  padding-bottom: 72px;
 }
 
 .services {
-  display: grid;
+  display: flex;
   width: 1160px;
-  grid-template-columns: 280px 880px;
+  grid-template-columns: 287px 873px;
   grid-template-rows: auto;
   margin-left: auto;
   margin-right: auto;
 }
 
+/*
 .services-content {
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+  overflow: hidden;
   width: 880px;
+  height: 500px;
+  background-color: indianred;
 }
+
+*/
 
 .services-menu {
   display: grid;
@@ -622,11 +630,11 @@ img {
   width: 280px;
   padding-top: 64px;
   padding-bottom: 65px;
-  margin-bottom: 72px;
+  border-right: 7px solid #000000;
 }
 
 .service-name {
-  display: flex;
+  display: grid;
   align-items: center;
   min-width: 160px;
   min-height: 40px;
@@ -646,35 +654,32 @@ img {
   grid-template-columns: 452px 136px;
   grid-template-rows: auto;
   align-items: center;
-  gap: 110px;
+  gap: 106px;
   width: 694px;
-  border-left: 7px solid #000000;
-  padding: 72.5px 63px 72.5px 116px;
-  margin-bottom: 72px;
+  padding: 0 63px 0 116px;
+
 }
 
 .service-content-warranty {
-  display: none;
+  display: grid;
   grid-template-columns: 452px 171px;
   grid-template-rows: auto;
   align-items: center;
   gap: 83px;
   width: 880px;
-  border-left: 7px solid #000000;
-  padding: 62px 63px 28px 116px;
-  margin-bottom: 72px;
+  padding: 0 63px 0 116px;
+
 }
 
 .service-content-credit {
-  display: none;
+  display: grid;
   grid-template-columns: 452px 156px;
   grid-template-rows: auto;
   align-items: center;
   gap: 83px;
   width: 880px;
-  border-left: 7px solid #000000;
-  padding: 65.5px 28px 65.5px 116px;
-  margin-bottom: 72px;
+  padding: 0 63px 0 116px;
+
 }
 
 .service-title {
@@ -697,6 +702,152 @@ img {
   margin: 0;
   flex-wrap: wrap;
 }
+
+/*---------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ----- PURE CSS SLIDER for SERVICES ----------*/
+
+.slider {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  overflow: hidden;
+}
+
+.slider-wrapper {
+  /*важный блок-подстилка под все. без него все исчезает*/
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 880px;
+  padding-top: 72.5px;
+}
+
+.control-input {
+  /*УБИРАЕТ ОРИГИНАЛЬНЫЕ РАДИО БУТТОНЫ*/
+  display: none;
+}
+
+.slides {
+  /* СТАВИМ НА ВСЕ КОНТЕНТ-БЛОКИ DISPLAY:NONE */
+  display: none;
+  animation: fadeInFromNone 0.6s ease-in-out;
+  /*контент слайда плавно "проявляется" за 0.6 сек.*/
+}
+
+.control-input.first-radio:checked ~ .slider > .content-one,
+.control-input.second-radio:checked ~ .slider > .content-two,
+.control-input.third-radio:checked ~ .slider > .content-three {
+  /* ЕСЛИ РАДИО ЧЕКНУТО --> СООТВЕТСТВУЮЩИЙ ЕМУ КОНТЕНТ-БЛОК получает DISPLAY:FLEX */
+  /* по умолчанию радио кнопка, соответсвующая DELIVERY service, помечена как checked*/
+  display: flex;
+}
+
+.control-radio {
+  position: relative;
+  display: flex;
+  width: 160px;
+  min-height: 40px;
+  color: #000000;
+  cursor: pointer;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.control-radio::before {
+  position: absolute;
+  content: '';
+  top: 1.5px;
+  left: -354px;
+  display: block;
+  height: 40px;
+  width: 280px;
+  background-color: #dab6b6;
+  cursor: pointer;
+  color: #F0F0F0;
+}
+
+.control-input.first-radio:checked ~ .control-radio.first-radio::before,
+.control-input.second-radio:checked ~ .control-radio.second-radio::before,
+.control-input.third-radio:checked ~ .control-radio.third-radio::before {
+  position: absolute;
+  content: '';
+  top: 1.5px;
+  left: -354px;
+  display: block;
+  background-image: url("../images/radio-checked.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 40px;
+  width: 280px;
+  background-color: #000000;
+}
+
+.control-input.first-radio:hover ~ .control-radio.first-radio,
+.control-input.second-radio:hover ~ .control-radio.second-radio,
+.control-input.third-radio:hover ~ .control-radio.third-radio {
+  opacity: 0.6;
+}
+
+.control-input.first-radio:focus ~ .control-radio.first-radio::before,
+.control-input.second-radio:focus ~ .control-radio.second-radio::before,
+.control-input.third-radio:focus ~ .control-radio.third-radio::before {
+  position: absolute;
+  content: '';
+  top: -1.5px;
+  left: -357px;
+  display: block;
+  height: 40px;
+  width: 280px;
+  border: 3px solid #83B3D3;
+}
+
+.control-input.first-radio:active ~ .control-radio.first-radio,
+.control-input.second-radio:active ~ .control-radio.second-radio,
+.control-input.third-radio:active ~ .control-radio.third-radio {
+  opacity: 0.2;
+}
+
+.slider-wrapper .control-radio.first-radio,
+.slider-wrapper .control-radio.second-radio,
+.slider-wrapper .control-radio.third-radio {
+  position: absolute;
+  content: '';
+  display: flex;
+  top: 10px;
+  left: -400px;
+  width: 160px;
+  height: 40px;
+  background-color: #ff0000;
+}
+
+.slider-wrapper .control-radio.second-radio {
+  top: 150px;
+  left: -400px;
+}
+
+.slider-wrapper .control-radio.third-radio {
+  top: 290px;
+  left: -400px;
+}
+
+.control-input.first-radio:checked ~ .controls .first-radio,
+.control-input.second-radio:checked ~ .controls .second-radio,
+.control-input.third-radio:checked ~ .controls .third-radio {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #b3067f;
+}
+
+
+/*---------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ----- PURE CSS SLIDER for SERVICES ----------*/
+
 
 /*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ------------ SERVICES ----------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
 
@@ -722,7 +873,7 @@ img {
   text-decoration: none;
   text-transform: uppercase;
   color: #000000;
-  border: 1px solid #FFFFFF ;
+  border: 1px solid #FFFFFF;
   outline: 2px solid #FFFFFF;
 }
 
@@ -763,6 +914,7 @@ img {
 .delivery-btn:hover {
   background-image: linear-gradient(90deg, #FFC700 10.775862%, #F0F0F0 10.775862%, #F0F0F0 89.224138%);
 }
+
 .delivery-btn:hover::after {
   background-image: url("../images/info-icon-black.svg");
 }
@@ -773,7 +925,7 @@ img {
 
 .delivery-btn:focus-visible {
 
-  border: 1px solid #FFFFFF ;
+  border: 1px solid #FFFFFF;
   outline: 2px solid #AF4FFF;
 }
 
@@ -895,12 +1047,12 @@ img {
 }
 
 .about-us {
- padding: 0 21.5625px;
+  padding: 0 21.5625px;
 }
 
 .contact-us {
   padding: 0 32.0705px;
- }
+}
 
 /*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -------- ABOUT and CONTACTS------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
 
@@ -913,6 +1065,7 @@ img {
   width: 100%;
   background-color: #F0F0F0;
 }
+
 .sub-line1,
 .sub-line2 {
   display: flex;
@@ -925,6 +1078,7 @@ img {
   padding-top: 64px;
   margin-bottom: 144px;
 }
+
 .sub-line2 {
   margin-bottom: 56px;
 }
@@ -1013,7 +1167,8 @@ img {
   line-height: 57px;
   width: 541px;
   border: 0;
-  border-bottom: 3px solid #C4C4C4;;
+  border-bottom: 3px solid #C4C4C4;
+  ;
   padding: 0;
   margin: 0;
   background-color: #F0F0F0;
@@ -1157,7 +1312,7 @@ img {
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: "Raleway",sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 18px;
   line-height: 21.00px;
@@ -1176,7 +1331,7 @@ img {
   width: 100%;
   height: 2px;
   bottom: -4px;
-  background-color:  #FFC700;
+  background-color: #FFC700;
 }
 
 .footer-nav-link:active {
@@ -1191,7 +1346,7 @@ img {
   width: 100%;
   height: 2px;
   bottom: -4px;
-  background-color:  #FFC700;
+  background-color: #FFC700;
   opacity: 0.3;
 }
 
@@ -1215,7 +1370,7 @@ img {
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: "Raleway",sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 18px;
   line-height: 21.00px;
@@ -1230,7 +1385,7 @@ img {
   width: 100%;
   height: 2px;
   bottom: -4px;
-  background-color:  #444444;
+  background-color: #444444;
 }
 
 
@@ -1256,7 +1411,7 @@ img {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color:  rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
   color: #444444;
 }
 
@@ -1290,7 +1445,7 @@ img {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color:  rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.3);
   color: #444444;
 }
 
@@ -1305,7 +1460,7 @@ img {
 .footer-contact-phone {
   position: relative;
   display: flex;
-  font-family: "Rubik",sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
@@ -1344,7 +1499,7 @@ img {
 .footer-contact-phone:visited {
   position: relative;
   display: flex;
-  font-family: "Rubik",sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;

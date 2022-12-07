@@ -257,41 +257,78 @@
               <div class="service-name">Кредит</div>
             </div>
 
-            <div class="services-content">
-              <div class="service-content-delivery">
-                <div>
-                  <h3 class="service-title">Доставка</h3>
-                  <p class="service-description">Мы с удовольствием доставим ваш товар прямо
-                    к вашему подъезду совершенно бесплатно! Ведь
-                    мы неплохо заработаем, поднимая его на ваш этаж.</p>
+            <div class="slider-wrapper">
+
+
+              <input class="control-input first-radio" type="radio" name="point" id="content-one" checked>
+              <label class="control-radio first-radio" for="content-one">Доставка</label>
+              <input class="control-input second-radio" type="radio" name="point" id="content-two">
+              <label class="control-radio second-radio" for="content-two">Гарантия</label>
+              <input class="control-input third-radio" type="radio" name="point" id="content-three">
+              <label class="control-radio third-radio" for="content-three">Кредит</label>
+
+
+              <div class="slider">
+
+
+                <!------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - СЛАЙД - СЕРВИС ДОСТАВКИ --->
+                <div class="slides content-one">
+                  <div class="service-content-delivery">
+                    <div>
+                      <h3 class="service-title">Доставка</h3>
+                      <p class="service-description">Мы с удовольствием доставим ваш товар прямо<br>
+                        к вашему подъезду совершенно бесплатно! Ведь<br>
+                        мы неплохо заработаем, поднимая его на ваш этаж.</p>
+                    </div>
+                    <img class="service-logo" src="images/delivery-service.svg" width="136" height="164"
+                      alt="Сервис доставки.">
+                  </div>
                 </div>
-                <img class="service-logo" src="images/delivery-service.svg" width="136" height="164"
-                  alt="Сервис доставки.">
+                <!------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ - СЛАЙД - СЕРВИС ДОСТАВКИ --->
+
+
+
+                <!------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - СЛАЙД - ГАРАНТИЙНЫЙ СЕРВИС --->
+                <div class="slides content-two">
+                  <div class="service-content-warranty">
+                    <div>
+                      <h3 class="service-title">Гарантия</h3>
+                      <p class="service-description">Если из-за возгорания купленного у нас товара у вас
+                        сгорит дом — не переживайте, мы выдадим вам новый.
+                        Товар, не дом, конечно же.</p>
+                    </div>
+                    <img class="service-logo" src="images/warranty-service.svg" width="171" height="195"
+                      alt="Гарантийный сервис.">
+                  </div>
+                </div>
+                <!------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ - СЛАЙД - ГАРАНТИЙНЫЙ СЕРВИС --->
+
+
+
+                <!------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - СЛАЙД - КРЕДИТНЫЙ СЕРВИС  --->
+                <div class="slides content-three">
+                  <div class="service-content-credit">
+                    <div>
+                      <h3 class="service-title">Кредит</h3>
+                      <p class="service-description">Залезть в долговую яму стало проще! Кредитные консультанты
+                        подберут для вас наиболее выгодные условия кредита.
+                        Выгодные для банка, разумеется.</p>
+                    </div>
+                    <img class="service-logo" src="images/credit-service.svg" width="156" height="188"
+                      alt="Кредитный сервис.">
+                  </div>
+                </div>
+                <!------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ - СЛАЙД - КРЕДИТНЫЙ СЕРВИС  --->
+
+
+
               </div>
 
-              <div class="service-content-warranty">
-                <div>
-                  <h3 class="service-title">Гарантия</h3>
-                  <p class="service-description">Если из-за возгорания купленного у нас товара у вас
-                    сгорит дом — не переживайте, мы выдадим вам новый.
-                    Товар, не дом, конечно же.</p>
-                </div>
-                <img class="service-logo" src="images/warranty-service.svg" width="171" height="195"
-                  alt="Гарантийный сервис.">
-              </div>
-            </div>
-            <div class="service-content-credit">
-              <div>
-                <h3 class="service-title">Кредит</h3>
-                <p class="service-description">Залезть в долговую яму стало проще! Кредитные консультанты
-                  подберут для вас наиболее выгодные условия кредита.
-                  Выгодные для банка, разумеется.</p>
-              </div>
-              <img class="service-logo" src="images/credit-service.svg" width="156" height="188"
-                alt="Кредитный сервис.">
             </div>
           </div>
         </div>
+
+        <br>
 
       </section>
       <!-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ------------ SERVICES ----------------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ------------->
@@ -514,6 +551,7 @@
 
     <!--Script SLIDE MASTER-->
     <script src="slide-master.js"></script>
+    <script src="radio-master.js"></script>
 
   </body>
 
