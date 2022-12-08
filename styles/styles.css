@@ -595,7 +595,7 @@ img {
   display: flex;
   min-height: 391px;
   width: 100%;
-  background: linear-gradient(to top, #F0F0F0 73.91304348%, #FFFFFF 26.08695652%);
+  background: linear-gradient(to top, #F0F0F0 77.8%, #FFFFFF 22.2%);
   padding-bottom: 72px;
 }
 
@@ -608,98 +608,108 @@ img {
   margin-right: auto;
 }
 
-/*
-.services-content {
+.services-menu {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  overflow: hidden;
-  width: 880px;
-  height: 500px;
-  background-color: indianred;
-}
-
-*/
-
-.services-menu {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto auto auto;
   align-items: center;
   gap: 35px;
   width: 280px;
+  margin:0;
+  padding: 0;
   padding-top: 64px;
   padding-bottom: 65px;
   border-right: 7px solid #000000;
-}
-
-.service-name {
-  display: grid;
-  align-items: center;
-  min-width: 160px;
-  min-height: 40px;
-  font-family: "Raleway", sans-serif;
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 21px;
-  text-align: center;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  background-color: rgb(132, 177, 132);
-  flex-wrap: wrap;
+  list-style-type: none;
 }
 
 .service-content-delivery {
-  display: grid;
-  grid-template-columns: 452px 136px;
-  grid-template-rows: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 106px;
-  width: 694px;
+  width: 880px;
   padding: 0 63px 0 116px;
+}
 
+.service-content-delivery:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 136px;
+  height: 164px;
+  background-image: url("../images/delivery-service.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  top: 5px;
+  left: 674px;
 }
 
 .service-content-warranty {
-  display: grid;
-  grid-template-columns: 452px 171px;
-  grid-template-rows: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 83px;
   width: 880px;
   padding: 0 63px 0 116px;
+}
 
+.service-content-warranty:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 171px;
+  height: 195px;
+  background-image: url("../images/warranty-service.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  top: 0;
+  left: 674px;
 }
 
 .service-content-credit {
-  display: grid;
-  grid-template-columns: 452px 156px;
-  grid-template-rows: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 83px;
   width: 880px;
   padding: 0 63px 0 116px;
+}
 
+.service-content-credit:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 156px;
+  height: 188px;
+  background-image: url("../images/credit-service.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  top: 0;
+  left: 689px;
 }
 
 .service-title {
   display: flex;
+  width: 480px;
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 50px;
   line-height: 50px;
   margin: 0;
+  margin-right: auto;
   margin-bottom: 34px;
   flex-wrap: wrap;
 }
 
 .service-description {
   display: flex;
+  width: 480px;
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 30px;
   margin: 0;
+  margin-right: auto;
   flex-wrap: wrap;
 }
 
@@ -713,7 +723,7 @@ img {
 }
 
 .slider-wrapper {
-  /*важный блок-подстилка под все. без него все исчезает*/
+  /*важный блок-обертка под все. без него все исчезает*/
   position: relative;
   display: flex;
   flex-direction: column;
@@ -722,20 +732,34 @@ img {
 }
 
 .control-input {
-  /*УБИРАЕТ ОРИГИНАЛЬНЫЕ РАДИО БУТТОНЫ*/
-  display: none;
+  /*ПРЯЧЕТ ОРИГИНАЛЬНЫЕ РАДИО БУТТОНЫ*/
+  position: absolute;
+  display: flex;
+  top: 63px;
+  left: -340px;
+  width: 40px;
+  height: 40px;
+  z-index: -1;
 }
+
+.control-input.warranty-radio {
+ top: 135px;
+}
+
+.control-input.credit-radio {
+  top: 211px;
+ }
 
 .slides {
   /* СТАВИМ НА ВСЕ КОНТЕНТ-БЛОКИ DISPLAY:NONE */
   display: none;
   animation: fadeInFromNone 0.6s ease-in-out;
-  /*контент слайда плавно "проявляется" за 0.6 сек.*/
+  /*контент выбранного слайда плавно "проявляется" за 0.6 сек.*/
 }
 
-.control-input.first-radio:checked ~ .slider > .content-one,
-.control-input.second-radio:checked ~ .slider > .content-two,
-.control-input.third-radio:checked ~ .slider > .content-three {
+.control-input.delivery-radio:checked ~ .slider > .delivery,
+.control-input.warranty-radio:checked ~ .slider > .warranty,
+.control-input.credit-radio:checked ~ .slider > .credit {
   /* ЕСЛИ РАДИО ЧЕКНУТО --> СООТВЕТСТВУЮЩИЙ ЕМУ КОНТЕНТ-БЛОК получает DISPLAY:FLEX */
   /* по умолчанию радио кнопка, соответсвующая DELIVERY service, помечена как checked*/
   display: flex;
@@ -744,6 +768,8 @@ img {
 .control-radio {
   position: relative;
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 160px;
   min-height: 40px;
   color: #000000;
@@ -757,94 +783,76 @@ img {
   text-transform: uppercase;
 }
 
-.control-radio::before {
+.control-input.delivery-radio:checked ~ .control-radio.delivery-radio,
+.control-input.warranty-radio:checked ~ .control-radio.warranty-radio,
+.control-input.credit-radio:checked ~ .control-radio.credit-radio {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 40px;
+  width: 246.5px;
+  padding-left: 33.5px;
+  color: #FFE17F;
+  background: #000000;
+}
+
+.control-input.delivery-radio:not(:checked):hover ~ .control-radio.delivery-radio,
+.control-input.warranty-radio:not(:checked):hover ~ .control-radio.warranty-radio,
+.control-input.credit-radio:not(:checked):hover ~ .control-radio.credit-radio {
+  background:  #FFE17F;
+}
+
+.control-input.delivery-radio:checked:hover ~ .control-radio.delivery-radio,
+.control-input.warranty-radio:checked:hover ~ .control-radio.warranty-radio,
+.control-input.credit-radio:checked:hover ~ .control-radio.credit-radio,
+.control-input.delivery-radio:focus-visible ~ .control-radio.delivery-radio,
+.control-input.warranty-radio:focus-visible ~ .control-radio.warranty-radio,
+.control-input.credit-radio:focus-visible ~ .control-radio.credit-radio {
+  width: 218.5px;
+  padding-left: 61.5px;
+}
+
+.control-input.delivery-radio:focus-visible ~ .control-radio.delivery-radio::before,
+.control-input.warranty-radio:focus-visible ~ .control-radio.warranty-radio::before,
+.control-input.credit-radio:focus-visible ~ .control-radio.credit-radio::before {
   position: absolute;
   content: '';
-  top: 1.5px;
-  left: -354px;
+  top: -4.5px;
+  left: -4px;
   display: block;
-  height: 40px;
-  width: 280px;
-  background-color: #dab6b6;
-  cursor: pointer;
-  color: #F0F0F0;
+  height: 45px;
+  width: 284px;
+  border: 2px solid #AF4FFF;
 }
 
-.control-input.first-radio:checked ~ .control-radio.first-radio::before,
-.control-input.second-radio:checked ~ .control-radio.second-radio::before,
-.control-input.third-radio:checked ~ .control-radio.third-radio::before {
-  position: absolute;
-  content: '';
-  top: 1.5px;
-  left: -354px;
-  display: block;
-  background-image: url("../images/radio-checked.svg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  height: 40px;
-  width: 280px;
-  background-color: #000000;
+.control-input.delivery-radio:not(:checked):active ~ .control-radio.delivery-radio,
+.control-input.warranty-radio:not(:checked):active ~ .control-radio.warranty-radio,
+.control-input.credit-radio:not(:checked):active ~ .control-radio.credit-radio {
+  background:  #FFCC33;
 }
 
-.control-input.first-radio:hover ~ .control-radio.first-radio,
-.control-input.second-radio:hover ~ .control-radio.second-radio,
-.control-input.third-radio:hover ~ .control-radio.third-radio {
-  opacity: 0.6;
-}
-
-.control-input.first-radio:focus ~ .control-radio.first-radio::before,
-.control-input.second-radio:focus ~ .control-radio.second-radio::before,
-.control-input.third-radio:focus ~ .control-radio.third-radio::before {
-  position: absolute;
-  content: '';
-  top: -1.5px;
-  left: -357px;
-  display: block;
-  height: 40px;
-  width: 280px;
-  border: 3px solid #83B3D3;
-}
-
-.control-input.first-radio:active ~ .control-radio.first-radio,
-.control-input.second-radio:active ~ .control-radio.second-radio,
-.control-input.third-radio:active ~ .control-radio.third-radio {
-  opacity: 0.2;
-}
-
-.slider-wrapper .control-radio.first-radio,
-.slider-wrapper .control-radio.second-radio,
-.slider-wrapper .control-radio.third-radio {
+.slider-wrapper .control-radio.delivery-radio,
+.slider-wrapper .control-radio.warranty-radio,
+.slider-wrapper .control-radio.credit-radio {
   position: absolute;
   content: '';
   display: flex;
-  top: 10px;
-  left: -400px;
+  top: 64px;
+  left: -286px;
   width: 160px;
   height: 40px;
-  background-color: #ff0000;
+  background: linear-gradient(to bottom, transparent 40%, #FFE17F 40%, #FFE17F 60%, transparent 60%);
 }
 
-.slider-wrapper .control-radio.second-radio {
-  top: 150px;
-  left: -400px;
+.slider-wrapper .control-radio.warranty-radio {
+  top: 139px;
+  left: -286px;
 }
 
-.slider-wrapper .control-radio.third-radio {
-  top: 290px;
-  left: -400px;
+.slider-wrapper .control-radio.credit-radio {
+  top: 214px;
+  left: -286px;
 }
-
-.control-input.first-radio:checked ~ .controls .first-radio,
-.control-input.second-radio:checked ~ .controls .second-radio,
-.control-input.third-radio:checked ~ .controls .third-radio {
-  position: absolute;
-  content: '';
-  display: block;
-  width: 10px;
-  height: 10px;
-  background: #b3067f;
-}
-
 
 /*---------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ----- PURE CSS SLIDER for SERVICES ----------*/
 
@@ -924,11 +932,9 @@ img {
 }
 
 .delivery-btn:focus-visible {
-
   border: 1px solid #FFFFFF;
   outline: 2px solid #AF4FFF;
 }
-
 
 
 
@@ -1366,28 +1372,6 @@ img {
   border: 2px solid #AF4FFF;
 }
 
-.footer-nav-link:visited {
-  position: relative;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-family: "Raleway", sans-serif;
-  font-weight: 800;
-  font-size: 18px;
-  line-height: 21.00px;
-  letter-spacing: 0.2em;
-  color: #FFFFFF;
-}
-
-.footer-nav-link:visited::before {
-  position: absolute;
-  content: '';
-  display: block;
-  width: 100%;
-  height: 2px;
-  bottom: -4px;
-  background-color: #444444;
-}
-
 
 
 .social-networks {
@@ -1437,18 +1421,6 @@ img {
   outline: 2px solid #AF4FFF;
 }
 
-.social-link:visited {
-  position: relative;
-  display: flex;
-  width: 40px;
-  height: 40px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.3);
-  color: #444444;
-}
-
 .footer-tel-column {
   /* grid column number 3 */
   display: flex;
@@ -1496,19 +1468,6 @@ img {
   border: 2px solid #AF4FFF;
 }
 
-.footer-contact-phone:visited {
-  position: relative;
-  display: flex;
-  font-family: "Rubik", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  text-decoration-line: underline;
-  color: #FFFFFF;
-  margin-bottom: 63px;
-  flex-wrap: wrap;
-  margin-left: auto;
-}
 
 .partner-logo-link {
   position: relative;
@@ -1549,18 +1508,7 @@ img {
   border: 1px solid #AF4FFF;
 }
 
-.partner-logo-link:visited {
-  position: relative;
-  display: flex;
-  width: 115px;
-  color: #FFC700;
-  margin-left: auto;
-  margin-top: auto;
-  margin-bottom: 4px;
-  text-decoration: none;
-  outline: none;
-  box-sizing: border-box;
-}
+
 
 /*-----↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑------------------------- F O O T E R ------------------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑------------------------*/
 
