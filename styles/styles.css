@@ -548,12 +548,9 @@ img {
 
 
 /*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -------- PRODUCT DIRECTIONS -----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ----------*/
-.line2-directions-list {
-  display: grid;
-  grid-template-columns: 160px 160px 160px 160px 160px 160px;
-  grid-template-rows: 160px auto;
-  grid-auto-flow: column dense;
-  gap: 32px 40px;
+.directions-list {
+  display: flex;
+  gap: 40px;
   width: 1160px;
   margin-left: auto;
   margin-right: auto;
@@ -561,18 +558,11 @@ img {
   padding: 0;
 }
 
-.directions-item:nth-child(odd) {
-  justify-content: center;
-  align-items: center;
-  background-color: #FFE17F;
-}
-
-.directions-item:nth-child(3) {
-  align-items: flex-end;
-}
-
-.directions-item {
+.direction-link {
+  position: relative;
   display: flex;
+  flex-direction: column;
+  width: 160px;
   list-style-type: none;
   font-family: "Raleway", sans-serif;
   font-weight: 800;
@@ -581,10 +571,57 @@ img {
   letter-spacing: -0.02em;
   padding: 0;
   margin: 0;
-  background-color: #FFFFFF;
-  flex-wrap: wrap;
+  background: linear-gradient(to bottom, #FFE17F 160px, #ffffff 160px, #ffffff 60%, #FFFFFF 100%);
+  color: #000000;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
 }
 
+.direction-link:hover {
+  background: linear-gradient(to bottom, #FFCC33 160px, #ffffff 28.195488%);
+}
+
+.direction-link:active {
+  opacity: 0.3;
+}
+
+.direction-link:focus-visible::after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 164px;
+  height: 257px;
+  border: 2px solid #AF4FFF;
+  top: -4px;
+  left: -4px;
+}
+
+.direction-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 160px;
+  margin-bottom: 32px;
+}
+
+.directions-item:nth-child(2) > .direction-link .direction-icon {
+  justify-content: flex-end;
+}
+
+
+.direction-title {
+  display: flex;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  margin: 0;
+  flex-wrap: wrap;
+}
 
 /*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ --------- PRODUCT DIRECTIONS --------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
 
@@ -614,7 +651,7 @@ img {
   align-items: center;
   gap: 35px;
   width: 280px;
-  margin:0;
+  margin: 0;
   padding: 0;
   padding-top: 64px;
   padding-bottom: 65px;
@@ -743,12 +780,12 @@ img {
 }
 
 .control-input.warranty-radio {
- top: 135px;
+  top: 135px;
 }
 
 .control-input.credit-radio {
   top: 211px;
- }
+}
 
 .slides {
   /* СТАВИМ НА ВСЕ КОНТЕНТ-БЛОКИ DISPLAY:NONE */
@@ -799,7 +836,7 @@ img {
 .control-input.delivery-radio:not(:checked):hover ~ .control-radio.delivery-radio,
 .control-input.warranty-radio:not(:checked):hover ~ .control-radio.warranty-radio,
 .control-input.credit-radio:not(:checked):hover ~ .control-radio.credit-radio {
-  background:  #FFE17F;
+  background: #FFE17F;
 }
 
 .control-input.delivery-radio:checked:hover ~ .control-radio.delivery-radio,
@@ -828,7 +865,7 @@ img {
 .control-input.delivery-radio:not(:checked):active ~ .control-radio.delivery-radio,
 .control-input.warranty-radio:not(:checked):active ~ .control-radio.warranty-radio,
 .control-input.credit-radio:not(:checked):active ~ .control-radio.credit-radio {
-  background:  #FFCC33;
+  background: #FFCC33;
 }
 
 .slider-wrapper .control-radio.delivery-radio,
