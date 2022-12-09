@@ -442,17 +442,25 @@
 
         <div class="subscription-container">
 
-          <div class="sub-line1">
+          <div class="sub-info-wrapper">
             <p class="sub-action">Подпишитесь на рассылку</p>
             <p class="sub-benefit">Еженедельный дайджест с обзорами новинок,<br>
               длительными тест-драйвами, распаковками, а также акции, спецпредложения и вот это вот всё.</p>
           </div>
 
-          <div class="sub-line2">
-            <form class="subscription-form" action="https://echo.htmlacademy.ru/" method="post">
+          <div class="sub-form-wrapper">
+            <form class="subscription-form" action="https://echo.htmlacademy.ru/" method="post" id="sub-form">
               <label class="visually-hidden" for="subscription-email">Адрес электронной почты для рассылки.</label>
-              <input class="field-line" placeholder="Ваш e-mail" type="email" name="subscription-email"
-                id="subscription-email" required>
+
+
+
+              <input class="field-line" type="email" placeholder="Ваш e-mail"  size="129" name="subscription-email"
+                id="subscription-email"
+                oninvalid="document.querySelectorAll('.sub-form-wrapper')[0].style.setProperty('--background-color', '#FF3D3D');"
+                onchange="try{setCustomValidity('')}catch(e){};
+                document.querySelectorAll('.sub-form-wrapper')[0].style.setProperty('--background-color', 'transparent');"
+                required>
+
               <button class="subscription-button" type="submit">
                 Подписаться
               </button>

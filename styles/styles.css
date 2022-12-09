@@ -875,7 +875,7 @@ img {
   content: '';
   display: flex;
   top: 64px;
-  left: -286px;
+  left: -284px;
   width: 160px;
   height: 40px;
   background: linear-gradient(to bottom, transparent 40%, #FFE17F 40%, #FFE17F 60%, transparent 60%);
@@ -883,12 +883,12 @@ img {
 
 .slider-wrapper .control-radio.warranty-radio {
   top: 139px;
-  left: -286px;
+  left: -284px;
 }
 
 .slider-wrapper .control-radio.credit-radio {
   top: 214px;
-  left: -286px;
+  left: -284px;
 }
 
 /*---------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ----- PURE CSS SLIDER for SERVICES ----------*/
@@ -1109,21 +1109,34 @@ img {
   background-color: #F0F0F0;
 }
 
-.sub-line1,
-.sub-line2 {
+.sub-info-wrapper,
+.sub-form-wrapper {
+  position: relative;
   display: flex;
   width: 1160px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.sub-line1 {
+.sub-form-wrapper::before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 558px;
+  height: 3px;
+  bottom: 0;
+  background-color: var(--background-color, transparent);
+  z-index: 1;
+}
+
+.sub-info-wrapper {
   padding-top: 64px;
   margin-bottom: 144px;
 }
 
-.sub-line2 {
+.sub-form-wrapper {
   margin-bottom: 56px;
+  padding-left: 1px;
 }
 
 .sub-action,
@@ -1140,7 +1153,7 @@ img {
   font-weight: 800;
   font-size: 50px;
   line-height: 50px;
-  margin-right: 232px;
+  margin-right: 252px;
 }
 
 .sub-benefit,
@@ -1177,45 +1190,74 @@ img {
   background-position: center center;
 }
 
-
-
 .subscription-form {
+  position: relative;
   display: flex;
   margin: 0;
   margin-right: 220px;
 }
 
 .subscription-button {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 252px;
+  min-width: 246px;
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 18px;
-  line-height: 57px;
+  line-height: 51px;
   text-align: center;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  padding: 0 35px;
+  padding: 0 33.7625px;
   border: 3px solid #C4C4C4;
   cursor: pointer;
+  box-sizing: border-box;
   flex-wrap: wrap;
 }
 
+.subscription-button:hover {
+  border: 3px solid #000000;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.subscription-button:active {
+  border: 3px solid #000000;
+  background-color: #000000;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.subscription-button:focus-visible {
+  outline: none;
+}
+
+.subscription-button:focus-visible:before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 256px;
+  height: 61px;
+  top: -7px;
+  left: -7px;
+  border: 2px solid #AF4FFF;
+}
+
 .field-line {
+  display: block;
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 57px;
-  width: 541px;
+  width: 558px;
   border: 0;
   border-bottom: 3px solid #C4C4C4;
-  ;
   padding: 0;
   margin: 0;
   background-color: #F0F0F0;
   color: #444444;
+  box-sizing: border-box;
 }
 
 .field-line[placeholder] {
@@ -1223,10 +1265,20 @@ img {
   font-weight: 400;
   font-size: 18px;
   line-height: 30px;
-  padding-left: 17px;
+  padding-left: 16px;
   color: rgba(68, 68, 68, 1);
 }
 
+.field-line:focus {
+  outline: none;
+  background-color: #DCDCDC;
+}
+
+.field-line:focus:valid {
+  outline: none;
+  border-bottom: 3px solid #08AF00;
+  z-index: 2;
+}
 
 
 /*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -------- SUBSCRIPTION----------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
