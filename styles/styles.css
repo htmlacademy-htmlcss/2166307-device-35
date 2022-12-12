@@ -1778,41 +1778,46 @@ img {
   border: 0;
 }
 
-
-.qty-label::after {
-  position: absolute;
-  content: 'i';
+.label-info {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 12px;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  text-align: center;
-
-  /*background-image: url("../images/info-qty.svg");*/
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-color:  #FFE17F;
-  top: -3px;
-  left: 700px;
+  gap: 8px;
 }
 
+.qty-label {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.qty-info {
+  position: absolute;
+  display: flex;
+  width: 26px;
+  height: 26px;
+  line-height: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-right: auto;
+  border-radius: 50%;
+  background-color: #FFE17F;
+  top: -3px;
+  left: 700px;
+  cursor: pointer;
+  z-index: 2;
+}
 
-.qty-label:after:hover {
+.qty-info:hover:after {
   position: absolute;
   content: '';
-  display: block;
+  display: flex;
   width: 200px;
   height: 166px;
-  background-image: url("../images/modal-tooltip.svg");
+  top: 40px;
+  background-image: url("../images/modal-tooltip.png");
   background-repeat: no-repeat;
   background-position: center center;
-  }
-
-
+  z-index: 2;
+}
 
 .quantity-block {
   display: flex;
@@ -1852,8 +1857,18 @@ img {
   display: block;
   width: 60px;
   height: 60px;
+  background-repeat: no-repeat;
+  background-position: center center;
   border: 0;
   padding: 0;
+}
+
+.quantity-arrow-minus {
+  background-image: url("../images/minus-icon.svg");
+}
+
+.quantity-arrow-plus {
+  background-image: url("../images/plus-icon.svg");
 }
 
 
