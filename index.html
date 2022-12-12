@@ -8,6 +8,11 @@
     <title>HTML Academy: Девайс</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+    <style>
+
+
+    </style>
+
   </head>
 
   <body>
@@ -29,7 +34,7 @@
             <form class="site-search-form" action="https://echo.htmlacademy.ru/" method="post">
               <label class="visually-hidden" for="search-target">Поиск по сайту.</label>
               <input class="search-line" placeholder="Поиск по сайту" type="text" name="search-request"
-                id="search-target">
+                id="search-target" required>
               <button class="search-button" type="submit">
                 Найти
               </button>
@@ -382,6 +387,27 @@
       <!-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -------- CUSTOM DELIVERY -------------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑----------->
 
 
+      <h1> Веб-страница </h1>
+      <form>
+        <input type="button" value="Вызвать окно" onclick="showModalWin()">
+      </form>
+      <!-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ --------2 CUSTOM DELIVERY 2 -------------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ------------->
+
+      <section>
+        <h2 class="visually-hidden">
+          Доставка редких товаров под заказ.
+        </h2>
+        <a class="delivery-btn" href="#delivery-dialog">
+
+          <span class="delivery-action">Доставим редкий товар под заказ</span>
+
+        </a>
+      </section>
+
+      <!-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ --------2 CUSTOM DELIVERY 2 -------------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑----------->
+
+
+
       <!-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -------- ABOUT and CONTACTS -----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ----------->
       <section>
         <h2 class="visually-hidden">
@@ -558,76 +584,78 @@
     <!-- =========== ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ =============== F O O T E R ======================== ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ====================== -->
 
 
-    <!---↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓-------------------  МОДАЛЬНОЕ   ОКНО  -------------------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ --------------------------->
+    <!---↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓-------------------  МОДАЛЬНОЕ   ОКНО  -------------------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ------------------------->
 
-    <div class="modal-container" id="delivery-dialog">
+    <div id="popupWin" class="modalwin">
+      <form class="modal-delivery-form" id="modal-delivery-window" action="https://echo.htmlacademy.ru/" method="post">
 
-      <a class="modal-container-overlay" href="#close"></a>
+        <div class="modal-title">
+          <h2 class="modal-title-delivery">Доставка под заказ</h2>
 
-      <div class="modal">
+            <button class="close-button" type="button" onclick="handleClick()"></button>
 
-        <section class="modal-content">
+        </div>
 
-          <form class="modal-delivery-form" action="https://echo.htmlacademy.ru/" method="post">
 
-            <div class="modal-title">
-              <h2 class="modal-title-delivery">Доставка под заказ</h2>
-              <a class="close-button" href="#"></a>
+        <div class="modal-name-mail">
+          <div class="name-input">
+            <label class="modal-subtitle"> Ваше имя: </label>
+            <input class="modal-name-input" type="text" size="100" placeholder="Введите имя" name="customer-name"
+              required>
+          </div>
+
+
+          <div class="mail-input">
+            <label class="modal-subtitle">Ваш e-mail:</label>
+            <input class="modal-mail-input" type="email" size="100" name="customer-email" required>
+            <span class="form-error-msg">Забавный у вас адрес</span>
+          </div>
+        </div>
+
+        <div class="modal-goods-quantity">
+
+          <div class="goods-input">
+            <label class="modal-subtitle"> Что нужно привезти: </label>
+
+            <input class="modal-goods-input" type="text" size="100" placeholder="В свободной форме" name="goods-list"
+              required>
+          </div>
+
+          <div class="qty-input">
+            <div class="label-info">
+              <label class="modal-subtitle qty-label"> Количество: </label>
+              <a class="qty-info">i</a>
             </div>
 
-
-            <div class="modal-name-mail">
-              <div class="name-input">
-                <label class="modal-subtitle"> Ваше имя: </label>
-                <input class="modal-name-input" type="text" size="100" placeholder="Введите имя" name="customer-name">
-              </div>
-
-
-              <div class="mail-input">
-                <label class="modal-subtitle">Ваш e-mail:</label>
-                <input class="modal-mail-input" type="email" size="100" name="customer-email">
-                <span class="form-error-msg">Забавный у вас адрес</span>
-              </div>
+            <div class="quantity-block">
+              <button class="quantity-arrow-minus" type="button"> </button>
+              <input class="quantity-num" type="number" value="1" name="qty-of-goods">
+              <button class="quantity-arrow-plus" type="button"> </button>
             </div>
+          </div>
 
-            <div class="modal-goods-quantity">
+        </div>
 
-              <div class="goods-input">
-                <label class="modal-subtitle"> Что нужно привезти: </label>
+        <div class="modal-submit-button">
+          <button class="modal-send button" type="submit">Отправить</button>
+        </div>
 
-                <input class="modal-goods-input" type="text" size="100" placeholder="В свободной форме" name="goods-list">
-              </div>
-
-              <div class="qty-input">
-                <div class="label-info">
-                <label class="modal-subtitle qty-label"> Количество: </label>
-                <a class="qty-info">i</a>
-                </div>
-
-                <div class="quantity-block">
-                  <button class="quantity-arrow-minus" type="button" >  </button>
-                  <input class="quantity-num" type="number" value="1"  name="qty-of-goods">
-                  <button class="quantity-arrow-plus" type="button" >  </button>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="modal-submit-button">
-              <button class="modal-send button" type="submit">Отправить</button>
-            </div>
-
-
-          </form>
-        </section>
-      </div>
+      </form>
     </div>
 
-    <!--Scripts and Jquery-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <div>
+
+    </div>
+
+    <!--   ========================================================================================================  -->
+
     <script src="scripts/slide-master.js"></script>
     <script src="scripts/subscription-master.js"></script>
     <script src="scripts/modal-master.js"></script>
+
+    <!--   ========================================================================================================  -->
 
   </body>
 
