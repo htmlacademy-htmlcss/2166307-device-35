@@ -1806,17 +1806,19 @@ img {
   z-index: 2;
 }
 
-.qty-info:hover:after {
+.qty-info:hover:after,
+.qty-info-:focus-visible {
   position: absolute;
   content: '';
   display: flex;
   width: 200px;
-  height: 166px;
-  top: 40px;
-  background-image: url("../images/modal-tooltip.png");
+  height: 176px;
+  top: 30px;
+  left: -140px;
+  background-image: url("../images/modal-tooltip.svg");
   background-repeat: no-repeat;
   background-position: center center;
-  z-index: 2;
+  box-shadow: 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .quantity-block {
