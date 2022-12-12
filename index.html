@@ -571,30 +571,45 @@
           <form class="modal-delivery-form" action="https://echo.htmlacademy.ru/" method="post">
 
             <div class="modal-title">
-            <h2 class="modal-title-delivery">Доставка под заказ</h2>
-            <a class="close-button" href="#"></a>
+              <h2 class="modal-title-delivery">Доставка под заказ</h2>
+              <a class="close-button" href="#"></a>
             </div>
 
 
             <div class="modal-name-mail">
               <div class="name-input">
                 <label class="modal-subtitle"> Ваше имя: </label>
-                <input class="modal-name-input" type="text" size="100">
+                <input class="modal-name-input" type="text" size="100" placeholder="Введите имя" name="customer-name">
               </div>
 
 
               <div class="mail-input">
                 <label class="modal-subtitle">Ваш e-mail:</label>
-                <input class="modal-mail-input" type="email" size="100">
+                <input class="modal-mail-input" type="email" size="100" name="customer-email">
                 <span class="form-error-msg">Забавный у вас адрес</span>
+              </div>
+            </div>
+
+            <div class="modal-goods-quantity">
+
+              <div class="goods-input">
+                <label class="modal-subtitle"> Что нужно привезти: </label>
+                <input class="modal-goods-input" type="text" size="100" placeholder="В свободной форме" name="goods-list">
+              </div>
+
+              <div class="qty-input">
+                <label class="modal-subtitle qty-label"> Количество: </label>
+                <div class="quantity-block">
+                  <button class="quantity-arrow-minus" type="button" > - </button>
+                  <input class="quantity-num" type="number" value="1"  name="qty-of-goods">
+                  <button class="quantity-arrow-plus" type="button" > + </button>
+                </div>
               </div>
 
             </div>
 
-              <div class="modal-line3">Что везти - Количество</div>
-
-              <div class="modal-line4-button">
-                <button class="modal-send-button" type="submit">Отправить</button>
+            <div class="modal-submit-button">
+              <button class="modal-send button" type="submit">Отправить</button>
             </div>
 
 
@@ -603,9 +618,11 @@
       </div>
     </div>
 
-    <!--Script SLIDE MASTER and INPUT MASTER-->
+    <!--Scripts and Jquery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="scripts/slide-master.js"></script>
     <script src="scripts/subscription-master.js"></script>
+    <script src="scripts/modal-master.js"></script>
 
   </body>
 

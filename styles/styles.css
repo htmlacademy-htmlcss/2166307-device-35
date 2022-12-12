@@ -202,7 +202,6 @@ img {
 }
 
 .catalog-link {
-
   text-decoration: none;
   text-transform: uppercase;
   color: #000000;
@@ -220,7 +219,6 @@ img {
   background-repeat: no-repeat;
   background-position: center center;
 }
-
 
 .catalog-link:hover::before {
   position: absolute;
@@ -1647,7 +1645,6 @@ img {
   position: relative;
   margin: 612px auto;
   width: 920px;
-
   background: #FFFFFF;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
@@ -1659,7 +1656,6 @@ img {
   flex-direction: column;
   position: relative;
 }
-
 
 .modal-delivery-form {
   display: flex;
@@ -1685,7 +1681,6 @@ img {
   /* modal track number 1 */
   display: flex;
   width: 664px;
-  background-color: rgb(138, 219, 181);
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 50px;
@@ -1696,28 +1691,28 @@ img {
 }
 
 .close-button {
- position: relative;
- display: block;
- width: 26px;
- height: 50px;
- background-image: url("../images/cross-icon.svg");
- background-repeat: no-repeat;
- background-position: center center;
+  position: relative;
+  display: block;
+  width: 26px;
+  height: 50px;
+  background-image: url("../images/cross-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .close-button:hover {
   opacity: 0.6;
- }
+}
 
- .close-button:active {
+.close-button:active {
   opacity: 0.3;
- }
+}
 
- .close-button:focus-visible {
+.close-button:focus-visible {
   outline: none
- }
+}
 
- .close-button:focus-visible::after {
+.close-button:focus-visible::after {
   position: absolute;
   content: '';
   display: block;
@@ -1726,36 +1721,145 @@ img {
   border: 2px solid #AF4FFF;
   top: 8px;
   left: -4px;
- }
-
-
-
+}
 
 .modal-name-mail {
   /* modal track number 2 */
   display: flex;
   gap: 40px;
-  background-color: gray;
 }
 
 .modal-name-input,
 .modal-mail-input {
   display: block;
-  width: 360px;
+  width: 340px;
   height: 60px;
-  background-color: #d1e08c;
+  background-color: #F0F0F0;
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 0;
+  padding-left: 20px;
+  border: 0;
+}
+
+.modal-subtitle {
+  display: flex;
+  font-family: "Rubik", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.modal-goods-quantity {
+  /* modal track number 3 */
+  position: relative;
+  display: flex;
+  gap: 40px;
+}
+
+.modal-goods-input {
+  display: block;
+  width: 520px;
+  height: 60px;
+  background-color: #F0F0F0;
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 0;
+  padding-left: 20px;
+  border: 0;
+}
+
+
+.qty-label::after {
+  position: absolute;
+  content: 'i';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 12px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  text-align: center;
+
+  /*background-image: url("../images/info-qty.svg");*/
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color:  #FFE17F;
+  top: -3px;
+  left: 700px;
+}
+
+
+
+.qty-label:after:hover {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 200px;
+  height: 166px;
+  background-image: url("../images/modal-tooltip.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  }
+
+
+
+.quantity-block {
+  display: flex;
+  justify-items: center;
+  width: 180px;
+}
+
+.quantity-num {
+  display: block;
+  width: 60px;
+  height: 60px;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  align-items: center;
+  text-align: center;
+  background-color: #F0F0F0;
   padding: 0;
   border: 0;
 }
 
-.modal-line3 {
-  /* modal track number 3 */
-  display: flex;
-  background-color: rgb(180, 160, 182);
+.quantity-num::-webkit-inner-spin-button,
+.quantity-num::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
 }
 
-.modal-line4-button {
-  /* modal track number 3 */
+.quantity-num {
+  -moz-appearance: textfield;
+}
+
+.quantity-arrow-minus,
+.quantity-arrow-plus {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border: 0;
+  padding: 0;
+}
+
+
+.modal-submit-button {
+  /* modal track number 4 */
   display: flex;
-  background-color: rgb(180, 160, 182);
+  margin-right: auto;
+  flex-wrap: wrap;
 }
