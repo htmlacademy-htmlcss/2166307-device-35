@@ -377,7 +377,7 @@
         <h2 class="visually-hidden">
           Доставка редких товаров под заказ.
         </h2>
-        <a class="delivery-btn" href="#delivery-dialog">
+        <a class="delivery-btn" onclick="showModalWin()" href="#">
 
           <span class="delivery-action">Доставим редкий товар под заказ</span>
 
@@ -385,26 +385,6 @@
       </section>
 
       <!-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -------- CUSTOM DELIVERY -------------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑----------->
-
-
-      <h1> Веб-страница </h1>
-      <form>
-        <input type="button" value="Вызвать окно" onclick="showModalWin()">
-      </form>
-      <!-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ --------2 CUSTOM DELIVERY 2 -------------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ------------->
-
-      <section>
-        <h2 class="visually-hidden">
-          Доставка редких товаров под заказ.
-        </h2>
-        <a class="delivery-btn" href="#delivery-dialog">
-
-          <span class="delivery-action">Доставим редкий товар под заказ</span>
-
-        </a>
-      </section>
-
-      <!-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ --------2 CUSTOM DELIVERY 2 -------------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑----------->
 
 
 
@@ -592,7 +572,7 @@
         <div class="modal-title">
           <h2 class="modal-title-delivery">Доставка под заказ</h2>
 
-            <button class="close-button" type="button" onclick="handleClick()"></button>
+            <button class="close-button" type="button" onclick="closeClick()"></button>
 
         </div>
 
@@ -628,9 +608,9 @@
             </div>
 
             <div class="quantity-block">
-              <button class="quantity-arrow-minus" type="button"> </button>
-              <input class="quantity-num" type="number" value="1" name="qty-of-goods">
-              <button class="quantity-arrow-plus" type="button"> </button>
+              <button class="quantity-arrow-minus" type="button" onclick="minusClick()"> </button>
+              <input class="quantity-num" type="number" value="1" min="1" name="qty-of-goods">
+              <button class="quantity-arrow-plus" type="button" onclick="plusClick()"> </button>
             </div>
           </div>
 
