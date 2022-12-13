@@ -1,4 +1,4 @@
-//-----------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓------- ОТКРЫТИЕ-ЗАКРЫТИЕ МОДАЛЬНОГО ОКНА ---------------------------------------------
+//-----------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓------- ОТКРЫТИЕ-ЗАКРЫТИЕ МОДАЛЬНОГО ОКНА ----------------------------------------------
 
 function showModalWin() {
 
@@ -25,10 +25,10 @@ function closeClick() {  // обработчик кнопки закрытия �
   return false;
 };
 
-//----------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑------- ОТКРЫТИЕ-ЗАКРЫТИЕ МОДАЛЬНОГО ОКНА ---------------------------------------------
+//----------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑------- ОТКРЫТИЕ-ЗАКРЫТИЕ МОДАЛЬНОГО ОКНА -----------------------------------------------
 
 
-//-----------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓------ ОБРАБОТЧИК для INPUT type=NUMBER ---------------------------------------------
+//-----------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓------ ОБРАБОТЧИК для INPUT type=NUMBER -------------------------------------------------
 
 function minusClick() {
   document.querySelectorAll('.quantity-arrow-minus')[0].nextElementSibling.stepDown();  // используем JS метод stepDown для уменьшения значения
@@ -40,4 +40,46 @@ function plusClick() {
   document.querySelectorAll('.quantity-arrow-plus')[0].previousElementSibling.onchange();
 };
 
-//----------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑------- ОБРАБОТЧИК для INPUT type=NUMBER ---------------------------------------------
+//-----------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑------ ОБРАБОТЧИК для INPUT type=NUMBER --------------------------------------------------
+
+
+//-----------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓------ ОБРАБОТЧИК для INPUT  MAIL/NAME/GOODS ---------------------------------------------
+
+function nameFocus() {
+  document.querySelectorAll('.for-name')[0].style.setProperty("--border", "2px solid #AF4FFF"); // ставим border на .for-name:before по фокусу поля Name
+}
+
+function nameBlur() {
+  document.querySelectorAll('.for-name')[0].style.setProperty("--border", "2px solid transparent"); // прячем border по onblur
+}
+
+function mailFocus() {
+  document.querySelectorAll('.for-mail')[0].style.setProperty("--border", "2px solid #AF4FFF"); // ставим border на .for-mail:before по фокусу поля Mail
+}
+
+function mailBlur() {
+  document.querySelectorAll('.for-mail')[0].style.setProperty("--border", "2px solid transparent"); // прячем border по onblur
+}
+
+function goodsFocus() {
+  document.querySelectorAll('.for-goods')[0].style.setProperty("--border", "2px solid #AF4FFF"); //ставим border на .for-goods:before по фокусу поля Goods
+}
+
+function goodsBlur() {
+  document.querySelectorAll('.for-goods')[0].style.setProperty("--border", "2px solid transparent"); // прячем border по onblur
+}
+
+//----------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑------- ОБРАБОТЧИК для INPUT  MAIL/NAME/GOODS ----------------------------------------------------
+
+
+//-----------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓------ ОБРАБОТЧИК для INPUT  MAIL (error msg, red border - invalid, green border - valid) -------
+
+function redBorder() {
+  document.querySelectorAll('.sub-form-wrapper')[0].style.setProperty('--background-color', '#FF3D3D');
+}
+
+
+function greenBorder() {
+  try { setCustomValidity('') } catch (e) { };
+  document.querySelectorAll('.sub-form-wrapper')[0].style.setProperty('--background-color', 'transparent');
+}

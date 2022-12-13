@@ -1224,6 +1224,7 @@ img {
   cursor: pointer;
   box-sizing: border-box;
   flex-wrap: wrap;
+  transition: 0.4s;
 }
 
 .subscription-button:hover {
@@ -1252,6 +1253,11 @@ img {
   left: -7px;
   border: 2px solid #AF4FFF;
 }
+
+.subscription-button:disabled {
+  opacity: 0.3;
+}
+
 
 .field-line {
   display: block;
@@ -1679,6 +1685,8 @@ img {
   background-image: url("../images/cross-icon.svg");
   background-repeat: no-repeat;
   background-position: center center;
+  background-color: #FFFFFF;
+  transition: 0.4s;
 }
 
 .close-button:hover {
@@ -1702,12 +1710,40 @@ img {
   border: 2px solid #AF4FFF;
   top: 8px;
   left: -4px;
+  transition: 0.4s;
 }
 
 .modal-name-mail {
+  position: relative;
   /* modal track number 2 */
   display: flex;
   gap: 40px;
+}
+
+.modal-name-mail::before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 13px;
+  height: 12px;
+  background-image: url("../images/user-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  top: 58px;
+  left: 325px;
+}
+
+.modal-name-mail::after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 15px;
+  height: 12px;
+  background-image: url("../images/email-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  top: 58px;
+  left: 725px;
 }
 
 .modal-name-input,
@@ -1717,16 +1753,43 @@ img {
   height: 60px;
   background-color: #F0F0F0;
   font-family: "Rubik", sans-serif;
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
   padding: 0;
   padding-left: 20px;
   border: 0;
+  transition: 0.4s;
+}
+.modal-mail-input {
+  margin-bottom: 2px;
+}
+
+.modal-name-input:hover,
+.modal-mail-input:hover {
+  background-color: #DCDCDC;
+}
+
+
+.modal-name-input:focus,
+.modal-mail-input:focus {
+  outline: none;
+}
+
+.mail-error-msg {
+   /* status/error */
+  display: flex;
+  font-family: "Rubik",sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  align-items: center;
+  color: #000000;
+  margin-bottom: -2px;
 }
 
 .modal-subtitle {
+  position: relative;
   display: flex;
   font-family: "Rubik", sans-serif;
   font-weight: 700;
@@ -1735,7 +1798,52 @@ img {
   letter-spacing: -0.02em;
   margin-bottom: 14px;
   flex-wrap: wrap;
+  border: 0;
 }
+
+
+.for-name::before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 364px;
+  height: 64px;
+  border: var(--border, 2px solid transparent);
+  left: -4px;
+  top: 30px;
+  background-color: transparent;
+  pointer-events: none;
+  transition: 0.4s;
+}
+
+.for-mail::before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 364px;
+  height: 64px;
+  border: var(--border, 2px solid transparent);
+  left: -4px;
+  top: 30px;
+  background-color: transparent;
+  pointer-events: none;
+  transition: 0.4s;
+ }
+
+ .for-goods::before {
+  position: absolute;
+  content: '';
+   display: block;
+   width: 544px;
+   height: 64px;
+   border: var(--border, 2px solid transparent);
+   left: -4px;
+   top: 30px;
+   background-color: transparent;
+   pointer-events: none;
+   transition: 0.4s;
+ }
+
 
 .modal-goods-quantity {
   /* modal track number 3 */
@@ -1757,6 +1865,15 @@ img {
   padding: 0;
   padding-left: 20px;
   border: 0;
+  transition: 0.4s;
+}
+
+.modal-goods-input:hover {
+  background-color: #DCDCDC;
+}
+
+.modal-goods-input:focus {
+  outline: none;
 }
 
 .label-info {
@@ -1809,9 +1926,10 @@ img {
 }
 
 .quantity-num {
+  position: relative;
   display: block;
-  width: 60px;
-  height: 60px;
+  width: 56px;
+  height: 56px;
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -1819,8 +1937,10 @@ img {
   align-items: center;
   text-align: center;
   background-color: #F0F0F0;
+  border: 2px solid #F0F0F0;
   padding: 0;
-  border: 0;
+  cursor: pointer;
+  transition: 0.4s;
 }
 
 .quantity-num::-webkit-inner-spin-button,
@@ -1835,23 +1955,70 @@ img {
   -moz-appearance: textfield;
 }
 
+.quantity-num:hover {
+  background-color: #DCDCDC;
+  border: 2px solid #DCDCDC;
+  color:rgb(0, 0, 0, 0.6)
+}
+
+.quantity-num:active {
+  color:rgb(0, 0, 0, 0.3)
+}
+
+.quantity-num:focus {
+ outline: none;
+ border: 2px solid #AF4FFF;
+}
+
 .quantity-arrow-minus,
 .quantity-arrow-plus {
-  display: block;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 60px;
   height: 60px;
-  background-repeat: no-repeat;
-  background-position: center center;
   border: 0;
   padding: 0;
+  background-color: #F0F0F0;
+  color: #000000;
+  transition: 0.4s;
+  cursor: pointer;
 }
 
-.quantity-arrow-minus {
-  background-image: url("../images/minus-icon.svg");
+.quantity-arrow-minus:hover,
+.quantity-arrow-plus:hover {
+ background-color: #DCDCDC;
+ color:rgb(0, 0, 0, 0.6)
 }
 
-.quantity-arrow-plus {
-  background-image: url("../images/plus-icon.svg");
+.quantity-arrow-minus:active,
+.quantity-arrow-plus:active {
+background-color: #F0F0F0;
+ color:rgb(0, 0, 0, 0.3)
+}
+
+.quantity-arrow-minus:focus-visible,
+.quantity-arrow-plus:focus-visible {
+background-color: #F0F0F0;
+ outline: none;
+}
+
+.quantity-arrow-minus:focus-visible::after,
+.quantity-arrow-plus:focus-visible::after {
+ position: absolute;
+ content: '';
+ display: block;
+ width: 56px;
+ height: 56px;
+ border: 2px solid #AF4FFF;
+ top: 0;
+ left: 0;
+}
+
+.quantity-arrow-minus:disabled,
+.quantity-arrow-plus:disabled {
+  opacity: 0.3;
 }
 
 
