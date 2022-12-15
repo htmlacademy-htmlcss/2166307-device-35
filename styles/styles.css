@@ -1620,23 +1620,29 @@ img {
 
 
 .modalwin {
-  display: none; /* сначала прячем окно */
-  position: fixed; /* фиксированное позиционирование, окно стабильно при прокрутке */
+  display: none;
+  /* сначала прячем окно */
+  position: fixed;
+  /* фиксированное позиционирование, окно стабильно при прокрутке */
   width: 920px;
   background: var(--background, #FFFFFF);
-  top: 18.12958825%; /* отступ сверху задаем относительным значением, чтобы везде отображалось красиво */
+  top: 18.12958825%;
+  /* отступ сверху задаем относительным значением, чтобы везде отображалось красиво */
   right: 0;
   left: 0;
   margin: 0 auto;
-  z-index: 5; /* поверх всех */
-  animation: fadeInFromNone 0.6s ease-in-out; /*добавляем легкую анимацию: плавное появление*/
+  z-index: 5;
+  /* поверх всех */
+  animation: fadeInFromNone 0.6s ease-in-out;
+  /*добавляем легкую анимацию: плавное появление*/
 }
 
 .shadow {
   position: fixed;
   width: 100%;
   height: 100%;
-  z-index: 4; /* фон показываем поверх всего кроме окна */
+  z-index: 4;
+  /* фон показываем поверх всего кроме окна */
   background: rgba(240, 240, 240, 0.9);
   left: 0;
   top: 0;
@@ -1644,6 +1650,7 @@ img {
 }
 
 .modal-delivery-form {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 920px;
@@ -1749,18 +1756,19 @@ img {
 .modal-name-input,
 .modal-mail-input {
   display: block;
-  width: 340px;
-  height: 60px;
+  width: 336px;
+  height: 56px;
   background-color: #F0F0F0;
+  border: var(--border, 2px solid #F0F0F0);
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
   padding: 0;
   padding-left: 20px;
-  border: 0;
   transition: 0.4s;
 }
+
 .modal-mail-input {
   margin-bottom: 2px;
 }
@@ -1768,23 +1776,40 @@ img {
 .modal-name-input:hover,
 .modal-mail-input:hover {
   background-color: #DCDCDC;
+  border: var(--border, 2px solid #DCDCDC);
 }
-
 
 .modal-name-input:focus,
 .modal-mail-input:focus {
   outline: none;
 }
 
+.modal-mail-input:valid,
+.modal-mail-input:focus:valid {
+  outline: none;
+  border: 2px solid #08AF00;
+
+}
+
+.modal-mail-input:valid + .mail-error-msg {
+  color: #08AF00;
+}
+
+.modal-mail-input:focus:valid + .mail-error-msg {
+  color: #08AF00;
+}
+
+
 .mail-error-msg {
-   /* status/error */
+  /* status/error */
+  position: relative;
   display: flex;
-  font-family: "Rubik",sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   align-items: center;
-  color: #000000;
+  color: var(--color, #000000);
   margin-bottom: -2px;
 }
 
@@ -1800,7 +1825,6 @@ img {
   flex-wrap: wrap;
   border: 0;
 }
-
 
 .for-name::before {
   position: absolute;
@@ -1819,7 +1843,7 @@ img {
 .for-mail::before {
   position: absolute;
   content: '';
-  display: block;
+  display: var(--display, block);
   width: 364px;
   height: 64px;
   border: var(--border, 2px solid transparent);
@@ -1828,21 +1852,21 @@ img {
   background-color: transparent;
   pointer-events: none;
   transition: 0.4s;
- }
+}
 
- .for-goods::before {
+.for-goods::before {
   position: absolute;
   content: '';
-   display: block;
-   width: 544px;
-   height: 64px;
-   border: var(--border, 2px solid transparent);
-   left: -4px;
-   top: 30px;
-   background-color: transparent;
-   pointer-events: none;
-   transition: 0.4s;
- }
+  display: block;
+  width: 544px;
+  height: 64px;
+  border: var(--border, 2px solid transparent);
+  left: -4px;
+  top: 30px;
+  background-color: transparent;
+  pointer-events: none;
+  transition: 0.4s;
+}
 
 
 .modal-goods-quantity {
@@ -1887,6 +1911,27 @@ img {
   flex-wrap: wrap;
 }
 
+.qty-info-tooltip {
+  position: absolute;
+  display: none;
+  width: 200px;
+  top: 27px;
+  left: 560px;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+  padding: 25px 17px 23px 19px;
+  background: linear-gradient(to bottom, transparent 6px, #000000 6px, #000000 60%, #000000 100%);
+  background-origin: border-box;
+  background-image: url("../images/modal-tooltip.svg");
+  box-shadow: 0 10px 0 rgba(0, 0, 0, 0.1);
+  transition: 0.6s;
+  z-index: 20;
+  flex-wrap: wrap;
+}
+
 .qty-info {
   position: absolute;
   display: flex;
@@ -1904,20 +1949,13 @@ img {
   z-index: 2;
 }
 
-.qty-info:hover:after,
-.qty-info-:focus-visible {
-  position: absolute;
-  content: '';
+.qty-info:hover + .qty-info-tooltip {
   display: flex;
-  width: 200px;
-  height: 176px;
-  top: 30px;
-  left: -140px;
-  background-image: url("../images/modal-tooltip.svg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  box-shadow: 0 10px 0 rgba(0, 0, 0, 0.1);
 }
+
+
+
+
 
 .quantity-block {
   display: flex;
@@ -1958,16 +1996,16 @@ img {
 .quantity-num:hover {
   background-color: #DCDCDC;
   border: 2px solid #DCDCDC;
-  color:rgb(0, 0, 0, 0.6)
+  color: rgb(0, 0, 0, 0.6)
 }
 
 .quantity-num:active {
-  color:rgb(0, 0, 0, 0.3)
+  color: rgb(0, 0, 0, 0.3)
 }
 
 .quantity-num:focus {
- outline: none;
- border: 2px solid #AF4FFF;
+  outline: none;
+  border: 2px solid #AF4FFF;
 }
 
 .quantity-arrow-minus,
@@ -1988,39 +2026,38 @@ img {
 
 .quantity-arrow-minus:hover,
 .quantity-arrow-plus:hover {
- background-color: #DCDCDC;
- color:rgb(0, 0, 0, 0.6)
+  background-color: #DCDCDC;
+  color: rgb(0, 0, 0, 0.6)
 }
 
 .quantity-arrow-minus:active,
 .quantity-arrow-plus:active {
-background-color: #F0F0F0;
- color:rgb(0, 0, 0, 0.3)
+  background-color: #F0F0F0;
+  color: rgb(0, 0, 0, 0.3)
 }
 
 .quantity-arrow-minus:focus-visible,
 .quantity-arrow-plus:focus-visible {
-background-color: #F0F0F0;
- outline: none;
+  background-color: #F0F0F0;
+  outline: none;
 }
 
 .quantity-arrow-minus:focus-visible::after,
 .quantity-arrow-plus:focus-visible::after {
- position: absolute;
- content: '';
- display: block;
- width: 56px;
- height: 56px;
- border: 2px solid #AF4FFF;
- top: 0;
- left: 0;
+  position: absolute;
+  content: '';
+  display: block;
+  width: 56px;
+  height: 56px;
+  border: 2px solid #AF4FFF;
+  top: 0;
+  left: 0;
 }
 
 .quantity-arrow-minus:disabled,
 .quantity-arrow-plus:disabled {
   opacity: 0.3;
 }
-
 
 .modal-submit-button {
   /* modal track number 4 */

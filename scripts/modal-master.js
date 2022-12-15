@@ -1,3 +1,4 @@
+
 //-----------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓------- ОТКРЫТИЕ-ЗАКРЫТИЕ МОДАЛЬНОГО ОКНА ----------------------------------------------
 
 function showModalWin() {
@@ -20,6 +21,9 @@ function closeClick() {  // обработчик кнопки закрытия �
   var modalWin = document.getElementById('popupWin'); // находим наше окошко
   var darkLayer = document.querySelectorAll('.shadow')[0]; // находим слой затемнения
   darkLayer.parentNode.removeChild(darkLayer); // выключаем затемнение
+  document.querySelectorAll('.mail-error-msg')[0].style.setProperty('--color', '#000000'); // сообщение об ошибке в почте красим снова в черный
+  document.querySelectorAll('.modal-mail-input')[0].style.setProperty('--border', '2px solid #F0F0F0'); // ставим бордер почты в исходное состояние
+  document.querySelectorAll('.for-mail')[0].style.setProperty('--display', 'block'); // возвращаем сиреневый исходный фокус на почту
   document.getElementById('modal-delivery-window').reset() // делаем сброс формы перед выключением модального окна
   modalWin.style.display = 'none'; // выключаем модальное окно
   return false;
@@ -75,11 +79,14 @@ function goodsBlur() {
 //-----------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓------ ОБРАБОТЧИК для INPUT  MAIL (error msg, red border - invalid, green border - valid) -------
 
 function redBorder() {
-  document.querySelectorAll('.sub-form-wrapper')[0].style.setProperty('--background-color', '#FF3D3D');
+ document.querySelectorAll('.mail-error-msg')[0].style.setProperty('--color', '#FF3D3D');
+ document.querySelectorAll('.modal-mail-input')[0].style.setProperty('--border', '2px solid #FF3D3D');
+ document.querySelectorAll('.for-mail')[0].style.setProperty('--display', 'none');
 }
 
 
 function greenBorder() {
-  try { setCustomValidity('') } catch (e) { };
-  document.querySelectorAll('.sub-form-wrapper')[0].style.setProperty('--background-color', 'transparent');
+ try { setCustomValidity('') } catch (e) { };
+// document.querySelectorAll('.mail-error-msg')[0].style.setProperty('--color', '#08AF00');
+ //document.querySelectorAll('.modal-mail-input')[0].style.setProperty('--border', '2px solid transparent');
 }

@@ -606,6 +606,9 @@
             <div class="label-info">
               <label class="modal-subtitle qty-label"> Количество: </label>
               <a class="qty-info">i</a>
+              <span class="qty-info-tooltip">
+                Постараемся найти, сколько нужно. Привезём сколько получится по требованиям<br> к провозу багажа.
+              </span>
             </div>
 
             <div class="quantity-block">
@@ -614,7 +617,7 @@
                   <path d="M16 7H0v2h16V7Z" />
                 </svg>
               </button>
-              <input class="quantity-num" type="number" value="1" min="1" name="qty-of-goods" required>
+              <input class="quantity-num" type="number" value="1" min="1" name="qty-of-goods" id="qty-num" required>
               <button class="quantity-arrow-plus" type="button" onclick="plusClick()">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path d="M16 7H9V0H7v7H0v2h7v7h2V9h7V7Z" />
