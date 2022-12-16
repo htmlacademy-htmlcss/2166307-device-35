@@ -32,7 +32,7 @@
           <div class="user-line">
 
             <form class="site-search-form" action="https://echo.htmlacademy.ru/" method="post">
-              <label class="visually-hidden" for="search-target">Поиск по сайту.</label>
+              <label class="visually-hidden" for="search-request">Поиск по сайту.</label>
               <input class="search-line" placeholder="Поиск по сайту" type="text" name="search-request"
                 id="search-target" required>
               <button class="search-button" type="submit">
@@ -579,15 +579,15 @@
 
         <div class="modal-name-mail">
           <div class="name-input">
-            <label class="modal-subtitle for-name"> Ваше имя: </label>
-            <input class="modal-name-input" type="text" size="100" placeholder="Введите имя" name="customer-name"
+            <label class="modal-subtitle for-name" for="client-name"> Ваше имя: </label>
+            <input class="modal-name-input" type="text" size="100" placeholder="Введите имя" name="customer-name" id="client-name"
               onfocus="nameFocus()" onblur="nameBlur()" oninput="nameBlur()" required>
           </div>
 
 
           <div class="mail-input">
-            <label class="modal-subtitle for-mail">Ваш e-mail:</label>
-            <input class="modal-mail-input" type="email" size="100" placeholder="Введите e-mail" name="customer-email"
+            <label class="modal-subtitle for-mail" for="client-email">Ваш e-mail:</label>
+            <input class="modal-mail-input" type="email" size="100" placeholder="Введите e-mail" name="customer-email" id="client-email"
               onfocus="mailFocus()" onblur="mailBlur()" oninput="mailBlur()" oninvalid="redBorder()" onchange="greenBorder()"  required>
             <span class="mail-error-msg">Забавный у вас адрес</span>
           </div>
@@ -596,17 +596,17 @@
         <div class="modal-goods-quantity">
 
           <div class="goods-input">
-            <label class="modal-subtitle for-goods"> Что нужно привезти: </label>
+            <label class="modal-subtitle for-goods" for="goods-type"> Что нужно привезти: </label>
 
-            <input class="modal-goods-input" type="text" size="100" placeholder="В свободной форме" name="goods-list"
+            <input class="modal-goods-input" type="text" size="100" placeholder="В свободной форме" name="goods-list" id="goods-type"
               onfocus="goodsFocus()" onblur="goodsBlur()" oninput="goodsBlur()" required>
           </div>
 
           <div class="qty-input">
             <div class="label-info">
-              <label class="modal-subtitle qty-label"> Количество: </label>
-              <a class="qty-info">i</a>
-              <span class="qty-info-tooltip">
+              <label class="modal-subtitle qty-label" for="qty-num"> Количество: </label>
+              <button class="qty-info-button" type="button" aria-labelledby="tooltip-label">i</button>
+              <span class="qty-info-tooltip" role="tooltip" id="tooltip-label">
                 Постараемся найти, сколько нужно. Привезём сколько получится по требованиям<br> к провозу багажа.
               </span>
             </div>

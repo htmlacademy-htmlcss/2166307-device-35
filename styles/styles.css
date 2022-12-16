@@ -84,6 +84,7 @@ img {
   margin-left: auto;
   margin-right: auto;
   margin-top: -20px;
+  margin-bottom: -16px;
 }
 
 .logo-line {
@@ -94,7 +95,6 @@ img {
 .user-line {
   /* grid track number 2 */
   display: flex;
-  background-color: rgb(218, 131, 184);
 }
 
 .site-search-form {
@@ -108,14 +108,21 @@ img {
 
 .search-line {
   height: 40px;
-  width: 359px;
+  width: 300px;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
   border: 2px solid #000000;
   background-color: transparent;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgb(0, 0, 0, 0.3);
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  padding-left: 48px;
+  padding-right: 10px;
 }
 
 .search-button {
@@ -183,6 +190,7 @@ img {
 .navigation-line {
   /* grid track number 3 */
   display: flex;
+  min-height: 50px;
   justify-content: space-between;
   font-family: "Raleway", sans-serif;
   font-size: 18px;
@@ -195,8 +203,8 @@ img {
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   max-width: 236px;
-  background-color: aquamarine;
   flex-wrap: wrap;
   z-index: 3;
 }
@@ -211,7 +219,7 @@ img {
   content: '';
   position: absolute;
   left: 243px;
-  top: -14.85px;
+  top: 0;
   display: block;
   width: 50px;
   height: 50px;
@@ -232,6 +240,7 @@ img {
 
 .navigation-list {
   display: flex;
+  align-items: center;
   flex-direction: row-reverse;
   max-width: 702px;
   list-style-type: none;
@@ -268,8 +277,9 @@ img {
 
 .main-page {
   /*режем весь main на 6 рядов  */
-  display: grid;
-  grid-template-rows: auto auto auto auto auto auto;
+  display: flex;
+  flex-direction: column;
+  /*grid-template-rows: auto auto auto auto auto auto;*/
   width: 100%;
   gap: 70px;
 }
@@ -1756,7 +1766,7 @@ img {
 .modal-name-input,
 .modal-mail-input {
   display: block;
-  width: 336px;
+  width: 291px;
   height: 56px;
   background-color: #F0F0F0;
   border: var(--border, 2px solid #F0F0F0);
@@ -1766,6 +1776,7 @@ img {
   line-height: 20px;
   padding: 0;
   padding-left: 20px;
+  padding-right: 45px;
   transition: 0.4s;
 }
 
@@ -1878,7 +1889,7 @@ img {
 
 .modal-goods-input {
   display: block;
-  width: 520px;
+  width: 500px;
   height: 60px;
   background-color: #F0F0F0;
   font-family: "Rubik", sans-serif;
@@ -1888,6 +1899,7 @@ img {
   line-height: 20px;
   padding: 0;
   padding-left: 20px;
+  padding-right: 20px;
   border: 0;
   transition: 0.4s;
 }
@@ -1906,7 +1918,6 @@ img {
 }
 
 .qty-label {
-  position: relative;
   display: flex;
   flex-wrap: wrap;
 }
@@ -1914,8 +1925,10 @@ img {
 .qty-info-tooltip {
   position: absolute;
   display: none;
+  justify-content: center;
+  justify-items: center;
   width: 200px;
-  top: 27px;
+  top: 33px;
   left: 560px;
   font-family: "Rubik", sans-serif;
   font-weight: 400;
@@ -1923,18 +1936,30 @@ img {
   line-height: 20px;
   color: #FFFFFF;
   padding: 25px 17px 23px 19px;
-  background: linear-gradient(to bottom, transparent 6px, #000000 6px, #000000 60%, #000000 100%);
-  background-origin: border-box;
-  background-image: url("../images/modal-tooltip.svg");
+  background: #000000;
   box-shadow: 0 10px 0 rgba(0, 0, 0, 0.1);
-  transition: 0.6s;
   z-index: 20;
   flex-wrap: wrap;
+  animation: fadeInFromNone 0.6s ease-in-out;
 }
 
-.qty-info {
+.qty-info-tooltip::after {
   position: absolute;
-  display: flex;
+  content: '';
+  display: block;
+  width: 14px;
+  height: 6px;
+  background-image: url("../images/tooltip-triangle.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  top: -6px;
+  left: 146px;
+  animation: fadeInFromNone 0.4s ease-in-out;
+}
+
+.qty-info-button {
+  position: relative;
+  display: block;
   width: 26px;
   height: 26px;
   line-height: 12px;
@@ -1943,19 +1968,20 @@ img {
   margin-right: auto;
   border-radius: 50%;
   background-color: #FFE17F;
-  top: -3px;
-  left: 700px;
   cursor: pointer;
-  z-index: 2;
+  border: 0;
+  margin-top: -3px;
 }
 
-.qty-info:hover + .qty-info-tooltip {
+.qty-info-button:focus-visible {
+  outline: none;
+  border: 2px solid #AF4FFF;
+}
+
+.qty-info-button:hover + .qty-info-tooltip,
+.qty-info-button:focus-visible + .qty-info-tooltip {
   display: flex;
 }
-
-
-
-
 
 .quantity-block {
   display: flex;
