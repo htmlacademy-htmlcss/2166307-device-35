@@ -14,12 +14,200 @@
 
     <header>
 
+      <div class="navigation-container">
+        <nav class="navigation">
 
+          <div class="logo-line">
+            <a class="logo-link" href="index.html">
+              <img class="device-logo" src="images/device-logo-black.svg" width="145" height="36"
+                alt="Логотип интернет магазина Девайс.">
+            </a>
+          </div>
+
+          <div class="user-line">
+
+            <form class="site-search-form" action="https://echo.htmlacademy.ru/" method="post">
+              <label class="visually-hidden" for="search-target">Поиск по сайту.</label>
+              <input class="search-line" placeholder="Поиск по сайту" type="text" name="search-request"
+                id="search-target" required>
+              <button class="search-button" type="submit">
+                Найти
+              </button>
+            </form>
+
+            <div class="user-actions-container">
+
+              <div class="enter-user-container">
+                <a class="user-link" href="#">Войти</a>
+              </div>
+
+              <ul class="user-list">
+                <li class="user-item">
+                  <a class="user-link" href="#">Корзина</a>
+                </li>
+
+                <li class="user-item">
+                  <a class="user-link" href="#">Сравнить</a>
+                </li>
+
+
+                <li class="user-item">
+                  <a class="user-link" href="#">Выйти</a>
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="navigation-line">
+
+            <div class="catalog-container">
+              <a class="catalog-link" href="#">
+                Каталог товаров
+              </a>
+            </div>
+
+            <ul class="navigation-list">
+
+              <li class="navigation-item">
+                <a class="navigation-link" href="#">
+                  Контакты
+                </a>
+              </li>
+
+              <li class="navigation-item">
+                <a class="navigation-link" href="#">
+                  Гарантия
+                </a>
+              </li>
+
+              <li class="navigation-item">
+                <a class="navigation-link" href="#">
+                  Доставка
+                </a>
+              </li>
+
+            </ul>
+
+          </div>
+        </nav>
+      </div>
     </header>
 
+    <!-- ==================================== M A I N ==================================================================================  -->
+
+
+    <!----↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓   Catalog header & Breadcrumbs  ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -------------------------------------->
+
     <main class="main-inner">
-      Это мейн
+
+
+      <section class="catalog-header">
+
+        <h1 class="inner-header-title">Моноподы для селфи</h1>
+        <ul class="breadcrumbs">
+
+          <li class="breadcrumbs-item">
+            <a class="breadcrumbs-link" href="index.html">
+              Главная
+            </a>
+          </li>
+
+          <li class="breadcrumbs-item">
+            <a class="breadcrumbs-link" href="catalog.html">
+              Каталог товаров
+            </a>
+          </li>
+
+          <li class="breadcrumbs-item">
+            <a class="breadcrumbs-link" href="catalog.html">
+              Моноподы для селфи
+            </a>
+          </li>
+
+        </ul>
+      </section>
+
+
+      <!-------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ Catalog header & Breadcrumbs  ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑--------------------------------->
+
+      <div class="catalog-wrapper">
+
+        <!----↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓   CATALOG FILTER  ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ----------------------------------------------->
+
+
+        <form class="catalog-filter">
+
+          <h2> Фильтр:</h2>
+
+          <h3>Стоимость</h3>
+
+          <div class="container">
+            <div class="slider-track"></div>
+            <label class="visually-hidden" for="slider-1">Минимальная стоимость продукта.</label>
+            <input type="range" name="min-price" min="0" max="10000" value="0" id="slider-1" step="100"
+              oninput="slideOne()">
+            <label class="visually-hidden" for="slider-2">Максимальная стоимость продукта.</label>
+            <input type="range" name="max-price" min="0" max="10000" value="5000" id="slider-2" step="100"
+              oninput="slideTwo()">
+          </div>
+
+          <h3>Цвет</h3>
+
+          <div class="catalog-fg">
+
+            <input class="ctrl-input f-box" type="checkbox" name="black" id="black-c" checked>
+            <label class="ctrl-checkbox f-box" for="black-c">Черный</label>
+
+            <input class="ctrl-input s-box" type="checkbox" name="white" id="white-c" checked>
+            <label class="ctrl-checkbox s-box" for="white-c">Белый</label>
+
+            <input class="ctrl-input t-box" type="checkbox" name="blue" id="blue-c">
+            <label class="ctrl-checkbox t-box" for="blue-c">Синий</label>
+
+            <input class="ctrl-input fo-box" type="checkbox" name="red" id="red-c">
+            <label class="ctrl-checkbox fo-box" for="red-c">Красный</label>
+
+            <input class="ctrl-input fi-box" type="checkbox" name="pink" id="pink-c">
+            <label class="ctrl-checkbox fi-box" for="pink-c">Розовый</label>
+
+          </div>
+
+          <h3>Bluetooth</h3>
+
+          <div class="catalog-fg">
+
+            <input class="ctrl-input f-radio" type="radio" name="bluetooth" value="On" id="bt-on" checked>
+            <label class="ctrl-radio f-radio" for="bt-on">Есть</label>
+
+            <input class="ctrl-input s-radio" type="radio" name="bluetooth" value="Off" id="bt-off">
+            <label class="ctrl-radio s-radio" for="bt-off">Нет</label>
+
+          </div>
+
+          <button class="button" type="submit">Показать</button>
+
+        </form>
+        <!-------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ CATALOG FILTER  ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑---------------------------------------------->
+
+        <!----↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓   CATALOG PRODUCTS  ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -------------------------------------------->
+
+        <section class="catalog-products">
+
+
+        </section>
+
+        <!-------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ CATALOG PRODUCTS  ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑------------------------------------------->
+
+      </div>
     </main>
+
+
+    <!-- ===========↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓=============== F O O T E R =========================↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓========================= -->
 
     <footer class="footer-container">
 

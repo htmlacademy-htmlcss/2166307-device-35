@@ -2153,3 +2153,112 @@ img {
   margin-right: auto;
   flex-wrap: wrap;
 }
+
+
+
+
+
+
+/*-- ===========↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓=====================   C A T A L O G    =========================↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓=======*/
+
+
+
+
+
+/*-----↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓-------------------Catalog header & Breadcrumbs ------------------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓--------------------*/
+
+
+.inner-header-title {
+  display: flex;
+  margin: 0 auto;
+  width: 1040px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 50px;
+  margin-top: 35px;
+  margin-bottom: 8px;
+  background-color: darkgrey;
+  flex-wrap: wrap;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  width: 1040px;
+  margin: 0 auto;
+  margin-left: auto;
+  margin-bottom: 34px;
+  padding: 0;
+  background-color: aquamarine;
+}
+
+.breadcrumbs-item {
+  display: flex;
+  margin-right: 16px;
+}
+
+.breadcrumbs-item:not(:first-child)::before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 20px;
+  background-image: url("../images/breadcrumbs-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-right: 16px;
+}
+
+.breadcrumbs-link {
+  position: relative;
+  display: flex;
+  font-size: 16px;
+  line-height: 21px;
+  text-decoration: none;
+}
+
+.breadcrumbs-link:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.breadcrumbs-link:focus {
+  outline: none;
+  cursor: pointer;
+ }
+
+.breadcrumbs-link:active {
+  opacity: 0.3;
+  cursor: pointer;
+ }
+
+ /*-----↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-------------------Catalog header & Breadcrumbs ------------------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑--------------------*/
+
+ .catalog-wrapper {
+  display: flex;
+  width: 100%;
+  background-color: pink;
+ }
+
+ .catalog-filter {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  background-color: rgb(106, 128, 158);
+  margin-left: auto;
+ }
+
+ .catalog-products {
+  display: flex;
+  flex-direction: column;
+  width: 840px;
+  background-color: tan;
+  margin-right: auto;
+ }
+
+ .catalog-fg {
+  display: flex;
+  flex-direction: column;
+
+ }
