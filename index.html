@@ -32,7 +32,7 @@
           <div class="user-line">
 
             <form class="site-search-form" action="https://echo.htmlacademy.ru/" method="post">
-              <label class="visually-hidden" for="search-request">Поиск по сайту.</label>
+              <label class="visually-hidden" for="search-target">Поиск по сайту.</label>
               <input class="search-line" placeholder="Поиск по сайту" type="text" name="search-request"
                 id="search-target" required>
               <button class="search-button" type="submit">
@@ -572,7 +572,7 @@
         <div class="modal-title">
           <h2 class="modal-title-delivery">Доставка под заказ</h2>
 
-          <button class="close-button" type="button" onclick="closeClick()"></button>
+          <button class="close-button" type="button"></button>
 
         </div>
 
@@ -581,14 +581,13 @@
           <div class="name-input">
             <label class="modal-subtitle for-name" for="client-name"> Ваше имя: </label>
             <input class="modal-name-input" type="text" size="100" placeholder="Введите имя" name="customer-name" id="client-name"
-              onfocus="nameFocus()" onblur="nameBlur()" oninput="nameBlur()" required>
+               required>
           </div>
 
 
           <div class="mail-input">
             <label class="modal-subtitle for-mail" for="client-email">Ваш e-mail:</label>
-            <input class="modal-mail-input" type="email" size="100" placeholder="Введите e-mail" name="customer-email" id="client-email"
-              onfocus="mailFocus()" onblur="mailBlur()" oninput="mailBlur()" oninvalid="redBorder()" onchange="greenBorder()"  required>
+            <input class="modal-mail-input" type="email" size="100" placeholder="Введите e-mail" name="customer-email" id="client-email" required>
             <span class="mail-error-msg">Забавный у вас адрес</span>
           </div>
         </div>
@@ -599,7 +598,7 @@
             <label class="modal-subtitle for-goods" for="goods-type"> Что нужно привезти: </label>
 
             <input class="modal-goods-input" type="text" size="100" placeholder="В свободной форме" name="goods-list" id="goods-type"
-              onfocus="goodsFocus()" onblur="goodsBlur()" oninput="goodsBlur()" required>
+               required>
           </div>
 
           <div class="qty-input">
@@ -612,16 +611,16 @@
             </div>
 
             <div class="quantity-block">
-              <button class="quantity-arrow-minus" type="button" onclick="minusClick()">
+              <button class="quantity-arrow-minus" type="button">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path d="M16 7H0v2h16V7Z" />
-                </svg>
+                </svg><span class="visually-hidden">Минус</span>
               </button>
               <input class="quantity-num" type="number" value="1" min="1" name="qty-of-goods" id="qty-num" required>
-              <button class="quantity-arrow-plus" type="button" onclick="plusClick()">
+              <button class="quantity-arrow-plus" type="button">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path d="M16 7H9V0H7v7H0v2h7v7h2V9h7V7Z" />
-                </svg>
+                </svg><span class="visually-hidden">Плюс</span>
               </button>
             </div>
           </div>

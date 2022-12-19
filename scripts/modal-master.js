@@ -17,7 +17,8 @@ function showModalWin() {
   };
 }
 
-function closeClick() {  // обработчик кнопки закрытия модального окна
+var closeWinEvent = document.querySelectorAll('.close-button')[0];
+closeWinEvent.addEventListener('click', function () {  // обработчик кнопки закрытия модального окна
   var modalWin = document.getElementById('popupWin'); // находим наше окошко
   var darkLayer = document.querySelectorAll('.shadow')[0]; // находим слой затемнения
   darkLayer.parentNode.removeChild(darkLayer); // выключаем затемнение
@@ -27,66 +28,73 @@ function closeClick() {  // обработчик кнопки закрытия �
   document.getElementById('modal-delivery-window').reset() // делаем сброс формы перед выключением модального окна
   modalWin.style.display = 'none'; // выключаем модальное окно
   return false;
-};
+});
 
 //----------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑------- ОТКРЫТИЕ-ЗАКРЫТИЕ МОДАЛЬНОГО ОКНА -----------------------------------------------
 
 
 //-----------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓------ ОБРАБОТЧИК для INPUT type=NUMBER -------------------------------------------------
 
-function minusClick() {
+var minusClickEvent = document.querySelectorAll('.quantity-arrow-minus')[0];
+minusClickEvent.addEventListener('click', function () {
   document.querySelectorAll('.quantity-arrow-minus')[0].nextElementSibling.stepDown();  // используем JS метод stepDown для уменьшения значения
   document.querySelectorAll('.quantity-arrow-minus')[0].nextElementSibling.onchange();
-};
+});
 
-function plusClick() {
+var plusClickEvent = document.querySelectorAll('.quantity-arrow-plus')[0];
+plusClickEvent.addEventListener('click', function () {
   document.querySelectorAll('.quantity-arrow-plus')[0].previousElementSibling.stepUp(); // используем JS метод stepUP для увеличения значения
   document.querySelectorAll('.quantity-arrow-plus')[0].previousElementSibling.onchange();
-};
+});
 
 //-----------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑------ ОБРАБОТЧИК для INPUT type=NUMBER --------------------------------------------------
 
 
 //-----------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓------ ОБРАБОТЧИК для INPUT  MAIL/NAME/GOODS ---------------------------------------------
 
-function nameFocus() {
-  document.querySelectorAll('.for-name')[0].style.setProperty("--border", "2px solid #AF4FFF"); // ставим border на .for-name:before по фокусу поля Name
-}
 
-function nameBlur() {
+var nameEvent = document.querySelectorAll('.modal-name-input')[0];
+var mailEvent = document.querySelectorAll('.modal-mail-input')[0];
+var goodsEvent = document.querySelectorAll('.modal-goods-input')[0];
+
+nameEvent.addEventListener('focus', function () {
+  document.querySelectorAll('.for-name')[0].style.setProperty("--border", "2px solid #AF4FFF"); // ставим border на .for-name:before по фокусу поля Name
+});
+
+nameEvent.addEventListener('blur', BlurName);
+nameEvent.addEventListener('input', BlurName);
+function BlurName() {
   document.querySelectorAll('.for-name')[0].style.setProperty("--border", "2px solid transparent"); // прячем border по onblur
 }
 
-function mailFocus() {
-  document.querySelectorAll('.for-mail')[0].style.setProperty("--border", "2px solid #AF4FFF"); // ставим border на .for-mail:before по фокусу поля Mail
-}
 
-function mailBlur() {
+mailEvent.addEventListener('focus', function () {
+  document.querySelectorAll('.for-mail')[0].style.setProperty("--border", "2px solid #AF4FFF"); // ставим border на .for-mail:before по фокусу поля Mail
+});
+
+mailEvent.addEventListener('blur', BlurMail);
+mailEvent.addEventListener('input', BlurMail);
+function BlurMail() {
   document.querySelectorAll('.for-mail')[0].style.setProperty("--border", "2px solid transparent"); // прячем border по onblur
 }
 
-function goodsFocus() {
+goodsEvent.addEventListener('focus', function () {
   document.querySelectorAll('.for-goods')[0].style.setProperty("--border", "2px solid #AF4FFF"); //ставим border на .for-goods:before по фокусу поля Goods
-}
+});
 
-function goodsBlur() {
+goodsEvent.addEventListener('blur', BlurGoods);
+goodsEvent.addEventListener('input', BlurGoods);
+function BlurGoods() {
   document.querySelectorAll('.for-goods')[0].style.setProperty("--border", "2px solid transparent"); // прячем border по onblur
 }
 
 //----------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑------- ОБРАБОТЧИК для INPUT  MAIL/NAME/GOODS ----------------------------------------------------
 
 
-//-----------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓------ ОБРАБОТЧИК для INPUT  MAIL (error msg, red border - invalid, green border - valid) -------
+//-----------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓------ ДОП ОБРАБОТЧИК для INPUT  MAIL (error msg, red border - invalid, green border - valid) -------
 
-function redBorder() {
- document.querySelectorAll('.mail-error-msg')[0].style.setProperty('--color', '#FF3D3D');
- document.querySelectorAll('.modal-mail-input')[0].style.setProperty('--border', '2px solid #FF3D3D');
- document.querySelectorAll('.for-mail')[0].style.setProperty('--display', 'none');
-}
-
-
-function greenBorder() {
- try { setCustomValidity('') } catch (e) { };
-// document.querySelectorAll('.mail-error-msg')[0].style.setProperty('--color', '#08AF00');
- //document.querySelectorAll('.modal-mail-input')[0].style.setProperty('--border', '2px solid transparent');
-}
+mailEvent.addEventListener('invalid', function () {
+  document.querySelectorAll('.mail-error-msg')[0].style.setProperty('--color', '#FF3D3D');
+  document.querySelectorAll('.modal-mail-input')[0].style.setProperty('--border', '2px solid #FF3D3D');
+  document.querySelectorAll('.for-mail')[0].style.setProperty('--display', 'none');
+});

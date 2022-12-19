@@ -108,7 +108,7 @@ img {
 
 .search-line {
   height: 40px;
-  width: 300px;
+  width: 358px;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
   border: 2px solid #000000;
@@ -117,7 +117,7 @@ img {
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-  color: rgb(0, 0, 0, 0.3);
+
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -126,6 +126,7 @@ img {
 }
 
 .search-button {
+  position: relative;
   display: flex;
   align-items: center;
   height: 40px;
@@ -138,7 +139,65 @@ img {
   background-color: transparent;
   padding: 10px 56px;
   box-sizing: border-box;
+  cursor: pointer;
+  transition: 0.4s;
 }
+
+.search-button::before {
+  position: absolute;
+  display: block;
+  content:'';
+  width: 16px;
+  height: 16px;
+  background-image: url("../images/loupe-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  top: 10px;
+  left: -343px;
+}
+
+
+.search-button:hover {
+
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.search-button:active {
+  border: 3px solid #000000;
+  background-color: #000000;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.search-button:focus-visible {
+  outline: none;
+}
+
+.search-button:focus-visible:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 256px;
+  height: 61px;
+  top: -7px;
+  left: -7px;
+  border: 2px solid #AF4FFF;
+}
+
+.search-button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.search-line[placeholder] {
+  color: rgb(0, 0, 0, 0.3);
+}
+
+.search-line:focus {
+  outline: none;
+  background-color: #DCDCDC;
+}
+
 
 .user-actions-container {
   /* flex контейнер для  |- ИмяЮзера/Вход -|- Выйти -|- Сравнить -|- Корзина -|  */
@@ -276,7 +335,7 @@ img {
 
 
 .main-page {
-  /*режем весь main на 6 рядов  */
+  /*режем весь main на 6 рядов с интервалом 70px  */
   display: flex;
   flex-direction: column;
   /*grid-template-rows: auto auto auto auto auto auto;*/
@@ -413,6 +472,7 @@ img {
 
 .button:disabled {
   opacity: 0.3;
+  cursor: default;
 }
 
 .hero-parameters-01 {
@@ -550,6 +610,7 @@ img {
 
 .slider-btn:disabled {
   opacity: 0.1;
+  cursor: default;
 }
 
 /*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ----------- HERO БЛОК ----------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
@@ -1266,8 +1327,8 @@ img {
 
 .subscription-button:disabled {
   opacity: 0.3;
+  cursor: default;
 }
-
 
 .field-line {
   display: block;
@@ -2083,6 +2144,7 @@ img {
 .quantity-arrow-minus:disabled,
 .quantity-arrow-plus:disabled {
   opacity: 0.3;
+  cursor: default;
 }
 
 .modal-submit-button {
