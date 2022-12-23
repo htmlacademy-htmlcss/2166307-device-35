@@ -136,60 +136,80 @@
       <!-------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ Catalog header & Breadcrumbs  ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑--------------------------------->
 
       <div class="catalog-wrapper">
+        <h2 class="visually-hidden">Каталог продуктов</h2>
 
         <!----↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓   CATALOG FILTER  ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ----------------------------------------------->
 
 
-        <form class="catalog-filter">
+        <form class="catalog-filter" action="https://echo.htmlacademy.ru" method="get">
 
-          <h2> Фильтр:</h2>
+          <h3 class="filter-title"> Фильтр:</h3>
 
-          <h3>Стоимость</h3>
+          <h4 class="filter-area-title">Стоимость</h4>
+          <div class="slider-container1">
 
-          <div class="container">
-            <div class="slider-track"></div>
-            <label class="visually-hidden" for="slider-1">Минимальная стоимость продукта.</label>
-            <input type="range" name="min-price" min="0" max="10000" value="0" id="slider-1" step="100"
-              oninput="slideOne()">
-            <label class="visually-hidden" for="slider-2">Максимальная стоимость продукта.</label>
-            <input type="range" name="max-price" min="0" max="10000" value="5000" id="slider-2" step="100"
-              oninput="slideTwo()">
-          </div>
 
-          <h3>Цвет</h3>
+            <div class="double-slider-wrapper">
 
-          <div class="catalog-fg">
 
-            <input class="ctrl-input f-box" type="checkbox" name="black" id="black-c" checked>
-            <label class="ctrl-checkbox f-box" for="black-c">Черный</label>
+              <div class="double-slider">
+                <div class="progress"></div>
+              </div>
+              <div class="range-input">
+                <input type="range" class="range-min" name="min-price" min="0" max="10000" value="0" step="100">
+                <input type="range" class="range-max" name="max-price" min="0" max="10000" value="5000" step="100">
+              </div>
 
-            <input class="ctrl-input s-box" type="checkbox" name="white" id="white-c" checked>
-            <label class="ctrl-checkbox s-box" for="white-c">Белый</label>
+              <div class="price-input">
+                <div class="field">
+                  <span class="from-to">от</span>
+                  <input class="input-min" type="number" value="0">
+                </div>
 
-            <input class="ctrl-input t-box" type="checkbox" name="blue" id="blue-c">
-            <label class="ctrl-checkbox t-box" for="blue-c">Синий</label>
+                <div class="field">
+                  <span class="up-to">до</span>
+                  <input class="input-max" type="number" value="5000">
+                </div>
+              </div>
 
-            <input class="ctrl-input fo-box" type="checkbox" name="red" id="red-c">
-            <label class="ctrl-checkbox fo-box" for="red-c">Красный</label>
+            </div>
 
-            <input class="ctrl-input fi-box" type="checkbox" name="pink" id="pink-c">
-            <label class="ctrl-checkbox fi-box" for="pink-c">Розовый</label>
-
-          </div>
-
-          <h3>Bluetooth</h3>
-
-          <div class="catalog-fg">
-
-            <input class="ctrl-input f-radio" type="radio" name="bluetooth" value="On" id="bt-on" checked>
-            <label class="ctrl-radio f-radio" for="bt-on">Есть</label>
-
-            <input class="ctrl-input s-radio" type="radio" name="bluetooth" value="Off" id="bt-off">
-            <label class="ctrl-radio s-radio" for="bt-off">Нет</label>
 
           </div>
+          <h4 class="filter-area-title">Цвет</h4>
 
-          <button class="button" type="submit">Показать</button>
+          <div class="catalog-filter-area">
+
+            <input class="color-input black-box" type="checkbox" name="black" id="black-color" checked>
+            <label class="color-checkbox black-box" for="black-color">Черный</label>
+
+            <input class="color-input white-box" type="checkbox" name="white" id="white-color" checked>
+            <label class="color-checkbox white-box" for="white-color">Белый</label>
+
+            <input class="color-input blue-box" type="checkbox" name="blue" id="blue-color">
+            <label class="color-checkbox blue-box" for="blue-color">Синий</label>
+
+            <input class="color-input red-box" type="checkbox" name="red" id="red-color">
+            <label class="color-checkbox red-box" for="red-color">Красный</label>
+
+            <input class="color-input pink-box" type="checkbox" name="pink" id="pink-color">
+            <label class="color-checkbox pink-box" for="pink-color">Розовый</label>
+
+          </div>
+
+          <h4 class="filter-area-title">Bluetooth</h4>
+
+          <div class="catalog-filter-area">
+
+            <input class="bt-input on-radio" type="radio" name="bluetooth" value="on" id="bt-on" checked>
+            <label class="bt-radio on-radio" for="bt-on">Есть</label>
+
+            <input class="bt-input off-radio" type="radio" name="bluetooth" value="off" id="bt-off">
+            <label class="bt-radio off-radio" for="bt-off">Нет</label>
+
+          </div>
+
+          <button class="gray-button" type="submit">Показать</button>
 
         </form>
         <!-------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ CATALOG FILTER  ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑---------------------------------------------->
@@ -197,6 +217,114 @@
         <!----↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓   CATALOG PRODUCTS  ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -------------------------------------------->
 
         <section class="catalog-products">
+          <h3 class="visually-hidden">Карточки товаров и опции отображения</h3>
+          <div class="sort-products">
+            <span class="sort-title">Сортировка:</span>
+
+            <div class="goods-options">
+              <label class="visually-hidden" for="marker-select">
+                Выберите тип выводимых товаров :</label>
+              <select class="product-options" name="product-marker" id="marker-select">
+                <option value="top">Популярные</option>
+                <option value="expensive">Дорогие</option>
+                <option value="cheap">Дешевые</option>
+                <option value="sale">Из распродажи</option>
+              </select>
+            </div>
+          </div>
+
+          <section>
+            <ul class="products-list">
+
+              <li class="product-card">
+                <a class="product-button" href="">
+                  <div class="product-card-image">
+                    <img src="images/catalog/product-1.png" width="360" height="380" alt="Любительская селфи-палка">
+                  </div>
+                  <div class="name-price">
+                    <span class="product-description">Любительская<br> селфи-палка</span>
+                    <span class="product-price">500 ₽</span>
+                  </div>
+                </a>
+                <button class="product-button-details">Подробнее</button>
+
+
+              </li>
+              <li class="product-card">
+                <a class="product-button" href="">
+                  <div class="product-card-image new-product">
+                    <img src="images/catalog/product-2.png" width="360" height="380" alt="Профессиональная селфи-палка">
+                  </div>
+                  <div class="name-price">
+                    <span class="product-description">Профессиональная<br> селфи-палка</span>
+                    <span class="product-price">1 500 ₽</span>
+                  </div>
+                </a>
+                <button class="product-button-details">Подробнее</button>
+
+
+              </li>
+              <li class="product-card">
+                <a class="product-button" href="">
+                  <div class="product-card-image">
+                    <img src="images/catalog/product-3.png" width="360" height="380" alt="Непотопляемая селфи-палка">
+                  </div>
+                  <div class="name-price">
+                    <span class="product-description">Непотопляемая<br> селфи-палка</span>
+                    <span class="product-price">2 500 ₽</span>
+                  </div>
+                </a>
+                <button class="product-button-details">Подробнее</button>
+
+
+              </li>
+
+              <li class="product-card">
+                <a class="product-button" href="">
+                  <div class="product-card-image">
+                    <img src="images/catalog/product-4.png" width="360" height="380" alt="Селфи-палка «Следуй за мной»">
+                  </div>
+                  <div class="name-price">
+                    <span class="product-description">Селфи-палка «Следуй за мной»</span>
+                    <span class="product-price">1 500 ₽</span>
+                  </div>
+                </a>
+                <button class="product-button-details">Подробнее</button>
+
+
+              </li>
+
+            </ul>
+
+            <button class="load-button" type="button"> Загрузить ещё</button>
+
+
+          </section>
+
+          <section class="pagination">
+            <h3 class="visually-hidden">Пагинация</h3>
+            <button class="forward-btn" type="button">Вперед</button>
+            <ul class="pagination-list">
+              <li class="pagination-item">
+                <a class="pagination-link">1</a>
+              </li>
+              <li class="pagination-item">
+                <a class="pagination-link" href="#">2</a>
+              </li>
+              <li class="pagination-item">
+                <a class="pagination-link" href="#">3</a>
+              </li>
+              <li class="pagination-item">
+                <a class="pagination-link" href="#">
+                  <span class="visually-hidden">Следующая страница</span>...
+                </a>
+              </li>
+              <li class="pagination-item">
+                <a class="pagination-link" href="#">15</a>
+              </li>
+            </ul>
+            <button class="back-btn" type="button">Назад</button>
+          </section>
 
 
         </section>
@@ -292,6 +420,8 @@
 
       </div>
     </footer>
+
+    <script src="scripts/double-range-slider.js"></script>
 
   </body>
 
