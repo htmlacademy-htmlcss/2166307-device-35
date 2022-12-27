@@ -84,7 +84,7 @@
 			}
 
 			// Hide select
-			item.style.display = 'none';
+		//	item.style.display = 'none';
 
 			// Get Default value (caption)
 			var caption = null;
