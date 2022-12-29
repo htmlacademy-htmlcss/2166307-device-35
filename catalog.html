@@ -27,9 +27,9 @@
           <div class="user-line">
 
             <form class="site-search-form" action="https://echo.htmlacademy.ru/" method="post">
-              <label class="visually-hidden" for="search-target">Поиск по сайту.</label>
-              <input class="search-line for-search" placeholder="Поиск по сайту" type="text" name="search-request"
-                id="search-target" required>
+              <label class="for-search" for="search-target"><span class="visually-hidden">Поиск по сайту.</span></label>
+              <input class="search-line" placeholder="Поиск по сайту" type="text" name="search-request"
+                id="search-target" autocomplete="off" required>
               <button class="search-button" type="submit">
                 Найти
               </button>
@@ -38,21 +38,24 @@
             <div class="user-actions-container">
 
               <div class="enter-user-container">
-                <a class="user-link" href="#">Войти</a>
+                <a class="enter-link" href="#">Войти</a>
+              </div>
+
+              <div class="entered-user-container">
+                <a class="enter-link" href="#">Коля Петухов</a>
+                <a class="exit-link" href="#">Выйти</a>
               </div>
 
               <ul class="user-list">
                 <li class="user-item">
-                  <a class="user-link" href="#">Корзина</a>
+                  <a class="user-link" href="#">
+                    <div class="basket-amont">2</div>
+                    <div class="basket"> Корзина</div>
+                  </a>
                 </li>
 
                 <li class="user-item">
                   <a class="user-link" href="#">Сравнить</a>
-                </li>
-
-
-                <li class="user-item">
-                  <a class="user-link" href="#">Выйти</a>
                 </li>
 
               </ul>
@@ -61,15 +64,22 @@
 
           </div>
 
-
-
           <div class="navigation-line">
 
             <div class="catalog-container">
-              <a class="catalog-link" href="#">
+              <button id="catalog-btn" class="catalog-button" type="button" value="OFF">
                 Каталог товаров
-              </a>
+              </button>
             </div>
+
+            <ul class="catalog-list">
+              <li class="catalog-item"><a class="catalog-item-link" href="">Виртуальная реальность</a></li>
+              <li class="catalog-item"><a class="catalog-item-link" href="catalog.html">Моноподы для cелфи</a></li>
+              <li class="catalog-item"><a class="catalog-item-link" href="">Экшн-камеры</a></li>
+              <li class="catalog-item"><a class="catalog-item-link" href="">Фитнес-браслеты</a></li>
+              <li class="catalog-item"><a class="catalog-item-link" href="">Умные часы</a></li>
+              <li class="catalog-item"><a class="catalog-item-link" href="">Квадрокоптеры</a></li>
+            </ul>
 
             <ul class="navigation-list">
 
@@ -104,7 +114,6 @@
     <!----↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓   Catalog header & Breadcrumbs  ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -------------------------------------->
 
     <main class="main-inner">
-
 
       <section class="catalog-header">
 
@@ -148,9 +157,7 @@
           <h4 class="filter-area-title">Стоимость</h4>
           <div class="slider-container1">
 
-
             <div class="double-slider-wrapper">
-
 
               <div class="double-slider">
                 <div class="progress"></div>
@@ -273,7 +280,6 @@
                 </a>
                 <button class="product-button-details">Подробнее</button>
 
-
               </li>
               <li class="product-card">
                 <a class="product-button" href="">
@@ -315,8 +321,6 @@
                   </div>
                 </a>
                 <button class="product-button-details">Подробнее</button>
-
-
               </li>
 
             </ul>
@@ -448,6 +452,7 @@
 
     <script src="scripts/double-range-slider.js"></script>
     <script src="scripts/select-master.js"></script>
+    <script src="scripts/navigation-master.js"></script>
 
   </body>
 

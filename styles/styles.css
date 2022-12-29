@@ -38,7 +38,6 @@ body {
   line-height: 20px;
   background-color: #ffffff;
   color: #000000;
-
 }
 
 img {
@@ -127,11 +126,6 @@ img {
   padding-left: 48px;
   padding-right: 10px;
 }
-
-/*
-.search-line[placeholder] {
-  color: rgb(0, 0, 0, 0.3);
-}*/
 
 .search-line:focus {
   outline: none;
@@ -228,17 +222,114 @@ img {
   /* flex контейнер для  |- ИмяЮзера/Вход -|- Выйти -|- Сравнить -|- Корзина -|  */
   display: flex;
   justify-content: space-between;
-  background-color: darkorchid;
   flex-grow: 1;
   flex-wrap: wrap;
 }
 
 .enter-user-container {
-  display: flex;
+  display: var(--display, flex);
   max-width: 147.5px;
   margin-right: 26.5px;
+  padding-right: 0.5px;
   align-items: center;
   flex-wrap: wrap;
+  animation: fadeInFromNone 0.6s ease-in-out;
+}
+
+.entered-user-container {
+  display: var(--display, none);
+  gap: 28px;
+  max-width: 231px;
+  margin-right: 26.5px;
+  padding-right: 0.5px;
+  align-items: center;
+  flex-wrap: wrap;
+  animation: fadeInFromNone 0.6s ease-in-out;
+}
+
+.enter-link {
+  position: relative;
+  display: flex;
+  text-decoration: none;
+  color: #000000;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  padding-left: 27px;
+  transition: 0.4s;
+}
+
+.enter-link::before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 15px;
+  height: 12px;
+  left: 0;
+  top: 9px;
+  background-image: url('../images/customer-icon.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: 0.4s;
+}
+
+.enter-link:hover {
+  opacity: 0.6;
+}
+
+.enter-link:focus-visible {
+  outline: none;
+}
+
+.enter-link:focus-visible::after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  top: -4px;
+  left: -4px;
+  border: 2px solid #AF4FFF;
+}
+
+.enter-link:active {
+  opacity: 0.3;
+}
+
+.exit-link {
+  position: relative;
+  display: flex;
+  text-decoration: none;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  transition: 0.4s;
+  color: rgb(0, 0, 0, 0.3);
+}
+
+.exit-link:hover {
+  color: rgb(0, 0, 0, 0.6);
+}
+
+.exit-link:focus-visible {
+  outline: none;
+}
+
+.exit-link:focus-visible::after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  top: -4px;
+  left: -4px;
+  border: 2px solid #AF4FFF;
+}
+
+.exit-link:active {
+  color: rgb(0, 0, 0, 1);
 }
 
 .user-list {
@@ -262,13 +353,98 @@ img {
 }
 
 .user-item:nth-child(2) {
-  margin-right: 36px;
+  margin-right: 18.5px;
 }
 
 .user-link {
+  position: relative;
+  display: flex;
+  gap: 22px;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
   text-decoration: none;
   color: #000000;
+  transition: 0.4s;
 }
+
+.user-item:nth-child(2) > .user-link {
+  padding-left:22px;
+  gap: 0;
+}
+
+.user-item:nth-child(2) > .user-link::before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 10px;
+  height: 12px;
+  left: 0;
+  top: 9px;
+  background-image: url('../images/compare-icon.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.user-link:hover {
+  opacity: 0.6;
+}
+
+.user-link:focus-visible {
+  outline: none;
+}
+
+.user-link:focus-visible::after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  top: -4px;
+  left: -4px;
+  border: 2px solid #AF4FFF;
+}
+
+.user-link:active {
+  opacity: 0.3;
+}
+
+.basket {
+  position: relative;
+  display: flex;
+}
+
+.basket::before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 16px;
+  height: 14px;
+  left: -29px;
+  top: 6.5px;
+  background-image: url('../images/basket-icon.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.basket-amont {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-self: center;
+align-items: center;
+min-width: 21px;
+height: 21px;
+font-family: 'Rubik',sans-serif;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+border-radius: 50%;
+background-color:  #FFFFFF;
+z-index: 2;
+}
+
 
 .navigation-line {
   /* grid track number 3 */
@@ -289,7 +465,7 @@ img {
   justify-content: center;
   width: 240px;
   flex-wrap: wrap;
-  z-index: 3;
+  z-index: 3
 }
 
 .catalog-button {
@@ -305,11 +481,11 @@ img {
   line-height: 21px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  background-color: #FFE17F;
   background-color: transparent;
+  color: #000000;
   margin-left: -7px;
   margin-right: 7px;
-  color: #000000;
+  cursor: pointer;
   transition: 0.4s;
 }
 
@@ -362,11 +538,9 @@ img {
   position: absolute;
   content: '';
   display: var(--display, none);
-
   grid-template-areas: "area-vr area-bracelet area-copter"
-                       "area-monopod area-watch ."
-                      "area-camera . .";
-
+    "area-monopod area-watch ."
+    "area-camera . .";
   gap: 18px 30px;
   grid-template-columns: 222px 182px 182px;
   grid-template-rows: auto auto auto;
@@ -382,7 +556,7 @@ img {
   line-height: 18px;
   letter-spacing: 0;
   list-style-type: none;
-  background-color: aquamarine;
+  background-color: #FFE17F;
   z-index: 2;
   animation: fadeInFromNone 0.6s ease-in-out;
   /*контент блока плавно "проявляется" за 0.6 сек.*/
@@ -446,31 +620,63 @@ img {
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
+  gap: 45px;
   max-width: 702px;
   list-style-type: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
   flex-wrap: wrap;
+  z-index: 3
 }
 
 .navigation-item {
   display: flex;
-  margin-right: 45px;
-}
-
-.navigation-item:first-child {
-  margin-right: 0;
+  width: 127px;
+  flex-wrap: wrap;
 }
 
 .navigation-link {
+  position: relative;
+  display: flex;
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.2em;
   text-decoration: none;
   text-transform: uppercase;
   color: #000000;
+  flex-wrap: wrap;
+  transition: 0.4s;
+}
+
+.navigation-link:hover {
+  opacity: 0.6;
+}
+
+.navigation-link:focus-visible {
+  outline: none;
+}
+
+.navigation-link:focus-visible::after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  top: -4px;
+  left: -4px;
+  border: 2px solid #AF4FFF;
+}
+
+.navigation-link:active {
+  opacity: 0.3;
 }
 
 
-/*-↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-------------------БЛОК НАВИГАЦИИ ---------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑--------*/
 
+/*-↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-------------------БЛОК НАВИГАЦИИ ---------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑--------*/
 
 
 .main-page {
@@ -481,7 +687,6 @@ img {
   width: 100%;
   gap: 70px;
 }
-
 
 
 
@@ -513,7 +718,6 @@ img {
 }
 
 @keyframes fadeInFromNone {
-
   /* анимация плавного появления слайда через  transition не работает =( , поэтому используем здесь технику @keyframes */
   0% {
     display: none;
@@ -530,7 +734,6 @@ img {
     opacity: 1;
   }
 }
-
 
 .hero-number {
   display: flex;
@@ -773,6 +976,7 @@ img {
   display: flex;
   flex-direction: column;
   width: 160px;
+  min-height: 253px;
   list-style-type: none;
   font-family: "Raleway", sans-serif;
   font-weight: 800;
@@ -801,8 +1005,8 @@ img {
   position: absolute;
   content: '';
   display: block;
-  width: 164px;
-  height: 257px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
   border: 2px solid #AF4FFF;
   top: -4px;
   left: -4px;
@@ -822,7 +1026,6 @@ img {
 .directions-item:nth-child(2) > .direction-link .direction-icon {
   justify-content: flex-end;
 }
-
 
 .direction-title {
   display: flex;
@@ -1131,8 +1334,6 @@ img {
   text-decoration: none;
   text-transform: uppercase;
   color: #000000;
-  border: 1px solid #FFFFFF;
-  outline: 2px solid #FFFFFF;
   transition: 0.4s;
 }
 
@@ -1149,20 +1350,21 @@ img {
   transition: 0.4s;
 }
 
-.delivery-btn::after {
+.delivery-action::after {
   position: absolute;
   content: '';
   display: block;
   width: 40px;
   height: 40px;
   left: 1035px;
+  top: 30px;
   background-image: url("../images/info-icon.svg");
   background-repeat: no-repeat;
   background-position: center center;
   border-radius: 50%;
   border: 20px solid rgba(220, 220, 220, 0.5);
   box-sizing: border-box;
-  transition: 0.4s;
+  transition: 0.2s;
 }
 
 .delivery-action {
@@ -1174,12 +1376,12 @@ img {
 
 .delivery-btn:hover {
   background-image: linear-gradient(90deg, #FFC700 10.775862%, #F0F0F0 10.775862%, #F0F0F0 89.224138%);
-  transition: 0.4s;
+  transition: 0.2s;
 }
 
-.delivery-btn:hover::after {
+.delivery-btn:hover > .delivery-action::after {
   background-image: url("../images/info-icon-black.svg");
-  transition: 0.4s;
+  transition: 0.2s;
 }
 
 .delivery-btn:active {
@@ -1187,11 +1389,20 @@ img {
 }
 
 .delivery-btn:focus-visible {
-  border: 1px solid #FFFFFF;
-  outline: 2px solid #AF4FFF;
-  transition: 0.4s;
+  outline: none;
 }
 
+.delivery-btn:focus-visible::after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  top: -4px;
+  left: -4px;
+  border: 2px solid #AF4FFF;
+  transition: 0.4s;
+}
 
 
 
@@ -1997,7 +2208,6 @@ img {
 .modal-mail-input:focus:valid {
   outline: none;
   border: 2px solid #08AF00;
-
 }
 
 .modal-mail-input:valid + .mail-error-msg {
@@ -2007,7 +2217,6 @@ img {
 .modal-mail-input:focus:valid + .mail-error-msg {
   color: #08AF00;
 }
-
 
 .mail-error-msg {
   /* status/error */
@@ -2365,28 +2574,16 @@ img {
   outline: none;
 }
 
-.breadcrumbs-item:not(:first-child) > .breadcrumbs-link:focus-visible::after {
+.breadcrumbs-item > .breadcrumbs-link:focus-visible::after {
   position: absolute;
   content: '';
   display: flex;
-  width: 102.39520958%;
-  height: 115%;
-  top: -3.5px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  top: -4px;
   left: -4px;
   border: 2px solid #AF4FFF;
 }
-
-.breadcrumbs-item:first-child > .breadcrumbs-link:focus-visible::after {
-  position: absolute;
-  content: '';
-  display: flex;
-  width: 102.39520958%;
-  height: 115%;
-  top: -3.5px;
-  left: -3px;
-  border: 2px solid #AF4FFF;
-}
-
 
 .breadcrumbs-link:active {
   opacity: 0.3;
@@ -2450,9 +2647,7 @@ img {
 
 
 
-
-
-/* ---------------кастомизация чекбоксов и радио --------------*/
+/* --- ↓ ↓ ↓ -----кастомизация чекбоксов и радио в Фильтре каталога ----- ↓ ↓ ↓ -----*/
 
 .color-checkbox,
 .bt-radio {
@@ -2605,7 +2800,7 @@ img {
   cursor: default;
 }
 
-/* ---------------кастомизация чекбоксов и радио --------------*/
+/* -----↑ ↑ ↑-------кастомизация чекбоксов и радио в Фильтре каталога ------↑ ↑ ↑-----*/
 
 .filter-area-title {
   display: flex;
@@ -2928,21 +3123,12 @@ img {
 
 select {
   position: relative;
-
   background-color: transparent;
   border: 0;
   width: 0.01px;
   height: 0.01px;
   margin: -0.01px;
 }
-
-/*
-select:hover {
-  background-color: transparent;
-  color: rgb(0, 0, 0, 0.6);
-}
-*/
-
 
 select option {
   background-color: white;
@@ -2965,7 +3151,6 @@ select option:hover {
   align-items: center;
   border-left: 2px solid rgb(206, 206, 206);
   border-right: 2px solid rgb(206, 206, 206);
-
 }
 
 .goods-options {
@@ -2984,12 +3169,9 @@ select option:hover {
   align-items: center;
   width: 307px;
   height: 200px;
-
   transition: 0.4s;
   border: 2px solid #AF4FFF;
-
 }
-
 
 .product-options {
   position: relative;
@@ -3035,7 +3217,6 @@ select option:hover {
   left: -4px;
   border: 2px solid #AF4FFF;
 }
-
 
 
 /* ------ ↑ ↑ ↑-----Кастомизация SELECT--------- ↑ ↑ ↑-------*/
@@ -3103,7 +3284,6 @@ select option:hover {
 .down-btn:active {
   color: rgb(0, 0, 0, 1);
 }
-
 
 .products-list {
   display: grid;
@@ -3180,8 +3360,8 @@ select option:hover {
   position: absolute;
   content: '';
   display: block;
-  width: 364px;
-  height: 456px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
   top: -4px;
   left: -4px;
   border: 2px solid #AF4FFF;
@@ -3277,8 +3457,8 @@ select option:hover {
   position: absolute;
   content: '';
   display: block;
-  width: 762px;
-  height: 63px;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
   top: -6px;
   left: -6px;
   border: 2px solid #AF4FFF;
@@ -3333,8 +3513,8 @@ select option:hover {
   position: absolute;
   content: '';
   display: flex;
-  width: 103.10077519%;
-  height: 105.63380282%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
   top: -4px;
   left: -4px;
   border: 2px solid #AF4FFF;
@@ -3365,10 +3545,7 @@ select option:hover {
 .pagination-item:nth-child(1) > .pagination-link {
   cursor: default;
   color: rgba(68, 68, 68, 0.6);
-
 }
-
-
 
 .pagination-link {
   position: relative;
@@ -3405,8 +3582,8 @@ select option:hover {
   position: absolute;
   content: '';
   display: block;
-  width: 44px;
-  height: 44px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
   top: -4px;
   left: -4px;
   border: 2px solid #AF4FFF;

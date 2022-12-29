@@ -16,6 +16,7 @@ function BlurSearch() {
 
 var CatalogEvent = document.querySelectorAll('.catalog-button')[0];
 
+
 CatalogEvent.addEventListener('click', ToggleFunction);
 
 
@@ -25,7 +26,7 @@ function ToggleFunction()
    document.getElementById("catalog-btn").value="ON";
    document.querySelectorAll('.catalog-button')[0].style.setProperty("--background-image", "url('../images/circle-minus-icon.svg')");
    document.querySelectorAll('.catalog-list')[0].style.setProperty("--display", "grid");
-  }
+}
 
  else {
   document.getElementById("catalog-btn").value="OFF";
@@ -33,3 +34,19 @@ function ToggleFunction()
   document.querySelectorAll('.catalog-list')[0].style.setProperty("--display", "none");
 }
 }
+
+// обработчик ВХОДА/ВЫХОДА юзера
+
+var EnterEvent = document.querySelectorAll('.enter-link')[0];
+var ExitEvent = document.querySelectorAll('.exit-link')[0];
+
+
+EnterEvent.addEventListener('click', function () {
+  document.querySelectorAll('.enter-user-container')[0].style.setProperty("--display", "none");
+  document.querySelectorAll('.entered-user-container')[0].style.setProperty("--display", "flex");
+});
+
+ExitEvent.addEventListener('click', function () {
+  document.querySelectorAll('.entered-user-container')[0].style.setProperty("--display", "none");
+  document.querySelectorAll('.enter-user-container')[0].style.setProperty("--display", "flex");
+});
