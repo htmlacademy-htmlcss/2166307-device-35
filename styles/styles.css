@@ -865,6 +865,7 @@ z-index: 2;
   margin: 0;
   padding: 0;
   cursor: pointer;
+  transition: 0.4s;
 }
 
 .slider-check {
@@ -902,6 +903,26 @@ z-index: 2;
 
 .slider-check:hover + .slider-label {
   opacity: 0.6;
+}
+
+.slider-check:focus-visible + .slider-label {
+  outline: none;
+}
+
+
+.slider-label:focus-visible {
+  outline: none;
+}
+
+.slider-check:focus-visible + .slider-label::after {
+  position: absolute;
+  content: '';
+  display: block;
+  top: -6px;
+  left: -6px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #AF4FFF;
 }
 
 .slider-check:active + .slider-label {
@@ -3167,8 +3188,10 @@ select option:hover {
   content: '';
   display: block;
   align-items: center;
-  width: 307px;
-  height: 200px;
+  width: 146px;
+  height: 34px;
+  top: center;
+  left: -4px;
   transition: 0.4s;
   border: 2px solid #AF4FFF;
 }
