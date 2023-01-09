@@ -52,16 +52,42 @@
               </div>
 
               <ul class="user-list">
+
                 <li class="user-item">
-                  <a class="user-link" href="#">
-                    <div class="basket-amont">2</div>
-                    <div class="basket"> Корзина</div>
-                  </a>
+                  <button class="user-btn" type="button" value="off">Сравнить</button>
                 </li>
 
                 <li class="user-item">
-                  <a class="user-link" href="#">Сравнить</a>
+                  <button class="user-btn" id="basket-btn" type="button" value="off">
+                    <div class="basket-amont">2</div>
+                    <div class="basket"> Корзина</div>
+                  </button>
+                  <!------------  Корзина ------------>
+                  <div class="basket-popover" role="dialog" id="prebasket">
+                    <ul class="basket-list">
+                      <li class="basket-item">
+                        <img class="basket-pic" src="images/catalog/product-1.jpg" width="39" height="43" alt="Любительская селфи-палка">
+                        <span class="basket-description">Любительская селфи-палка</span>
+                        <span class="visually-hidden price-beginner">500</span>
+                        <button class="delete-btn"><span class=visually-hidden>Удалить позицию из корзины.</span></button>
+                      </li>
+                      <li class="basket-item">
+                        <img class="basket-pic" src="images/catalog/product-2.jpg" width="39" height="43" alt="Профессиональная селфи-палка">
+                        <span class="basket-description" >Профессиональная селфи-палка</span>
+                        <span class="visually-hidden price-profi">1500</span>
+                        <button class="delete-btn"><span class=visually-hidden>Удалить товар из корзины.</span></button>
+                      </li>
+                      </ul>
+                      <div class="basket-results">
+                        <div class="qty-container"><span>Товаров:</span><span class="qty-value" id="basket-figure">2</span></div>
+                        <div class="cost-container"><span>Сумма:</span><span class="cost-value" id="cost">2000</span><span>₽</span></div>
+                      </div>
+                    <button class="open-basket-btn">Открыть корзину</button>
+                  </div>
+                  <!------------  Корзина ------------>
                 </li>
+
+
 
               </ul>
 
@@ -72,7 +98,7 @@
           <div class="navigation-line">
 
             <div class="catalog-container">
-              <button id="catalog-btn" class="catalog-button" type="button" value="OFF">
+              <button id="catalog-btn" class="catalog-button" type="button" value="off">
                 Каталог товаров
               </button>
             </div>
@@ -90,7 +116,7 @@
 
               <li class="navigation-item">
                 <a class="navigation-link" href="#">
-                  Контакты
+                  Доставка
                 </a>
               </li>
 
@@ -102,7 +128,7 @@
 
               <li class="navigation-item">
                 <a class="navigation-link" href="#">
-                  Доставка
+                  Контакты
                 </a>
               </li>
 

@@ -22,14 +22,14 @@ CatalogEvent.addEventListener('click', ToggleFunction);
 
 function ToggleFunction()
 {
-  if(document.getElementById("catalog-btn").value=="OFF"){
-   document.getElementById("catalog-btn").value="ON";
+  if(document.getElementById("catalog-btn").value=="off"){
+   document.getElementById("catalog-btn").value="on";
    document.querySelectorAll('.catalog-button')[0].style.setProperty("--background-image", "url('../images/circle-minus-icon.svg')");
    document.querySelectorAll('.catalog-list')[0].style.setProperty("--display", "grid");
 }
 
  else {
-  document.getElementById("catalog-btn").value="OFF";
+  document.getElementById("catalog-btn").value="off";
   document.querySelectorAll('.catalog-button')[0].style.setProperty("--background-image", "url('../images/circle-plus-icon.svg')");
   document.querySelectorAll('.catalog-list')[0].style.setProperty("--display", "none");
 }
@@ -50,3 +50,26 @@ ExitEvent.addEventListener('click', function () {
   document.querySelectorAll('.entered-user-container')[0].style.setProperty("--display", "none");
   document.querySelectorAll('.enter-user-container')[0].style.setProperty("--display", "flex");
 });
+
+// обработчик КОРЗИНЫ
+
+var BasketEvent = document.getElementById('basket-btn');
+BasketEvent.addEventListener('click', BasketToggleFunction);
+
+function BasketToggleFunction() {
+
+  if(document.getElementById("basket-btn").value=="off") {
+   // alert('сработало условие что value кнопки = OFF ');
+   document.getElementById("basket-btn").value="on";
+  // alert('изменили value кнопки = ON ');
+   document.getElementById("prebasket").style.setProperty("--display", "flex");
+ //  alert('дали display: flex  поповеру');
+}
+
+else {
+document.querySelectorAll('.basket-popover')[0].style.setProperty("--display", "none");
+document.getElementById("basket-btn").value="off";
+
+}
+
+}

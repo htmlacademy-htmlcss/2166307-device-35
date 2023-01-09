@@ -23,6 +23,10 @@
 }
 
 
+*:focus-visible {
+ border: #08AF00;
+}
+
 html {
   height: 100%;
 }
@@ -32,6 +36,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
+  min-width: 1200px;
   min-height: 100%;
   font-family: "Rubik", sans-serif;
   font-size: 18px;
@@ -73,6 +78,7 @@ img {
   margin-right: auto;
   background-color: #FFE17F;
   margin-top: 40px;
+  padding-bottom: 20px;
 }
 
 .navigation {
@@ -85,6 +91,7 @@ img {
   margin-right: auto;
   margin-top: -20px;
   margin-bottom: -16px;
+  padding-bottom: 16px;
 }
 
 .logo-line {
@@ -334,7 +341,6 @@ img {
 
 .user-list {
   display: flex;
-  flex-direction: row-reverse;
   max-width: 322.5px;
   list-style-type: none;
   margin: 0;
@@ -343,20 +349,22 @@ img {
 }
 
 .user-item {
+
   display: flex;
   align-items: center;
   margin-right: 26.5px;
 }
 
-.user-item:nth-child(1) {
+.user-item:nth-child(2) {
+  position: relative;
   margin-right: 0;
 }
 
-.user-item:nth-child(2) {
+.user-item:nth-child(1) {
   margin-right: 18.5px;
 }
 
-.user-link {
+.user-btn {
   position: relative;
   display: flex;
   gap: 22px;
@@ -365,16 +373,19 @@ img {
   font-size: 18px;
   line-height: 30px;
   text-decoration: none;
+  border: 0;
+  padding: 0;
+  background-color: #FFE17F ;
   color: #000000;
   transition: 0.4s;
 }
 
-.user-item:nth-child(2) > .user-link {
-  padding-left:22px;
+.user-item:nth-child(1) > .user-btn {
+  padding-left: 22px;
   gap: 0;
 }
 
-.user-item:nth-child(2) > .user-link::before {
+.user-item:nth-child(1) > .user-btn::before {
   position: absolute;
   content: '';
   display: block;
@@ -387,15 +398,15 @@ img {
   background-position: center center;
 }
 
-.user-link:hover {
+.user-btn:hover {
   opacity: 0.6;
 }
 
-.user-link:focus-visible {
+.user-btn:focus-visible {
   outline: none;
 }
 
-.user-link:focus-visible::after {
+.user-btn:focus-visible::after {
   position: absolute;
   content: '';
   display: block;
@@ -406,7 +417,7 @@ img {
   border: 2px solid #AF4FFF;
 }
 
-.user-link:active {
+.user-btn:active {
   opacity: 0.3;
 }
 
@@ -428,6 +439,39 @@ img {
   background-position: center center;
 }
 
+.basket-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.basket-item {
+  display: flex;
+  gap: 23px;
+  margin-bottom: 20px;
+}
+
+.basket-description {
+  display: flex;
+  width: 185px;
+  flex-wrap: wrap;
+}
+
+.delete-btn {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: 0;
+}
+
+.basket-results {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
 .basket-amont {
 display: flex;
 flex-direction: column;
@@ -443,6 +487,60 @@ line-height: 17px;
 border-radius: 50%;
 background-color:  #FFFFFF;
 z-index: 2;
+}
+
+.basket-popover {
+  position: absolute;
+  display: var(--display, none);
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  width: 280px;
+  top: 40px;
+  left: -20px;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+  padding: 20px;
+  background: #000000;
+  z-index: 5;
+  flex-wrap: wrap;
+  animation: fadeInFromNone 0.6s ease-in-out;
+}
+
+.basket-popover::after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 14px;
+  height: 6px;
+  background-image: url("../images/tooltip-triangle.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  top: -6px;
+  left: center;
+  animation: fadeInFromNone 0.4s ease-in-out;
+}
+
+.open-basket-btn {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+width: 280px;
+padding: 10px 20px;
+border: 0;
+background-color: #FFFFFF;
+font-family: "Raleway", sans-serif;
+font-style: normal;
+font-weight: 800;
+font-size: 18px;
+line-height: 21px;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: #000000;
 }
 
 
@@ -619,7 +717,6 @@ z-index: 2;
 .navigation-list {
   display: flex;
   align-items: center;
-  flex-direction: row-reverse;
   gap: 45px;
   max-width: 702px;
   list-style-type: none;
@@ -2541,12 +2638,12 @@ z-index: 2;
 
 .inner-header-title {
   display: flex;
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway";
   font-weight: 800;
-  font-size: 50px;
-  line-height: 50px;
+  font-size: 52px;
+  line-height: 52px;
   margin: 0;
-  margin-bottom: 8px;
+  margin-bottom: 14px;
   flex-wrap: wrap;
 }
 
@@ -2892,11 +2989,6 @@ z-index: 2;
   display: flex;
   width: 200px;
   margin-bottom: 35px;
-}
-
-::selection {
-  color: #fff;
-  background: #17A2B8;
 }
 
 .double-slider-wrapper {
@@ -3454,8 +3546,9 @@ select option:hover {
   text-align: center;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  padding: 18px 40px;
+  padding: 15px 40px;
   border: 3px solid #E5E5E5;
+  background-color: #FFFFFF;
   cursor: pointer;
   box-sizing: border-box;
   transition: 0.4s;
@@ -3480,14 +3573,15 @@ select option:hover {
   position: absolute;
   content: '';
   display: block;
-  width: calc(100% + 6px);
-  height: calc(100% + 6px);
+  width: calc(100% + 8px);
+  height: calc(100% + 8px);
   top: -6px;
   left: -6px;
   border: 2px solid #AF4FFF;
 }
 
 .load-button:disabled {
+  border: 3px solid #FFFFFF;
   opacity: 0.3;
   cursor: default;
 }
@@ -3507,6 +3601,7 @@ select option:hover {
 .back-btn {
   position: relative;
   display: flex;
+  min-width: 129px;
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 18px;
@@ -3514,11 +3609,16 @@ select option:hover {
   align-items: center;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+  text-decoration: none;
   background-color: #EBEBEB;
   color: #000000;
   border: 0;
   padding: 25px 24px 25px 24px;
   transition: 0.4s;
+}
+
+.forward-btn {
+ min-width: 139px;
 }
 
 .forward-btn:hover,
@@ -3549,11 +3649,19 @@ select option:hover {
   color: rgba(0, 0, 0, 0.3);
 }
 
+.forward-btn:disabled,
+.back-btn:disabled {
+  background-color: #EBEBEB;
+  color: rgba(68, 68, 68, 0.3)
+}
+
+
+
 .pagination-list {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 }
 
