@@ -54,29 +54,34 @@
 
                 <li class="user-item">
                   <button class="user-btn" id="basket-btn" type="button" value="off">
-                    <div class="basket-amont">2</div>
-                    <div class="basket"> Корзина</div>
+                    <span class="basket-amont">2</span>
+                    <span class="basket"> Корзина</span>
                   </button>
                   <!------------  Корзина ------------>
                   <div class="basket-popover" role="dialog" id="prebasket">
                     <ul class="basket-list">
                       <li class="basket-item">
-                        <img class="basket-pic" src="images/catalog/product-1.jpg" width="39" height="43" alt="Любительская селфи-палка">
+                        <img class="basket-pic" src="images/catalog/product-1.jpg" width="39" height="43"
+                          alt="Любительская селфи-палка">
                         <span class="basket-description">Любительская селфи-палка</span>
                         <span class="visually-hidden price-beginner">500</span>
-                        <button class="delete-btn"><span class=visually-hidden>Удалить позицию из корзины.</span></button>
+                        <button class="delete-btn"><span class=visually-hidden>Удалить позицию из
+                            корзины.</span></button>
                       </li>
                       <li class="basket-item">
-                        <img class="basket-pic" src="images/catalog/product-2.jpg" width="39" height="43" alt="Профессиональная селфи-палка">
-                        <span class="basket-description" >Профессиональная селфи-палка</span>
+                        <img class="basket-pic" src="images/catalog/product-2.jpg" width="39" height="43"
+                          alt="Профессиональная селфи-палка">
+                        <span class="basket-description">Профессиональная селфи-палка</span>
                         <span class="visually-hidden price-profi">1500</span>
                         <button class="delete-btn"><span class=visually-hidden>Удалить товар из корзины.</span></button>
                       </li>
-                      </ul>
-                      <div class="basket-results">
-                        <div class="qty-container"><span>Товаров:</span><span class="qty-value" id="basket-figure">2</span></div>
-                        <div class="cost-container"><span>Сумма:</span><span class="cost-value" id="cost">2000</span><span>₽</span></div>
-                      </div>
+                    </ul>
+                    <div class="basket-results">
+                      <div class="qty-container"><span>Товаров:</span><span class="qty-value"
+                          id="basket-figure">2</span></div>
+                      <div class="cost-container"><span>Сумма:</span><span class="cost-value"
+                          id="cost">2000</span><span>₽</span></div>
+                    </div>
                     <button class="open-basket-btn">Открыть корзину</button>
                   </div>
                   <!------------  Корзина ------------>
@@ -200,13 +205,13 @@
               <div class="price-input">
                 <div class="field">
                   <span class="from-to">от</span>
-                  <input class="input-min" type="number" value="0" id="min-value">
+                  <input class="input-min" type="number" min="0" max="10000" value="0" id="min-value">
                   <label class="visually-hidden" for="min-value">Минимальное значение цены.</label>
                 </div>
 
                 <div class="field">
                   <span class="up-to">до</span>
-                  <input class="input-max" type="number" value="5000" id="max-value">
+                  <input class="input-max" type="number" min="0" max="10000" value="5000" id="max-value">
                   <label class="visually-hidden" for="max-value">Максимальное значение цены.</label>
                 </div>
               </div>
@@ -218,10 +223,12 @@
 
           <div class="filter-color">
 
-            <input class="color-input black-box" type="checkbox" name="color-values" value="black" id="black-color" checked>
+            <input class="color-input black-box" type="checkbox" name="color-values" value="black" id="black-color"
+              checked>
             <label class="color-checkbox black-box" for="black-color">Черный</label>
 
-            <input class="color-input white-box" type="checkbox" name="color-values" value="white" id="white-color" checked>
+            <input class="color-input white-box" type="checkbox" name="color-values" value="white" id="white-color"
+              checked>
             <label class="color-checkbox white-box" for="white-color">Белый</label>
 
             <input class="color-input blue-box" type="checkbox" name="color-values" value="blue" id="blue-color">
@@ -342,7 +349,7 @@
                     <img src="images/catalog/product-4.jpg" width="360" height="380" alt="Селфи-палка «Следуй за мной»">
                   </div>
                   <div class="name-price">
-                    <span class="product-description">Селфи-палка «Следуй за мной»</span>
+                    <span class="product-description">Селфи-палка «Следуй<br> за мной»</span>
                     <span class="product-price">1 500 ₽</span>
                   </div>
                 </a>
@@ -358,7 +365,7 @@
 
           <section class="pagination">
             <h3 class="visually-hidden">Пагинация</h3>
-            <button class="forward-btn" disabled>Назад</button>
+            <button class="back-btn" disabled>Назад</button>
             <ul class="pagination-list">
               <li class="pagination-item">
                 <a class="pagination-link">1</a>
@@ -378,7 +385,7 @@
                 <a class="pagination-link" href="#">15</a>
               </li>
             </ul>
-            <button class="back-btn">Вперед</button>
+            <button class="forward-btn">Вперед</button>
           </section>
 
 

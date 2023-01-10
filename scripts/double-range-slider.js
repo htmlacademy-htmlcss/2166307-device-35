@@ -39,6 +39,35 @@ rangeInput.forEach(input =>{
     });
 });
 
+// обработчик фокуса даб ренж слайдера
+
+var MinPriceEvent = document.querySelectorAll('.range-min')[0];
+var MaxPriceEvent = document.querySelectorAll('.range-max')[0];
+
+MinPriceEvent.addEventListener('input', removeMinFocus);
+MinPriceEvent.addEventListener('blur', addMinFocus);
+MaxPriceEvent.addEventListener('input', removeMaxFocus);
+MaxPriceEvent.addEventListener('blur', addMaxFocus);
+
+function removeMinFocus() {
+  document.querySelectorAll('.range-min')[0].style.setProperty("--display", "none");
+}
+
+function addMinFocus() {
+  document.querySelectorAll('.range-min')[0].style.setProperty("--display", "block");
+}
+
+function removeMaxFocus() {
+document.querySelectorAll('.range-max')[0].style.setProperty("--display", "none");
+}
+
+function addMaxFocus() {
+document.querySelectorAll('.range-max')[0].style.setProperty("--display", "block");
+}
+
+
+
+
 //===============ОБРАБОТЧИК СОСТОЯНИЙ КАРТОЧКИ ПРОДУКТА====================
 
 var productEvent0 = document.querySelectorAll('.product-button')[0];
