@@ -1,6 +1,9 @@
 
 //-----------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓------- ОТКРЫТИЕ-ЗАКРЫТИЕ МОДАЛЬНОГО ОКНА ----------------------------------------------
 
+var OpenWinEvent = document.querySelectorAll('.delivery-btn')[0];
+OpenWinEvent.addEventListener('click', showModalWin)
+
 function showModalWin() {
 
   var darkLayer = document.createElement('div'); // слой затемнения
