@@ -946,7 +946,7 @@ img {
 .hero-info {
   display: flex;
   flex-direction: column;
-  margin-bottom: -37px;
+
 }
 
 .hero-number {
@@ -1048,38 +1048,49 @@ img {
   display: grid;
   grid-template-columns: 141px 147px;
   grid-template-rows: auto auto;
+  grid-auto-flow: column;
   width: 305px;
   gap: 12px 20px;
+  margin: 0;
+  margin-bottom: 37px;
 }
 
 .hero-parameters-02 {
   display: grid;
   grid-template-columns: 155px;
   grid-template-rows: auto auto;
+  grid-auto-flow: column;
   width: 155px;
   gap: 12px;
+  margin: 0;
+  margin-bottom: 37px;
 }
 
 .hero-parameters-03 {
   display: grid;
   grid-template-columns: 99px 79px 128px;
   grid-template-rows: auto auto;
+  grid-auto-flow: column;
   width: 386px;
   gap: 12px 40px;
-}
-
-.value {
-  font-family: "Rubik", sans-serif;
-  font-weight: 400;
-  font-size: 36px;
-  line-height: 30px;
+  margin: 0;
+  margin-bottom: 37px;
 }
 
 .parameter {
   font-family: "Rubik", sans-serif;
   font-weight: 400;
+  font-size: 36px;
+  line-height: 30px;
+  margin: 0;
+}
+
+.parameter-description {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
   font-size: 16px;
   line-height: 30px;
+  margin: 0;
 }
 
 .slider-check + .slider-label {
@@ -1109,19 +1120,19 @@ img {
 
 .slider-check.first,
 .slider-label.first {
-  top: 512px;
+  bottom: 0;
   left: 543px;
 }
 
 .slider-check.second,
 .slider-label.second {
-  top: 512px;
+  bottom: 0;
   left: 574.5px;
 }
 
 .slider-check.third,
 .slider-label.third {
-  top: 512px;
+  bottom: 0;
   left: 606px;
 }
 
@@ -1579,7 +1590,9 @@ img {
   width: 1160px;
   margin-right: auto;
   margin-left: auto;
-  padding: 38.25px 0;
+  padding: 0;
+  padding-top: 40.25px;
+  padding-bottom: 36.25px;
   background-image: linear-gradient(90deg, #FFE17F 10.775862%, #F0F0F0 10.775862%, #F0F0F0 89.224138%);
   font-family: "Raleway", sans-serif;
   font-size: 20px;
@@ -3808,7 +3821,7 @@ select option:hover {
   background-color: #EBEBEB;
   color: #000000;
   border: 0;
-  padding: 26px 13px 24px 15px;
+  padding: 26px 0 24px 0;
   cursor: pointer;
   transition: 0.4s;
 }
@@ -3845,8 +3858,8 @@ select option:hover {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.forward-btn:disabled,
-.back-btn:disabled {
+.btn-disabled {
+  pointer-events: none;
   background-color: #EBEBEB;
   color: rgba(68, 68, 68, 0.3);
   cursor: default;
