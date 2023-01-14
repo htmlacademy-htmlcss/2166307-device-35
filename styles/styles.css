@@ -42,7 +42,6 @@ body {
 }
 
 img {
-  /* нормализация тега IMG */
   max-width: 100%;
   object-fit: contain;
 }
@@ -50,7 +49,6 @@ img {
 .main-page,
 .main-inner {
   flex-grow: 1;
-  /* делаем MAIN жадным через свойство flex-grow; реализуем sticky-footer */
   background-color: #ffffff;
   color: #000000;
 }
@@ -64,8 +62,6 @@ img {
   top: 0;
   left: 0;
 }
-
-/*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ----БЛОК НАВИГАЦИИ -----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -----*/
 
 .navigation-container {
   display: flex;
@@ -91,12 +87,10 @@ img {
 }
 
 .logo-line {
-  /* grid track number 1 */
   display: flex;
 }
 
 .user-line {
-  /* grid track number 2 */
   display: flex;
 }
 
@@ -157,13 +151,12 @@ img {
   transition: 0.4s;
 }
 
-
 .search-button {
   position: relative;
   display: flex;
   align-items: center;
   height: 40px;
-  line-height: 20px;
+  line-height: 16px;
   font-size: 16px;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -171,6 +164,7 @@ img {
   border-left: 0;
   background-color: transparent;
   padding: 10px 56px;
+  margin: 0;
   box-sizing: border-box;
   cursor: pointer;
   transition: 0.4s;
@@ -222,7 +216,6 @@ img {
 }
 
 .user-actions-container {
-  /* flex контейнер для  |- ИмяЮзера/Вход -|- Выйти -|- Сравнить -|- Корзина -|  */
   display: flex;
   justify-content: space-between;
   flex-grow: 1;
@@ -244,7 +237,6 @@ img {
   gap: 28px;
   max-width: 231px;
   margin-right: 26.5px;
-  padding-right: 0.5px;
   align-items: center;
   flex-wrap: wrap;
   animation: fadeInFromNone 0.6s ease-in-out;
@@ -372,6 +364,7 @@ img {
   text-decoration: none;
   border: 0;
   padding: 0;
+  margin: 0;
   background-color: #FFE17F;
   color: #000000;
   transition: 0.4s;
@@ -646,7 +639,6 @@ img {
 }
 
 .navigation-line {
-  /* grid track number 3 */
   display: flex;
   min-height: 50px;
   justify-content: space-between;
@@ -758,7 +750,6 @@ img {
   background-color: #FFE17F;
   z-index: 2;
   animation: fadeInFromNone 0.6s ease-in-out;
-  /*контент блока плавно "проявляется" за 0.6 сек.*/
 }
 
 .catalog-item:nth-child(1) {
@@ -872,24 +863,12 @@ img {
   opacity: 0.3;
 }
 
-
-
-/*-↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-------------------БЛОК НАВИГАЦИИ ---------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑--------*/
-
-
 .main-page {
-  /*режем весь main на 6 ячеек с интервалом 70px  */
   display: flex;
   flex-direction: column;
-  /*grid-template-rows: auto auto auto auto auto auto;*/
   width: 100%;
   gap: 70px;
 }
-
-
-
-/*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ------------ HERO БЛОК -----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ----------*/
-
 
 .hero-section {
   display: flex;
@@ -917,12 +896,9 @@ img {
   margin-left: auto;
   margin-right: auto;
   animation: fadeInFromNone 0.6s ease-in-out;
-  /*контент слайда плавно "проявляется" за 0.6 сек.*/
 }
 
 @keyframes fadeInFromNone {
-
-  /* анимация плавного появления слайда через  transition не работает =( , поэтому используем здесь технику @keyframes */
   0% {
     display: none;
     opacity: 0;
@@ -946,7 +922,6 @@ img {
 .hero-info {
   display: flex;
   flex-direction: column;
-
 }
 
 .hero-number {
@@ -1104,7 +1079,7 @@ img {
   padding: 0;
   cursor: pointer;
   transition: 0.4s;
-  z-index: 5;
+  z-index: 3;
 }
 
 .slider-check {
@@ -1215,12 +1190,6 @@ img {
   cursor: default;
 }
 
-/*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ----------- HERO БЛОК ----------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
-
-
-
-/*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -------- PRODUCT DIRECTIONS -----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ----------*/
-
 .directions-list {
   display: flex;
   gap: 40px;
@@ -1298,11 +1267,6 @@ img {
   flex-wrap: wrap;
 }
 
-/*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ --------- PRODUCT DIRECTIONS --------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
-
-
-
-/*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ------------ SERVICES -----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ------------*/
 .services-section {
   display: flex;
 }
@@ -1427,9 +1391,12 @@ img {
   margin: 0;
   margin-right: auto;
   flex-wrap: wrap;
+  padding-right: 1px;
 }
 
-/*---------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ----- PURE CSS SLIDER for SERVICES ----------*/
+.goods-delivery {
+  width: 454px;
+}
 
 .slider {
   position: relative;
@@ -1439,7 +1406,6 @@ img {
 }
 
 .slider-wrapper {
-  /*важный блок-обертка под все. без него все исчезает*/
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1448,7 +1414,6 @@ img {
 }
 
 .control-input {
-  /*ПРЯЧЕТ ОРИГИНАЛЬНЫЕ РАДИО БУТТОНЫ*/
   position: absolute;
   display: flex;
   top: 63px;
@@ -1467,17 +1432,13 @@ img {
 }
 
 .slides {
-  /* СТАВИМ НА ВСЕ КОНТЕНТ-БЛОКИ DISPLAY:NONE */
   display: none;
   animation: fadeInFromNone 0.6s ease-in-out;
-  /*контент выбранного слайда плавно "проявляется" за 0.6 сек.*/
 }
 
 .control-input.delivery-radio:checked ~ .slider > .delivery,
 .control-input.warranty-radio:checked ~ .slider > .warranty,
 .control-input.credit-radio:checked ~ .slider > .credit {
-  /* ЕСЛИ РАДИО ЧЕКНУТО --> СООТВЕТСТВУЮЩИЙ ЕМУ КОНТЕНТ-БЛОК получает DISPLAY:FLEX */
-  /* по умолчанию радио кнопка, соответсвующая DELIVERY service, помечена как checked*/
   display: flex;
 }
 
@@ -1573,14 +1534,6 @@ img {
   left: -286px;
 }
 
-/*---------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ----- PURE CSS SLIDER for SERVICES ----------*/
-
-
-/*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ------------ SERVICES ----------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
-
-
-
-/*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -------- CUSTOM DELIVERY --------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -----------*/
 .delivery-btn {
   position: relative;
   display: flex;
@@ -1672,13 +1625,6 @@ img {
   transition: 0.4s;
 }
 
-
-
-/*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -------- CUSTOM DELIVERY ---------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
-
-
-
-/*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -------- ABOUT and CONTACTS -------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -----------*/
 .about-contacts {
   position: relative;
   display: grid;
@@ -1824,11 +1770,6 @@ img {
   padding: 0 30px;
 }
 
-/*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -------- ABOUT and CONTACTS------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
-
-
-
-/*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -------- SUBSCRIPTION -----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -----------*/
 .subscription-container {
   display: flex;
   flex-direction: column;
@@ -1939,7 +1880,9 @@ img {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   padding: 0 33.7625px;
+  margin: 0;
   border: 3px solid #C4C4C4;
+  background-color: transparent;
   cursor: pointer;
   box-sizing: border-box;
   flex-wrap: wrap;
@@ -2015,13 +1958,6 @@ img {
   z-index: 2;
 }
 
-
-/*-------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -------- SUBSCRIPTION----------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-----------*/
-
-
-
-/*-----↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓-------------------  F O O T E R   ------------------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓---------------------------*/
-
 .footer-container {
   display: flex;
   width: 100%;
@@ -2040,7 +1976,6 @@ img {
 }
 
 .footer-address-column {
-  /* grid column number 1 */
   position: relative;
   display: flex;
   flex-direction: column;
@@ -2114,7 +2049,6 @@ img {
 }
 
 .footer-nav-column {
-  /* grid column number 2 */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2241,7 +2175,6 @@ img {
 }
 
 .footer-tel-column {
-  /* grid column number 3 */
   display: flex;
   flex-direction: column;
   padding-top: 78px;
@@ -2326,39 +2259,25 @@ img {
   border: 1px solid #AF4FFF;
 }
 
-
-
-/*-----↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑------------------------- F O O T E R ------------------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑------------------------*/
-
-
-
-/*-----↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓-------------------------  МОДАЛЬНОЕ  ОКНО  ----------------------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ --------------*/
-
-
 .modalwin {
   display: none;
-  /* сначала прячем окно */
   position: fixed;
-  /* фиксированное позиционирование, окно стабильно при прокрутке */
   width: 920px;
   background: var(--background, #FFFFFF);
   top: 18.12958825%;
-  /* отступ сверху задаем относительным значением, чтобы везде отображалось красиво */
   right: 0;
   left: 0;
   margin: 0 auto;
   z-index: 5;
-  /* поверх всех */
   animation: fadeInFromNone 0.6s ease-in-out;
-  /*добавляем легкую анимацию: плавное появление*/
 }
 
 .shadow {
   position: fixed;
+  display: var(--display, none);
   width: 100%;
   height: 100%;
   z-index: 4;
-  /* фон показываем поверх всего кроме окна */
   background: rgba(240, 240, 240, 0.9);
   left: 0;
   top: 0;
@@ -2381,13 +2300,11 @@ img {
 }
 
 .modal-title {
-  /* modal track number 1 */
   display: flex;
   justify-content: space-between;
 }
 
 .modal-title-delivery {
-  /* modal track number 1 */
   display: flex;
   width: 664px;
   font-family: "Raleway", sans-serif;
@@ -2437,7 +2354,6 @@ img {
 }
 
 .modal-name-mail {
-  /* modal track number 2 */
   position: relative;
   display: flex;
   gap: 40px;
@@ -2516,7 +2432,6 @@ img {
 }
 
 .mail-error-msg {
-  /* status/error */
   position: relative;
   display: flex;
   font-family: "Rubik", sans-serif;
@@ -2584,7 +2499,6 @@ img {
 }
 
 .modal-goods-quantity {
-  /* modal track number 3 */
   position: relative;
   display: flex;
   gap: 40px;
@@ -2790,21 +2704,10 @@ img {
 }
 
 .modal-submit-button {
-  /* modal track number 4 */
   display: flex;
   margin-right: auto;
   flex-wrap: wrap;
 }
-
-
-/*-- ===========↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓=====================   C A T A L O G    =========================↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓=======*/
-
-
-
-
-
-/*-----↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓-------------Catalog header & Breadcrumbs ------------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓--------------------*/
-
 
 .catalog-header {
   display: flex;
@@ -2886,10 +2789,6 @@ img {
   cursor: pointer;
 }
 
-/*-----↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑--------------Catalog header & Breadcrumbs -----------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑--------------------*/
-
-
-/*---------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓------------ФИЛЬТР КАТАЛОГА ----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓--------------*/
 .catalog-wrapper {
   display: flex;
   width: 100%;
@@ -2939,10 +2838,6 @@ img {
   margin-bottom: 33px;
   flex-wrap: wrap;
 }
-
-
-
-/* --- ↓ ↓ ↓ -----кастомизация чекбоксов и радио в Фильтре каталога ----- ↓ ↓ ↓ -----*/
 
 .color-checkbox,
 .bt-radio {
@@ -3099,8 +2994,6 @@ img {
   cursor: default;
 }
 
-/* -----↑ ↑ ↑-------кастомизация чекбоксов и радио в Фильтре каталога ------↑ ↑ ↑-----*/
-
 .filter-area-title {
   display: flex;
   width: 200px;
@@ -3163,8 +3056,6 @@ img {
   opacity: 0.3;
   cursor: default;
 }
-
-/*--↓ ↓ ↓----double range slider ----------↓ ↓ ↓----------*/
 
 .slider-container1 {
   display: flex;
@@ -3237,28 +3128,23 @@ img {
   line-height: 20px;
   color: rgb(0, 0, 0, 0.3);
   background-color: #F0F0F0;
+  -moz-appearance: textfield;
   outline: none;
 }
 
 .double-slider {
   height: 2px;
-  /*тощина  полосы-подкладки слайдера*/
   position: relative;
   background: #DCDCDC;
-  /*цвет полосы-подкладки слайдера*/
 }
 
 .double-slider .progress {
   height: 2px;
-  /*тощина основной полосы слайдера*/
   left: 0%;
-  /*начальная установка основной полосы слайдера*/
   right: 50%;
-  /*начальная установка основной полосы слайдера*/
   position: absolute;
   border-radius: 5px;
   background: #000000;
-  /*цвет полосы слайдера*/
 }
 
 .range-input {
@@ -3317,7 +3203,6 @@ img {
 
 .range-min::-webkit-slider-thumb,
 .range-max::-webkit-slider-thumb {
-  /* стилизация плашки */
   position: relative;
   height: 18px;
   width: 18px;
@@ -3360,7 +3245,6 @@ img {
 
 .range-min::-moz-range-thumb,
 .range-max::-moz-range-thumb {
-  /* стилизация плашки */
   position: relative;
   height: 18px;
   width: 18px;
@@ -3401,16 +3285,6 @@ img {
   background-color: #000000;
 }
 
-
-/*--↑ ↑ ↑----double range slider ----------↑ ↑ ↑----------*/
-
-
-
-/*--------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑--------------ФИЛЬТР КАТАЛОГА -----------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑--------------*/
-
-
-/*--------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓--------------КАРТОЧКИ ТОВАРОВ -----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓-------------*/
-
 .catalog-products {
   display: flex;
   flex-direction: column;
@@ -3439,9 +3313,6 @@ img {
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
-
-
-/* ---- ↓ ↓ ↓ -------Кастомизация SELECT------- ↓ ↓ ↓ ---------*/
 
 .goods-options > select {
   position: relative;
@@ -3512,7 +3383,6 @@ select option:hover {
   background-color: #F0F0F0;
   cursor: pointer;
   appearance: none;
-  /*      Убираем стандартную стрелку*/
   -webkit-appearance: none;
   -moz-appearance: none;
   transition: 0.4s;
@@ -3520,7 +3390,6 @@ select option:hover {
 }
 
 .product-options::before {
-  /* Добавляем кастомную стрелку*/
   position: absolute;
   content: '';
   display: block;
@@ -3541,8 +3410,6 @@ select option:hover {
   outline: none;
 }
 
-/* ------ ↑ ↑ ↑-----Кастомизация SELECT--------- ↑ ↑ ↑-------*/
-
 .up-down-btn {
   display: flex;
   width: 60px;
@@ -3558,6 +3425,7 @@ select option:hover {
   width: 30px;
   height: 30px;
   border: 0;
+  background-color: transparent;
   cursor: pointer;
   transition: 0.4s;
   color: rgb(0, 0, 0, 0.2);
@@ -3793,11 +3661,6 @@ select option:hover {
   cursor: default;
 }
 
-/*---------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑---------КАРТОЧКИ ТОВАРОВ ----------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑-------------*/
-
-
-
-/*-------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓---------------ПАГИНАЦИЯ ----------------↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓--------------*/
 .pagination {
   display: flex;
   justify-content: space-between;
@@ -3931,6 +3794,3 @@ select option:hover {
 .pagination-link:active {
   color: rgba(68, 68, 68, 0.1);
 }
-
-
-/*---------------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑--------ПАГИНАЦИЯ -------------↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑----------------------*/
